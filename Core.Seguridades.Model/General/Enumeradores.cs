@@ -4,4 +4,13 @@
     {
         OperacionExitosa = 10000,
     }
+
+
+    public enum ErrorUsuario { 
+    
+        NoExisteNombreEmpresaAsignada = 20001,
+
+
+    }
+
 }

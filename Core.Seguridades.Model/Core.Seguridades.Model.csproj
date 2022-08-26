@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Transaccion\Response\" />
     <Folder Include="Transaccion\Request\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Core.Common.Model" Version="1.0.2" />
   </ItemGroup>
 
 </Project>
