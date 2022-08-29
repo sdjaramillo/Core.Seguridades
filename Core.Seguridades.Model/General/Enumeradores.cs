@@ -9,8 +9,9 @@
     public enum ErrorUsuario { 
     
         NoExisteNombreEmpresaAsignada = 20001,
-
-
+        NoExisteUsuariosBaseDatos = 20002,
+        CamposVaciosActenticacionActiveDirectory = 20003,
     }
+
 
 }

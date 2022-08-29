@@ -7,13 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Core.Common.BusinessLogic" Version="1.0.2" />
-    <PackageReference Include="Core.Common.Util" Version="1.0.2" />
+    <PackageReference Include="System.DirectoryServices" Version="6.0.0" />
+    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core.Seguridades.Adapter\Core.Seguridades.Adapter.csproj" />
-    <ProjectReference Include="..\Core.Seguridades.DataAccess\Core.Seguridades.DataAccess.csproj" />
     <ProjectReference Include="..\Core.Seguridades.Model\Core.Seguridades.Model.csproj" />
   </ItemGroup>
 
