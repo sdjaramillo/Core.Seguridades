@@ -30,7 +30,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
             if (objetoTransaccional.Resultado.CodigoRespuesta == (int)Error.OperacionExitosa)
             {
                 ObtenerListaUsuariosResponse respuesta = new ObtenerListaUsuariosResponse();
-                return null;
+                return respuesta;
             }
             else
                 return null;

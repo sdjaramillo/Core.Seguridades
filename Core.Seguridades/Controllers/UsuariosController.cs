@@ -6,6 +6,10 @@ using Core.Common.Util.Helper;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 using Core.Seguridades.Model.Transaccion.Response.Usuarios;
 using Core.Seguridades.DataAccess.Usuarios;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Core.Seguridades.Model.Entidad.Usuarios;
+using System.DirectoryServices.AccountManagement;
+using Core.Seguridades.Model.Transaccion.Request.Usuarios;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,7 +18,7 @@ namespace Core.Seguridades.Controllers
     /// <summary>
     /// Controlador de usuario con peticiones HTTP
     /// </summary>
-    [Route("api/Core.Seguridades/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase
     {
@@ -58,5 +62,22 @@ namespace Core.Seguridades.Controllers
 
             return Ok(respuesta);
         }
+
+        [HttpPut]
+        [Route("ActualizarUsuario")]
+        [Produces(typeof(EstructuraBase<ActualizarUsuarioResponse>))]
+        public IActionResult ActualizarUsuario([FromBody] ActualizarUsuarioRequest usuario)
+        {
+            UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
+            transaccion.UsuarioRequest = usuario;
+            
+            EstructuraBase<ActualizarUsuarioResponse> respuesta = this.Actualizar<UsuarioTrx, ActualizarUsuarioResponse, ActualizarUsuarioIN>(
+                new ActualizarUsuarioIN(),
+                transaccion);
+
+            return Ok(respuesta);
+        }
+
+       
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Core.Common.Model.Transaccion;
 using Core.Seguridades.Model.Entidad.Usuarios;
+using Core.Seguridades.Model.Transaccion.Request.Usuarios;
 
 namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
 {
@@ -12,6 +13,7 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
             ListaUsuarios = new List<Usuario>();
             ListaUsuariosActiveDirectory = new List<UsuarioActiveDirectory>();
             ListaUsuariosNuevos = new List<UsuarioActiveDirectory>();
+            Usuario = new Usuario();
         }
 
         /// <summary>
@@ -43,5 +45,7 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
         /// Total numéricos de usuarios eliminados
         /// </summary>
         public int CantidadUsuariosEliminados { get; set; }
+
+        public ActualizarUsuarioRequest UsuarioRequest { get; set; }
     }
 }

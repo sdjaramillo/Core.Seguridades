@@ -41,4 +41,22 @@ namespace Core.Seguridades.Model.General
     {
         public const string IdentificarEmpresa = "OU";
     }
+
+    public static class PA_ACTUALIZAR_USUARIO
+    {
+        public const string NombreStoreProcedure = "PA_ACTUALIZAR_USUARIO";
+        public const string CodigoHorarioLaboral = "@HorarioLaboralCodigo";
+        public const string CodigoRol = "@RolCodigo";
+        public const string CodigoEmpresa = "@EmpresaCodigo";
+        public const string NombreRedUsuario = "@NombreRedUsuario";
+        public const string NombreUsuario = "@NombreUsuario";
+        public const string ApellidoUsuario = "@ApellidoUsuario";
+        public const string FechaNacimientoUsuario = "@FechaNacimientoUsuario";
+        public const string FechaIngresoUsuario = "@FechaIngresoUsuario";
+        public const string FechaSalidaUsuario = "@FechaSalidaUsuario";
+        public const string EstadoUsuario = "@EstadoUsuario";
+        public const string CorreoElectronicoUsuario = "@CorreoElectronicoUsuario";
+        public const string DescripcionUsuario = "@DescripcionUsuario";
+        public const string ImagenUsuario = "@ImagenUsuario";
+    }
 }

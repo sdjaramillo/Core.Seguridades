@@ -11,7 +11,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
     /// <summary>
     /// Realiza validaciones para los usuarios
     /// </summary>
-    public class ValidarDatosUsuarioBLL
+    public static class ValidarDatosUsuarioBLL
     {
         /// <summary>
         /// Valida que cualquiera de los 6 campos de los usuarios no sean null

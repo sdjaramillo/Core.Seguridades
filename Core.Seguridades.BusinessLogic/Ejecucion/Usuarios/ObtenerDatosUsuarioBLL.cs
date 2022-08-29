@@ -1,11 +1,5 @@
-﻿using Core.Seguridades.Model.Entidad.Usuarios;
-using Core.Seguridades.Model.General;
-using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
+
 
 namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
 {
