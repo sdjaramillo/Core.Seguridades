@@ -14,6 +14,7 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
             ListaUsuariosActiveDirectory = new List<UsuarioActiveDirectory>();
             ListaUsuariosNuevos = new List<UsuarioActiveDirectory>();
             Usuario = new Usuario();
+            UsuarioRequest = new ActualizarUsuarioRequest();
         }
 
         /// <summary>
@@ -47,5 +48,6 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
         public int CantidadUsuariosEliminados { get; set; }
 
         public ActualizarUsuarioRequest UsuarioRequest { get; set; }
+
     }
 }

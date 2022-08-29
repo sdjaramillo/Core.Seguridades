@@ -59,4 +59,9 @@ namespace Core.Seguridades.Model.General
         public const string DescripcionUsuario = "@DescripcionUsuario";
         public const string ImagenUsuario = "@ImagenUsuario";
     }
+    public static class PA_ELIMINAR_USUARIO
+    {
+        public const string NombreStoreProcedure = "PA_ELIMINAR_USUARIO";
+        public const string NombreRedUsuario = "@NombreRedUsuario";
+    }
 }

@@ -78,6 +78,19 @@ namespace Core.Seguridades.Controllers
             return Ok(respuesta);
         }
 
-       
+        [HttpDelete]
+        [Route("EliminarUsuario/{nombreRedUsuario}")]
+        [Produces(typeof(EstructuraBase<EliminarUsuarioResponse>))]
+        public IActionResult EliminarUsuario(string nombreRedUsuario)
+        {
+            UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
+            transaccion.UsuarioRequest.NombreRedUsuario = nombreRedUsuario;
+
+            EstructuraBase<EliminarUsuarioResponse> respuesta = this.Eliminar<UsuarioTrx, EliminarUsuarioResponse, EliminarUsuarioIN>(
+                new EliminarUsuarioIN(),
+                transaccion);
+
+            return Ok(respuesta);
+        }
     }
 }
