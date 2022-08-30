@@ -9,10 +9,19 @@ using System.Threading.Tasks;
 
 namespace Core.Seguridades.Model.Transaccion.Transaccional.Autenticacion
 {
+    /// <summary>
+    /// Objeto transaccional para autenticar
+    /// </summary>
     public class AutenticacionTrx : TransaccionBase
     {
+        /// <summary>
+        /// Campos de nombre y contraseña para petición de inicio de sesión
+        /// </summary>
         public AutenticarActiveDirectoryRequest UsuarioAutenticacionRequest { get; set; }
-        public string MensajeAutenticacion { get; set; }
+
+        /// <summary>
+        /// Resultado de inicio de sesión 
+        /// </summary>
         public bool ResultadoAutenticacion { get; set; }
 
     }

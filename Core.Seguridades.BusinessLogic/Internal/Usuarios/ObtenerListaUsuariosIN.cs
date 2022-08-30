@@ -1,5 +1,4 @@
-﻿using Core.Common.BusinessLogic.ProcessTemplate;
-using Core.Common.Model.General;
+﻿using Core.Common.ProcessTemplate.InternalBusinessLogic;
 using Core.Seguridades.BusinessLogic.Ejecucion.Usuarios;
 using Core.Seguridades.Model.Transaccion.Response.Usuarios;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
@@ -25,7 +24,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
             return null;
         }
 
-        public ObtenerListaUsuariosResponse ArmarObjetoRespuesta(UsuarioTrx objetoTransaccional)
+        /*public ObtenerListaUsuariosResponse ArmarObjetoRespuesta(UsuarioTrx objetoTransaccional)
         {
             if (objetoTransaccional.Resultado.CodigoRespuesta == (int)Error.OperacionExitosa)
             {
@@ -34,6 +33,6 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
             }
             else
                 return null;
-        }
+        }*/
     }
 }

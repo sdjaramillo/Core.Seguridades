@@ -31,6 +31,7 @@ namespace Core.Seguridades.Model.General
         public const string NombreEmpresa = "@NombreEmpresa";
         public const string FechaIngresoUsuario = "@FechaIngresoUsuario";
         public const string CorreoElectronicoUsuario = "@CorreoElectronicoUsuario";
+        public const string CiudadUsuario = "@CiudadUsuario";
         public const string Retorno = "@RESULT";
     }
 
@@ -39,9 +40,18 @@ namespace Core.Seguridades.Model.General
     /// </summary>
     public static class MigrarUsuariosActiveDirectoryConstantes
     {
-        public const string IdentificarEmpresa = "OU";
+        public const string IdentificarEmpresa = "-";
+        public const string NombreUsuario = "givenName";
+        public const string ApellidoUsuario = "sn";
+        public const string CadenaNombreEmpresa = "description";
+        public const string FechaIngresoUsuario = "whenCreated";
+        public const string NombreRedUsuario = "sAMAccountName";
+        public const string CorreoElectronicoUsuario = "userPrincipalName";
     }
 
+    /// <summary>
+    /// Parametros para actualizar un usuario almacenado en la base de datos
+    /// </summary>
     public static class PA_ACTUALIZAR_USUARIO
     {
         public const string NombreStoreProcedure = "PA_ACTUALIZAR_USUARIO";
@@ -59,6 +69,10 @@ namespace Core.Seguridades.Model.General
         public const string DescripcionUsuario = "@DescripcionUsuario";
         public const string ImagenUsuario = "@ImagenUsuario";
     }
+
+    /// <summary>
+    /// Parametros para eliminación logica de un usuario almacenado en la base de datos
+    /// </summary>
     public static class PA_ELIMINAR_USUARIO
     {
         public const string NombreStoreProcedure = "PA_ELIMINAR_USUARIO";

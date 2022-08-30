@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Core.Seguridades.Model.Transaccion.Request.Usuarios
 {
+    /// <summary>
+    /// Solicitud de datos para actualizar usaurio
+    /// </summary>
     public class ActualizarUsuarioRequest
     {
         public ActualizarUsuarioRequest() 

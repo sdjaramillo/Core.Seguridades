@@ -1,4 +1,5 @@
-﻿using Core.Common.BusinessLogic.ProcessTemplate;
+﻿using Core.Common.ProcessTemplate.InternalBusinessLogic;
+using Core.Common.Util.Helper;
 using Core.Seguridades.BusinessLogic.Ejecucion.Usuarios;
 using Core.Seguridades.Model.Transaccion.Response.Usuarios;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
@@ -24,10 +25,16 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
             return null;
         }
 
-        public MigrarUsuariosActiveDirectoryResponse ArmarObjetoRespuesta(UsuarioTrx objetoTransaccional)
-        {
-            return null;
-        }
+        //public MigrarUsuariosActiveDirectoryResponse ArmarObjetoRespuesta(UsuarioTrx objetoTransaccional)
+        //{
+        //    if (objetoTransaccional.Respuesta.CodigoRespuesta == 10000)
+        //    {
+        //        MigrarUsuariosActiveDirectoryResponse respuesta = new MigrarUsuariosActiveDirectoryResponse();
+        //        var aux = MapHelper.MapeoDinamicoRespuesta(objetoTransaccional, respuesta, objetoTransaccional.DatosApi.LogicaInyectada);
+        //        return aux;
+        //    }
+        //    return null;
+        //}
 
         public void HomologarInformacion(UsuarioTrx objetoTransaccional)
         {

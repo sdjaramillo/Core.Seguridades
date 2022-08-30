@@ -9,8 +9,5 @@ namespace Core.Seguridades.Model.Transaccion.Response.Usuarios
     public class ObtenerListaUsuariosResponse
     {
         List<Usuario> Usuarios { get; set; }
-
-
-
     }
 }

@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Core.Common.BusinessLogic" Version="1.0.2" />
-    <PackageReference Include="Core.Common.Util" Version="1.0.2" />
+    <PackageReference Include="Core.Common.ProcessTemplate" Version="1.0.4" />
+    <PackageReference Include="Core.Common.Util" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup>

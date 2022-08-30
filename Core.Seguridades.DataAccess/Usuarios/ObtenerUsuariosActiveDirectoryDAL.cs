@@ -1,4 +1,5 @@
 ﻿using Core.Seguridades.Model.Entidad.Usuarios;
+using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 using System.DirectoryServices.AccountManagement;
 using DirectoryEntry = System.DirectoryServices.DirectoryEntry;
@@ -26,12 +27,12 @@ namespace Core.Seguridades.DataAccess.Usuarios
                         objetoTransaccional.ListaUsuariosActiveDirectory.Add(
                             new UsuarioActiveDirectory()
                             {
-                                NombreUsuario = (string)de.Properties["givenName"].Value,
-                                ApellidoUsuario = (string)de.Properties["sn"].Value,
-                                CadenaNombreEmpresa = (string)de.Properties["distinguishedName"].Value,
-                                FechaIngresoUsuario = (DateTime)de.Properties["whenCreated"].Value,
-                                NombreRedUsuario = (string)de.Properties["sAMAccountName"].Value,
-                                CorreoElectronicoUsuario = (string)de.Properties["userPrincipalName"].Value
+                                NombreUsuario = (string)de.Properties[MigrarUsuariosActiveDirectoryConstantes.NombreUsuario].Value,
+                                ApellidoUsuario = (string)de.Properties[MigrarUsuariosActiveDirectoryConstantes.ApellidoUsuario].Value,
+                                CadenaNombreEmpresa = (string)de.Properties[MigrarUsuariosActiveDirectoryConstantes.CadenaNombreEmpresa].Value,
+                                FechaIngresoUsuario = (DateTime)de.Properties[MigrarUsuariosActiveDirectoryConstantes.FechaIngresoUsuario].Value,
+                                NombreRedUsuario = (string)de.Properties[MigrarUsuariosActiveDirectoryConstantes.NombreRedUsuario].Value,
+                                CorreoElectronicoUsuario = (string)de.Properties[MigrarUsuariosActiveDirectoryConstantes.CorreoElectronicoUsuario].Value
                             });
                     }
                 } 

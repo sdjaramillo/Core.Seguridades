@@ -3,14 +3,18 @@ using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 using Dapper;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Seguridades.DataAccess.Usuarios
 {
+    /// <summary>
+    /// Lógica de acceso de los datos que permite actualizar un usuario
+    /// </summary>
     public static class ActualizarUsuarioDAL
     {
+        /// <summary>
+        /// Método que ejecuta la actualización de los datos de un usuario en tabla SEG_USUARIO de la BD
+        /// </summary>
+        /// <param name="objetoTransaccional">Objeto transaccional de usuario</param>
         public static void Execute(UsuarioTrx objetoTransaccional)
         {
             string query = PA_ACTUALIZAR_USUARIO.NombreStoreProcedure;
@@ -35,7 +39,6 @@ namespace Core.Seguridades.DataAccess.Usuarios
 
                 var resultado = connection.Query(query, parametros, commandType: CommandType.StoredProcedure);
 
-                
             }
         }
     }

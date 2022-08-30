@@ -13,12 +13,14 @@ namespace Core.Seguridades.Model.Entidad.Usuarios
     {
         public UsuarioActiveDirectory() { }
 
-        public string NombreUsuario { get; set; } //givenName
-        public string ApellidoUsuario { get; set; } //sn
-        public string CadenaNombreEmpresa { get; set; } //distinguishedName
+        public string NombreUsuario { get; set; } 
+        public string ApellidoUsuario { get; set; } 
+        public string CadenaNombreEmpresa { get; set; } 
         public string NombreEmpresa { get; set; } 
-        public DateTime FechaIngresoUsuario { get; set; } //whenCreated
-        public string NombreRedUsuario { get; set; } //sAMAccountName
-        public string CorreoElectronicoUsuario { get; set; } //mail
+        public DateTime FechaIngresoUsuario { get; set; } 
+        public string NombreRedUsuario { get; set; } 
+        public string CorreoElectronicoUsuario { get; set; } 
+
+        public string CiudadUsuario { get; set; } 
     }
 }

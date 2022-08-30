@@ -46,7 +46,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
             {
                 foreach (var usuario in connection.Query<PA_OBTENER_LISTA_USUARIOS_Result>(query).ToList())
                 {
-                    objetoTransaccional.ListaUsuarios.Add(MapHelper.MapeoDinamicoAutoMapper<Usuario, PA_OBTENER_LISTA_USUARIOS_Result>(usuario));
+                    objetoTransaccional.ListaUsuarios.Add(MapHelper.MapeoDinamicoSimpleAutoMapper<Usuario, PA_OBTENER_LISTA_USUARIOS_Result>(usuario));
                 }
             }
         }

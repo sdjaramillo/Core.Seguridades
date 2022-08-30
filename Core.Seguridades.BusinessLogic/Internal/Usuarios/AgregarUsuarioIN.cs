@@ -1,5 +1,5 @@
-﻿using Core.Common.BusinessLogic.ProcessTemplate;
-using Core.Common.Model.General;
+﻿using Core.Common.Model.General;
+using Core.Common.ProcessTemplate.InternalBusinessLogic;
 using Core.Common.Util.Helper;
 using Core.Seguridades.Model.Transaccion.Response.Usuarios;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
@@ -21,7 +21,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
             throw new NotImplementedException();
         }
 
-        public AgregarUsuarioResponse ArmarObjetoRespuesta(UsuarioTrx objetoTransaccional)
+       /* public AgregarUsuarioResponse ArmarObjetoRespuesta(UsuarioTrx objetoTransaccional)
         {
             if (objetoTransaccional.Resultado.CodigoRespuesta == (int)Error.OperacionExitosa)
             {
@@ -30,7 +30,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
             }
             else
                 return null;
-        }
+        }*/
 
 
         public void HomologarInformacion(UsuarioTrx objetoTransaccional)

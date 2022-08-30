@@ -9,6 +9,9 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
     /// </summary>
     public class UsuarioTrx : TransaccionBase
     {
+        /// <summary>
+        /// Constructor del objeto transaccional donde se instancia las listas de usuarios
+        /// </summary>
         public UsuarioTrx() {
             ListaUsuarios = new List<Usuario>();
             ListaUsuariosActiveDirectory = new List<UsuarioActiveDirectory>();
@@ -47,6 +50,9 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
         /// </summary>
         public int CantidadUsuariosEliminados { get; set; }
 
+        /// <summary>
+        /// Campos de usuario utilizado para actualizar la infromación
+        /// </summary>
         public ActualizarUsuarioRequest UsuarioRequest { get; set; }
 
     }

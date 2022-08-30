@@ -3,8 +3,11 @@
 
 namespace Core.Seguridades.Model.Transaccion.Response.Usuarios
 {
+    /// <summary>
+    /// Respuesta al actualizar un usuario
+    /// </summary>
     public class ActualizarUsuarioResponse
     {
-        public Usuario usuario { get; set; }
+        public Usuario Usuario { get; set; }
     }
 }

@@ -6,8 +6,15 @@ using System.Data.SqlClient;
 
 namespace Core.Seguridades.DataAccess.Usuarios
 {
+    /// <summary>
+    /// Lógica de acceso a los datos que permite eliminar un usaurio
+    /// </summary>
     public static class EliminarUsuarioDAL
     {
+        /// <summary>
+        /// Método que elimina un usuario de la tabla SEG_USUARIO de la BD
+        /// </summary>
+        /// <param name="objetoTransaccional">Objeto transaccional de usuario</param>
         public static void Execute(UsuarioTrx objetoTransaccional)
         {
             string query = PA_ELIMINAR_USUARIO.NombreStoreProcedure;

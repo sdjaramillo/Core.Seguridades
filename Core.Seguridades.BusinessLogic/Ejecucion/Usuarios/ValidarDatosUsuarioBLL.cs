@@ -1,10 +1,5 @@
 ﻿using Core.Seguridades.Model.Entidad.Usuarios;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
 {
@@ -26,7 +21,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
                     usuario.ApellidoUsuario == null ||
                     usuario.CadenaNombreEmpresa == null ||
                     usuario.NombreEmpresa == null ||
-                    usuario.CorreoElectronicoUsuario == null)
+                    usuario.CorreoElectronicoUsuario == null )
                 {
                     usuariosInvalidos.Add(usuario);
                 }

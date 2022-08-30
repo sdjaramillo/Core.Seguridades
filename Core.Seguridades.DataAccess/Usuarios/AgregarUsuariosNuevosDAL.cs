@@ -33,13 +33,14 @@ namespace Core.Seguridades.DataAccess.Usuarios
                     parametros.Add(PA_AGREGAR_LISTA_USUARIOS.NombreEmpresa, usuario.NombreEmpresa, System.Data.DbType.String);
                     parametros.Add(PA_AGREGAR_LISTA_USUARIOS.FechaIngresoUsuario, usuario.FechaIngresoUsuario, System.Data.DbType.DateTime);
                     parametros.Add(PA_AGREGAR_LISTA_USUARIOS.CorreoElectronicoUsuario, usuario.CorreoElectronicoUsuario, System.Data.DbType.String);
+                    parametros.Add(PA_AGREGAR_LISTA_USUARIOS.CiudadUsuario, usuario.CiudadUsuario, System.Data.DbType.String);
                     parametros.Add(PA_AGREGAR_LISTA_USUARIOS.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
 
                     var resultado = connection.Query(query, parametros, commandType: CommandType.StoredProcedure);
 
                     if (parametros.Get<int>(PA_AGREGAR_LISTA_USUARIOS.Retorno) != 10000)
                     {
-                        objetoTransaccional.Resultado.CodigoInternoRespuesta = (int)ErrorUsuario.NoExisteNombreEmpresaAsignada;
+                        objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorUsuario.NoExisteNombreEmpresaAsignada;
                     }
 
                 }

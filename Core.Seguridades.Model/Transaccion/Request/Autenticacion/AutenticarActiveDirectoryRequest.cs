@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Core.Seguridades.Model.Transaccion.Request.Autenticacion
 {
+    /// <summary>
+    /// Solicitud de datos para autenticar usuario mediante active directory
+    /// </summary>
     public class AutenticarActiveDirectoryRequest
     {
         public AutenticarActiveDirectoryRequest() { }

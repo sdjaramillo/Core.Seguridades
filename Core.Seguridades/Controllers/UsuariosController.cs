@@ -1,17 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Core.Common.Model.General;
-using Core.Seguridades.Model.Transaccion;
 using Core.Seguridades.BusinessLogic.Internal.Usuarios;
 using Core.Common.Util.Helper;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 using Core.Seguridades.Model.Transaccion.Response.Usuarios;
-using Core.Seguridades.DataAccess.Usuarios;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Core.Seguridades.Model.Entidad.Usuarios;
-using System.DirectoryServices.AccountManagement;
 using Core.Seguridades.Model.Transaccion.Request.Usuarios;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Core.Common.ProcessTemplate.Util;
+using Core.Common.Model.Transaccion.Respuesta;
 
 namespace Core.Seguridades.Controllers
 {
@@ -49,7 +44,7 @@ namespace Core.Seguridades.Controllers
         /// <returns>
         /// Devuelve la cantidad de usuarios ingresados y eliminados
         /// </returns>
-        [HttpPut]
+        [HttpPost]
         [Route("MigrarUsuariosActiveDirectory")]
         [Produces(typeof(EstructuraBase<MigrarUsuariosActiveDirectoryResponse>))]
         public IActionResult MigrarUsuariosActiveDirectory()

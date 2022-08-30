@@ -37,18 +37,25 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
             foreach (var usuarioActiveDirectory in objetoTransaccional.ListaUsuariosActiveDirectory)
             {
                 string activeDirectoryEmpresa = usuarioActiveDirectory.CadenaNombreEmpresa;
-                string empresaNombre = "=,";
-                if (activeDirectoryEmpresa.Split(MigrarUsuariosActiveDirectoryConstantes.IdentificarEmpresa).Length > 1)
+                
+                string empresaNombre = null;
+                string ciudadCodigo = "UIO";
+                if (activeDirectoryEmpresa != null)
                 {
-                    empresaNombre = activeDirectoryEmpresa.Split(MigrarUsuariosActiveDirectoryConstantes.IdentificarEmpresa)[1];
+                    if (activeDirectoryEmpresa.Split(MigrarUsuariosActiveDirectoryConstantes.IdentificarEmpresa).Length > 1)
+                    {
+                        empresaNombre = activeDirectoryEmpresa.Split(MigrarUsuariosActiveDirectoryConstantes.IdentificarEmpresa)[0];
+                        empresaNombre = empresaNombre.Replace(" ", String.Empty);
+                        ciudadCodigo = activeDirectoryEmpresa.Split(MigrarUsuariosActiveDirectoryConstantes.IdentificarEmpresa)[1];
+                        ciudadCodigo = ciudadCodigo.Replace(" ", String.Empty);
+                    }
+                    else
+                    {
+                        empresaNombre = activeDirectoryEmpresa;
+                    }
+                    usuarioActiveDirectory.NombreEmpresa = empresaNombre;
+                    usuarioActiveDirectory.CiudadUsuario = ciudadCodigo;
                 }
-                if (activeDirectoryEmpresa.Split(MigrarUsuariosActiveDirectoryConstantes.IdentificarEmpresa).Length > 2)
-                {
-                    empresaNombre = activeDirectoryEmpresa.Split(MigrarUsuariosActiveDirectoryConstantes.IdentificarEmpresa)[2];
-                }
-                empresaNombre = empresaNombre.Split(",")[0];
-                empresaNombre = empresaNombre.Split("=")[1];
-                usuarioActiveDirectory.NombreEmpresa = empresaNombre;
             }
             
         }

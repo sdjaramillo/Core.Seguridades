@@ -1,13 +1,13 @@
-﻿using Core.Common.BusinessLogic.ProcessTemplate;
-using Core.Common.Model.General;
-using Core.Seguridades.Adapter.Autenticacion.ActiveDirectory;
+﻿using Core.Common.ProcessTemplate.InternalBusinessLogic;
 using Core.Seguridades.BusinessLogic.Ejecucion.Autenticacion;
 using Core.Seguridades.Model.Transaccion.Response.Autenticacion;
-using Core.Seguridades.Model.Transaccion.Response.Usuarios;
 using Core.Seguridades.Model.Transaccion.Transaccional.Autenticacion;
 
 namespace Core.Seguridades.BusinessLogic.Internal.Autenticacion
 {
+    /// <summary>
+    /// Logica interna para el proceso de actenticar un usuarios de active directory 
+    /// </summary>
     public class AutenticarActiveDirectoryIN : IProcesarTransaccion<AutenticacionTrx, AutenticarActiveDirectoryResponse>
     {
         public void AgregarInformacion(AutenticacionTrx objetoTransaccional)
@@ -20,16 +20,16 @@ namespace Core.Seguridades.BusinessLogic.Internal.Autenticacion
             return null;
         }
 
-        public AutenticarActiveDirectoryResponse ArmarObjetoRespuesta(AutenticacionTrx objetoTransaccional)
+       /* public AutenticarActiveDirectoryResponse ArmarObjetoRespuesta(AutenticacionTrx objetoTransaccional)
         {
-            if (objetoTransaccional.Resultado.CodigoRespuesta == (int)Error.OperacionExitosa)
+            if (.Resultado.CodigoRespuesta == (int)Error.OperacionExitosa)
             {
                 AutenticarActiveDirectoryResponse respuesta = new AutenticarActiveDirectoryResponse();
                 return respuesta;
             }
             else
                 return null;
-        }
+        }*/
 
         public void AutorizarTransaccion(AutenticacionTrx objetoTransaccional)
         {
