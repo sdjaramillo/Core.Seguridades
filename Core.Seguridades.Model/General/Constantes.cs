@@ -14,20 +14,20 @@ namespace Core.Seguridades.Model.General
     /// <summary>
     /// Parametos para obtener la lista de usuarios mediante el procedimiento almacenado
     /// </summary>
-    public static class PA_OBTENER_LISTA_USUARIOS
+    public static class PA_SEG_OBTENER_LISTA_USUARIOS
     {
-        public const string NombreStoreProcedure = "PA_OBTENER_LISTA_USUARIOS";
+        public const string NombreStoreProcedure = "PA_SEG_OBTENER_LISTA_USUARIOS";
     }
 
     /// <summary>
     /// Parametos para agregar la lista de usuarios mediante el procedimiento almacenado
     /// </summary>
-    public static class PA_AGREGAR_LISTA_USUARIOS
+    public static class PA_SEG_AGREGAR_LISTA_USUARIOS
     {
-        public const string NombreStoreProcedure = "PA_AGREGAR_LISTA_USUARIOS";
+        public const string NombreStoreProcedure = "PA_SEG_AGREGAR_LISTA_USUARIOS";
         public const string NombreRedUsuario = "@NombreRedUsuario";
-        public const string NombreUsuario = "@NombreUsuario";
-        public const string ApellidoUsuario = "@ApellidoUsuario";
+        public const string NombresUsuario = "@NombreUsuario";
+        public const string ApellidosUsuario = "@ApellidoUsuario";
         public const string NombreEmpresa = "@NombreEmpresa";
         public const string FechaIngresoUsuario = "@FechaIngresoUsuario";
         public const string CorreoElectronicoUsuario = "@CorreoElectronicoUsuario";
@@ -52,9 +52,9 @@ namespace Core.Seguridades.Model.General
     /// <summary>
     /// Parametros para actualizar un usuario almacenado en la base de datos
     /// </summary>
-    public static class PA_ACTUALIZAR_USUARIO
+    public static class PA_SEG_ACTUALIZAR_USUARIO
     {
-        public const string NombreStoreProcedure = "PA_ACTUALIZAR_USUARIO";
+        public const string NombreStoreProcedure = "PA_SEG_ACTUALIZAR_USUARIO";
         public const string CodigoHorarioLaboral = "@HorarioLaboralCodigo";
         public const string CodigoRol = "@RolCodigo";
         public const string CodigoEmpresa = "@EmpresaCodigo";
@@ -73,9 +73,9 @@ namespace Core.Seguridades.Model.General
     /// <summary>
     /// Parametros para eliminación logica de un usuario almacenado en la base de datos
     /// </summary>
-    public static class PA_ELIMINAR_USUARIO
+    public static class PA_SEG_ELIMINAR_USUARIO
     {
-        public const string NombreStoreProcedure = "PA_ELIMINAR_USUARIO";
+        public const string NombreStoreProcedure = "PA_SEG_ELIMINAR_USUARIO";
         public const string NombreRedUsuario = "@NombreRedUsuario";
     }
 }

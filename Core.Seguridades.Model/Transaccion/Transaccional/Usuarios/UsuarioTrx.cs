@@ -16,6 +16,7 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
             ListaUsuarios = new List<Usuario>();
             ListaUsuariosActiveDirectory = new List<UsuarioActiveDirectory>();
             ListaUsuariosNuevos = new List<UsuarioActiveDirectory>();
+            ListaUsuariosEliminados = new List<string>();
             Usuario = new Usuario();
             UsuarioRequest = new ActualizarUsuarioRequest();
         }
@@ -49,6 +50,7 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
         /// Total numéricos de usuarios eliminados
         /// </summary>
         public int CantidadUsuariosEliminados { get; set; }
+        public List<string> ListaUsuariosEliminados { get; set; }
 
         /// <summary>
         /// Campos de usuario utilizado para actualizar la infromación

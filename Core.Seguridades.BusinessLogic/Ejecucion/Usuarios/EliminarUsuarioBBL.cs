@@ -16,5 +16,6 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
         {
             EliminarUsuarioDAL.Execute(objetoTransaccional);
         }
+
     }
 }

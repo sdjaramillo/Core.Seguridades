@@ -8,6 +8,10 @@ namespace Core.Seguridades.Model.Transaccion.Response.Usuarios
     /// </summary>
     public class ObtenerListaUsuariosResponse
     {
-        List<Usuario> Usuarios { get; set; }
+        public ObtenerListaUsuariosResponse()
+        {
+            Usuarios = new List<Usuario>();
+        }
+        public List<Usuario> Usuarios { get; set; }
     }
 }

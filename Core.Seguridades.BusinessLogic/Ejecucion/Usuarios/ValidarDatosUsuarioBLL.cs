@@ -25,6 +25,10 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
                 {
                     usuariosInvalidos.Add(usuario);
                 }
+                else
+                {
+                    objetoTransaccional.CantidadUsuariosNuevos -= 1;
+                }
             }
             objetoTransaccional.ListaUsuariosNuevos = objetoTransaccional.ListaUsuariosNuevos.Except(usuariosInvalidos).ToList();
         }

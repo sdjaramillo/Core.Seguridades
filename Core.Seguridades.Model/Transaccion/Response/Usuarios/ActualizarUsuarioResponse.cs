@@ -8,6 +8,10 @@ namespace Core.Seguridades.Model.Transaccion.Response.Usuarios
     /// </summary>
     public class ActualizarUsuarioResponse
     {
+        public ActualizarUsuarioResponse ()
+        {
+            Usuario = new Usuario ();
+        }
         public Usuario Usuario { get; set; }
     }
 }

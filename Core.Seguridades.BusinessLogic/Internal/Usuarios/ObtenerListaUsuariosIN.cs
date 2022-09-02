@@ -19,10 +19,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
         {
         }
 
-        public ObtenerListaUsuariosResponse ArmaraPaginaRespuesta(UsuarioTrx objetoTransaccional)
-        {
-            return null;
-        }
+
 
         /*public ObtenerListaUsuariosResponse ArmarObjetoRespuesta(UsuarioTrx objetoTransaccional)
         {

@@ -13,15 +13,15 @@ namespace Core.Seguridades.Controllers
     public class AutenticacionController : ControllerBase
     {
         [HttpPost]
-        [Route("AutenticarUsuario")]
+        [Route("AutenticarUsuarioActiveDirectory")]
         [Produces(typeof(EstructuraBase<AutenticarActiveDirectoryResponse>))]
-        public IActionResult AutenticarUsuario([FromBody] AutenticarActiveDirectoryRequest autenticacion)
+        public IActionResult AutenticarUsuarioActiveDirectory([FromBody] AutenticarActiveDirectoryRequest autenticacion)
         {
             AutenticacionTrx transaccion = this.GenerarTransaccion<AutenticacionTrx>();
             transaccion.UsuarioAutenticacionRequest = autenticacion;
 
-            EstructuraBase<AutenticarActiveDirectoryResponse> respuesta = this.ProcesarTransaccion<AutenticacionTrx, AutenticarActiveDirectoryResponse, AutenticarActiveDirectoryIN>(
-                new AutenticarActiveDirectoryIN(),
+            EstructuraBase<AutenticarActiveDirectoryResponse> respuesta = this.ProcesarTransaccion<AutenticacionTrx, AutenticarActiveDirectoryResponse, AutenticarUsuarioActiveDirectoryIN>(
+                new AutenticarUsuarioActiveDirectoryIN(),
                 transaccion);
 
             return Ok(respuesta);

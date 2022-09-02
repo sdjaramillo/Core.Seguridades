@@ -12,7 +12,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Autenticacion
         /// Autentucación active directory usando capa adapter
         /// </summary>
         /// <param name="objetoTransaccional">Objeto transaccional de autenticacion</param>
-        public static void AutenticacionActiveDirectory (AutenticacionTrx objetoTransaccional)
+        public static void AutenticarUsuariosActiveDirectory(AutenticacionTrx objetoTransaccional)
         {
             AutenticarUsuarioActiveDirectoryADP.AutenticacionActiveDirectory(objetoTransaccional);
         }

@@ -51,7 +51,7 @@ namespace Core.Seguridades.Controllers
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
 
-            EstructuraBase<MigrarUsuariosActiveDirectoryResponse> respuesta = this.Insertar<UsuarioTrx, MigrarUsuariosActiveDirectoryResponse, MigrarUsuariosActiveDirectoryIN>(
+            EstructuraBase<MigrarUsuariosActiveDirectoryResponse> respuesta = this.ProcesarTransaccionSimple<UsuarioTrx, MigrarUsuariosActiveDirectoryResponse, MigrarUsuariosActiveDirectoryIN>(
                 new MigrarUsuariosActiveDirectoryIN(),
                 transaccion);
 
@@ -76,10 +76,10 @@ namespace Core.Seguridades.Controllers
         [HttpDelete]
         [Route("EliminarUsuario/{nombreRedUsuario}")]
         [Produces(typeof(EstructuraBase<EliminarUsuarioResponse>))]
-        public IActionResult EliminarUsuario(string nombreRedUsuario)
+        public IActionResult EliminarUsuario(string nombreRed)
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
-            transaccion.UsuarioRequest.NombreRedUsuario = nombreRedUsuario;
+            transaccion.UsuarioRequest.NombreRed = nombreRed;
 
             EstructuraBase<EliminarUsuarioResponse> respuesta = this.Eliminar<UsuarioTrx, EliminarUsuarioResponse, EliminarUsuarioIN>(
                 new EliminarUsuarioIN(),

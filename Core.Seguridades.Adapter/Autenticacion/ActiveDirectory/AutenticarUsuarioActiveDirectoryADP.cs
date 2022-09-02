@@ -13,13 +13,12 @@ namespace Core.Seguridades.Adapter.Autenticacion.ActiveDirectory
         /// </summary>
         /// <param name="objetoTransaccional">Objeto transaccional de autenticacion</param>
         /// <returns></returns>
-        public static bool AutenticacionActiveDirectory(AutenticacionTrx objetoTransaccional)
+        public static void AutenticacionActiveDirectory(AutenticacionTrx objetoTransaccional)
         {
             PrincipalContext pc = new PrincipalContext(ContextType.Domain, "10.0.0.211");
             bool respuesta = pc.ValidateCredentials(objetoTransaccional.UsuarioAutenticacionRequest.NombreRedUsuario, objetoTransaccional.UsuarioAutenticacionRequest.ContraseniaUsuario);
-            objetoTransaccional.ResultadoAutenticacion = respuesta;
+            objetoTransaccional.ResultadoAutenticacion = respuesta ;
 
-            return respuesta;
         }
     }
 }

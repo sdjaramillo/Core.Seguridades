@@ -17,7 +17,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
             List<string> listaUsuariosActiveDirectory = objetoTransaccional.ListaUsuariosActiveDirectory
                 .Select(x => x.NombreRedUsuario).ToList();
             List<string> listaUsuariosDB = objetoTransaccional.ListaUsuarios
-                .Select(x => x.NombreRedUsuario).ToList();
+                .Select(x => x.NombreRed).ToList();
 
             var usuariosNuevos = listaUsuariosActiveDirectory.Except(listaUsuariosDB).ToList();
             objetoTransaccional.ListaUsuariosNuevos = objetoTransaccional.ListaUsuariosActiveDirectory.Where(x => usuariosNuevos.Contains(x.NombreRedUsuario)).ToList();
@@ -26,6 +26,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
 
             objetoTransaccional.CantidadUsuariosNuevos = usuariosNuevos.Count;
             objetoTransaccional.CantidadUsuariosEliminados = usuariosEliminados.Count;
+            objetoTransaccional.ListaUsuariosEliminados = usuariosEliminados;
         }
 
     }

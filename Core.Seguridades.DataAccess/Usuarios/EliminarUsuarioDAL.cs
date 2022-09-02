@@ -17,15 +17,19 @@ namespace Core.Seguridades.DataAccess.Usuarios
         /// <param name="objetoTransaccional">Objeto transaccional de usuario</param>
         public static void Execute(UsuarioTrx objetoTransaccional)
         {
-            string query = PA_ELIMINAR_USUARIO.NombreStoreProcedure;
+            string query = PA_SEG_ELIMINAR_USUARIO.NombreStoreProcedure;
 
             using (var connection = new SqlConnection(new DB_Connection().connDB_name))
             {
-                DynamicParameters parametros;
-                parametros = new DynamicParameters();
-                parametros.Add(PA_ELIMINAR_USUARIO.NombreRedUsuario, objetoTransaccional.UsuarioRequest.NombreRedUsuario);
+                
+                foreach (var usuario in objetoTransaccional.ListaUsuariosEliminados)
+                {
+                    DynamicParameters parametros;
+                    parametros = new DynamicParameters();
+                    parametros.Add(PA_SEG_ELIMINAR_USUARIO.NombreRedUsuario, usuario);
 
-                var resultado = connection.Query(query, parametros, commandType: CommandType.StoredProcedure);
+                    var resultado = connection.Query(query, parametros, commandType: CommandType.StoredProcedure);
+                }
             }
         }
     }

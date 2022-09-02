@@ -11,6 +11,6 @@ namespace Core.Seguridades.Model.Transaccion.Response.Autenticacion
     /// </summary>
     public class AutenticarActiveDirectoryResponse
     {
-        public bool InicioSesion { get; set; }
+        public bool AutenticacionUsuario { get; set; }
     }
 }

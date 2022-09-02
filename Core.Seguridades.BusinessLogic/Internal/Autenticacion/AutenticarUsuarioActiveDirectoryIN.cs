@@ -8,28 +8,12 @@ namespace Core.Seguridades.BusinessLogic.Internal.Autenticacion
     /// <summary>
     /// Logica interna para el proceso de actenticar un usuarios de active directory 
     /// </summary>
-    public class AutenticarActiveDirectoryIN : IProcesarTransaccion<AutenticacionTrx, AutenticarActiveDirectoryResponse>
+    public class AutenticarUsuarioActiveDirectoryIN : IProcesarTransaccion<AutenticacionTrx, AutenticarActiveDirectoryResponse>
     {
         public void AgregarInformacion(AutenticacionTrx objetoTransaccional)
         {
             //
         }
-
-        public AutenticarActiveDirectoryResponse ArmaraPaginaRespuesta(AutenticacionTrx objetoTransaccional)
-        {
-            return null;
-        }
-
-       /* public AutenticarActiveDirectoryResponse ArmarObjetoRespuesta(AutenticacionTrx objetoTransaccional)
-        {
-            if (.Resultado.CodigoRespuesta == (int)Error.OperacionExitosa)
-            {
-                AutenticarActiveDirectoryResponse respuesta = new AutenticarActiveDirectoryResponse();
-                return respuesta;
-            }
-            else
-                return null;
-        }*/
 
         public void AutorizarTransaccion(AutenticacionTrx objetoTransaccional)
         {
@@ -38,7 +22,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Autenticacion
 
         public void EjecutarTransaccion(AutenticacionTrx objetoTransaccional)
         {
-            AutenticarActiveDirectoryBBL.AutenticacionActiveDirectory(objetoTransaccional);
+            AutenticarActiveDirectoryBBL.AutenticarUsuariosActiveDirectory(objetoTransaccional);
         }
 
         public void ReversarTransaccion(AutenticacionTrx objetoTransaccional)

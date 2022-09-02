@@ -18,7 +18,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
             List<Usuario> listaUsuariosBaseDatos = objetoTransaccional.ListaUsuarios.ToList();
             if (listaUsuariosBaseDatos.Count > 0)
             {
-                var usuarioActualizar = listaUsuariosBaseDatos.Single(x => x.NombreRedUsuario == objetoTransaccional.UsuarioRequest.NombreRedUsuario);
+                var usuarioActualizar = listaUsuariosBaseDatos.Single(x => x.NombreRed == objetoTransaccional.UsuarioRequest.NombreRed);
                 objetoTransaccional.Usuario = usuarioActualizar;
             }
             else {

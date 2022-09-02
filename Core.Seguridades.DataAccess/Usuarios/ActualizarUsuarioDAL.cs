@@ -17,25 +17,25 @@ namespace Core.Seguridades.DataAccess.Usuarios
         /// <param name="objetoTransaccional">Objeto transaccional de usuario</param>
         public static void Execute(UsuarioTrx objetoTransaccional)
         {
-            string query = PA_ACTUALIZAR_USUARIO.NombreStoreProcedure;
+            string query = PA_SEG_ACTUALIZAR_USUARIO.NombreStoreProcedure;
 
             using (var connection = new SqlConnection(new DB_Connection().connDB_name))
             {
                 DynamicParameters parametros;
                 parametros = new DynamicParameters();
-                parametros.Add(PA_ACTUALIZAR_USUARIO.CodigoHorarioLaboral, objetoTransaccional.UsuarioRequest.CodigoHorarioLaboral);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.CodigoRol, objetoTransaccional.UsuarioRequest.CodigoRol);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.CodigoEmpresa, objetoTransaccional.UsuarioRequest.CodigoEmpresa);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.NombreRedUsuario, objetoTransaccional.UsuarioRequest.NombreRedUsuario);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.NombreUsuario, objetoTransaccional.UsuarioRequest.NombreUsuario);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.ApellidoUsuario, objetoTransaccional.UsuarioRequest.ApellidoUsuario);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.FechaNacimientoUsuario, objetoTransaccional.UsuarioRequest.FechaNacimientoUsuario);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.FechaIngresoUsuario, objetoTransaccional.UsuarioRequest.FechaIngresoUsuario);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.FechaSalidaUsuario, objetoTransaccional.UsuarioRequest.FechaSalidaUsuario);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.EstadoUsuario, objetoTransaccional.UsuarioRequest.EstadoUsuario);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.CorreoElectronicoUsuario, objetoTransaccional.UsuarioRequest.CorreoElectronicoUsuario);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.DescripcionUsuario, objetoTransaccional.UsuarioRequest.DescripcionUsuario);
-                parametros.Add(PA_ACTUALIZAR_USUARIO.ImagenUsuario, objetoTransaccional.UsuarioRequest.ImagenUsuario);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CodigoHorarioLaboral, objetoTransaccional.UsuarioRequest.CodigoHorarioLaboral);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CodigoRol, objetoTransaccional.UsuarioRequest.CodigoRol);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CodigoEmpresa, objetoTransaccional.UsuarioRequest.CodigoEmpresa);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.NombreRedUsuario, objetoTransaccional.UsuarioRequest.NombreRed);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.NombreUsuario, objetoTransaccional.UsuarioRequest.Nombres);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.ApellidoUsuario, objetoTransaccional.UsuarioRequest.Apellidos);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.FechaNacimientoUsuario, objetoTransaccional.UsuarioRequest.FechaNacimiento);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.FechaIngresoUsuario, objetoTransaccional.UsuarioRequest.FechaIngreso);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.FechaSalidaUsuario, objetoTransaccional.UsuarioRequest.FechaSalida);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.EstadoUsuario, objetoTransaccional.UsuarioRequest.Estado);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CorreoElectronicoUsuario, objetoTransaccional.UsuarioRequest.CorreoElectronico);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.DescripcionUsuario, objetoTransaccional.UsuarioRequest.Descripcion);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.ImagenUsuario, objetoTransaccional.UsuarioRequest.Imagen);
 
                 var resultado = connection.Query(query, parametros, commandType: CommandType.StoredProcedure);
 
