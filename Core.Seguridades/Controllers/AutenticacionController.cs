@@ -1,5 +1,5 @@
 ﻿using Core.Common.Model.Transaccion.Respuesta;
-using Core.Common.ProcessTemplate.Util;
+using Core.Common.ProcessTemplate.Helper;
 using Core.Seguridades.BusinessLogic.Internal.Autenticacion;
 using Core.Seguridades.Model.Transaccion.Request.Autenticacion;
 using Core.Seguridades.Model.Transaccion.Response.Autenticacion;

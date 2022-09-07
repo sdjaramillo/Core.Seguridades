@@ -2,8 +2,9 @@
 using Core.Seguridades.Model.General;
 using Dapper;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
-using Core.Common.Util.Helper;
 using Core.Seguridades.Model.Entidad.Usuarios;
+using Core.Common.Util.Helper.API;
+using Core.Common.DataAccess.Helper;
 
 namespace Core.Seguridades.DataAccess.Usuarios
 {
@@ -19,7 +20,6 @@ namespace Core.Seguridades.DataAccess.Usuarios
         {
             public int Id { get; set; }
             public string CodigoHorarioLaboral { get; set; }
-            public string CodigoRol { get; set; }
             public string CodigoEmpresa { get; set; }
             public string NombreRed { get; set; }
             public string Nombres { get; set; }
@@ -41,15 +41,20 @@ namespace Core.Seguridades.DataAccess.Usuarios
         /// <param name="objetoTransaccional">Objeto transaccional de usuario</param>
         public static void Execute(UsuarioTrx objetoTransaccional)
         {
-            string query = PA_SEG_OBTENER_LISTA_USUARIOS.NombreStoreProcedure;    
+            string query = PA_SEG_OBTENER_LISTA_USUARIOS.NombreStoreProcedure;
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_name);
+            List<PA_OBTENER_LISTA_USUARIOS_Result> resultadoListaUsuarios=conexion.ObtenerListaDatos<PA_OBTENER_LISTA_USUARIOS_Result>(query);
 
-            using (var connection = new SqlConnection(new DB_Connection().connDB_name))
+
+            objetoTransaccional.ListaUsuarios.AddRange(AutoMapperHelper.MapeoDinamicoListasAutoMapper<Usuario, PA_OBTENER_LISTA_USUARIOS_Result>(resultadoListaUsuarios));
+
+            /*using (var connection = new SqlConnection(new DB_Connection().connDB_name))
             {
                 foreach (var usuario in connection.Query<PA_OBTENER_LISTA_USUARIOS_Result>(query).ToList())
                 {
-                    objetoTransaccional.ListaUsuarios.Add(MapHelper.MapeoDinamicoSimpleAutoMapper<Usuario, PA_OBTENER_LISTA_USUARIOS_Result>(usuario));
+                    objetoTransaccional.ListaUsuarios.Add(AutoMapperHelper.MapeoDinamicoSimpleAutoMapper<Usuario, PA_OBTENER_LISTA_USUARIOS_Result>(usuario));
                 }
-            }
+            }*/
         }
     }
 }

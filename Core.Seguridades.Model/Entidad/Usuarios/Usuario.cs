@@ -11,11 +11,11 @@
 
         public int Id { get; set; }
         public string CodigoHorarioLaboral { get; set; }
-        public string CodigoRol { get; set; }
         public string CodigoEmpresa { get; set; }
         public string NombreRed { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
+        public string Ciudad { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaIngreso { get; set; }
         public DateTime FechaSalida { get; set; }

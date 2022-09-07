@@ -1,4 +1,6 @@
-﻿using Core.Seguridades.Model.Entidad.Usuarios;
+﻿using Core.Common.DataAccess.Procesos.VariablesSistema;
+using Core.Common.Util.Helper.Datos;
+using Core.Seguridades.Model.Entidad.Usuarios;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 using System.DirectoryServices.AccountManagement;
@@ -17,12 +19,12 @@ namespace Core.Seguridades.DataAccess.Usuarios
         /// <param name="objetoTransaccional">Objeto transaccional de usuario</param>
         public static void Execute(UsuarioTrx objetoTransaccional)
         {
-            using (var context = new PrincipalContext(ContextType.Domain, "10.0.0.211")) 
-            { 
-                using (var searcher = new PrincipalSearcher(new UserPrincipal(context))) 
-                { 
-                    foreach (var result in searcher.FindAll()) 
-                    { 
+            using (var context = new PrincipalContext(ContextType.Domain, VariablesSistemaHelper.ObtenerValor(ConstantesVariablesSistema.IP_GENERAL_ACTIVE_DIRECTORY)))
+            {
+                using (var searcher = new PrincipalSearcher(new UserPrincipal(context)))
+                {
+                    foreach (var result in searcher.FindAll())
+                    {
                         DirectoryEntry de = result.GetUnderlyingObject() as DirectoryEntry;
                         objetoTransaccional.ListaUsuariosActiveDirectory.Add(
                             new UsuarioActiveDirectory()
@@ -35,7 +37,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
                                 CorreoElectronicoUsuario = (string)de.Properties[MigrarUsuariosActiveDirectoryConstantes.CorreoElectronicoUsuario].Value
                             });
                     }
-                } 
+                }
             }
         }
     }

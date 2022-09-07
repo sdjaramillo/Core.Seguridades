@@ -1,4 +1,6 @@
-﻿using Core.Seguridades.Model.Transaccion.Transaccional.Autenticacion;
+﻿using Core.Common.Util.Helper.Datos;
+using Core.Seguridades.Model.General;
+using Core.Seguridades.Model.Transaccion.Transaccional.Autenticacion;
 using System.DirectoryServices.AccountManagement;
 
 namespace Core.Seguridades.Adapter.Autenticacion.ActiveDirectory
@@ -15,7 +17,7 @@ namespace Core.Seguridades.Adapter.Autenticacion.ActiveDirectory
         /// <returns></returns>
         public static void AutenticacionActiveDirectory(AutenticacionTrx objetoTransaccional)
         {
-            PrincipalContext pc = new PrincipalContext(ContextType.Domain, "10.0.0.211");
+            PrincipalContext pc = new PrincipalContext(ContextType.Domain, VariablesSistemaHelper.ObtenerValor(ConstantesVariablesSistema.IP_GENERAL_ACTIVE_DIRECTORY));
             bool respuesta = pc.ValidateCredentials(objetoTransaccional.UsuarioAutenticacionRequest.NombreRedUsuario, objetoTransaccional.UsuarioAutenticacionRequest.ContraseniaUsuario);
             objetoTransaccional.ResultadoAutenticacion = respuesta ;
 
