@@ -7,15 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Core.Common.Model" Version="1.1.1" />
-    <PackageReference Include="Core.Common.ProcessTemplate" Version="1.1.1" />
-    <PackageReference Include="Core.Common.Util" Version="1.1.1" />
+    <PackageReference Include="Core.Common.Model" Version="1.1.2" />
+    <PackageReference Include="Core.Common.ProcessTemplate" Version="1.1.2" />
+    <PackageReference Include="Core.Common.Util" Version="1.1.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Core.Seguridades.Adapter\Core.Seguridades.Adapter.csproj" />
     <ProjectReference Include="..\Core.Seguridades.DataAccess\Core.Seguridades.DataAccess.csproj" />
     <ProjectReference Include="..\Core.Seguridades.Model\Core.Seguridades.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Ejecucion\Menus\" />
+    <Folder Include="Internal\Menus\" />
   </ItemGroup>
 
 </Project>

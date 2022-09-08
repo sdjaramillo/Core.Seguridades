@@ -21,12 +21,12 @@ namespace Core.Seguridades.DataAccess.Usuarios
 
             using (var connection = new SqlConnection(new DB_Connection().connDB_name))
             {
-                
+
                 foreach (var usuario in objetoTransaccional.ListaUsuariosEliminados)
                 {
                     DynamicParameters parametros;
                     parametros = new DynamicParameters();
-                    parametros.Add(PA_SEG_ELIMINAR_USUARIO.NombreRedUsuario, usuario);
+                    parametros.Add(PA_SEG_ELIMINAR_USUARIO.NombreRed, usuario);
 
                     var resultado = connection.Query(query, parametros, commandType: CommandType.StoredProcedure);
                 }

@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Core.Common.DataAccess" Version="1.1.1" />
-    <PackageReference Include="Core.Common.Util" Version="1.1.1" />
+    <PackageReference Include="Core.Common.DataAccess" Version="1.1.2" />
+    <PackageReference Include="Core.Common.Util" Version="1.1.2" />
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
@@ -18,6 +18,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core.Seguridades.Model\Core.Seguridades.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Menus\" />
   </ItemGroup>
 
 </Project>

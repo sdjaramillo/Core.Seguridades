@@ -20,6 +20,11 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
             return null;
         }
 
+        public void Eliminarnformacion(UsuarioTrx objetoTransaccional)
+        {
+            EliminarUsuarioBBL.EliminarLogicoUsuario(objetoTransaccional);
+        }
+
         /*public EliminarUsuarioResponse ArmarObjetoRespuesta(UsuarioTrx objetoTransaccional)
         {
             if (objetoTransaccional.Resultado.CodigoRespuesta == (int)Error.OperacionExitosa)
@@ -32,14 +37,13 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
             return null;
         }*/
 
-        public void Eliminarnformacion(UsuarioTrx objetoTransaccional)
-        {
-            EliminarUsuarioBBL.EliminarLogicoUsuario(objetoTransaccional);
-        }
+
 
         public void ValidarInformacion(UsuarioTrx objetoTransaccional)
         {
+            objetoTransaccional.UsuarioRequest.NombreRed = objetoTransaccional.EliminarNombreRed;
             ValidarExisteUsuarioBLL.ExistenciaUsuarioBaseDatos(objetoTransaccional);
+            objetoTransaccional.ListaUsuariosEliminados.Add(objetoTransaccional.Usuario.NombreRed);
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Core.Common.Model.General;
 using Core.Seguridades.BusinessLogic.Internal.Usuarios;
-using Core.Common.Util.Helper;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 using Core.Seguridades.Model.Transaccion.Response.Usuarios;
 using Core.Seguridades.Model.Transaccion.Request.Usuarios;
@@ -17,6 +15,11 @@ namespace Core.Seguridades.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
+        private readonly IConfiguration _configuration;
+        public UsuariosController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         /// <summary>
         /// Petición HTTP tipo GET para obtener la lista de usuarios de la BD
         /// </summary>
@@ -29,6 +32,7 @@ namespace Core.Seguridades.Controllers
         public IActionResult ObtenerListaUsuarios()
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
+            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<ObtenerListaUsuariosResponse> respuesta = this.ObtenerTodos<UsuarioTrx, ObtenerListaUsuariosResponse, ObtenerListaUsuariosIN>(
                 new ObtenerListaUsuariosIN(),
@@ -50,6 +54,7 @@ namespace Core.Seguridades.Controllers
         public IActionResult MigrarUsuariosActiveDirectory()
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
+            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<MigrarUsuariosActiveDirectoryResponse> respuesta = this.ProcesarTransaccionSimple<UsuarioTrx, MigrarUsuariosActiveDirectoryResponse, MigrarUsuariosActiveDirectoryIN>(
                 new MigrarUsuariosActiveDirectoryIN(),
@@ -65,7 +70,8 @@ namespace Core.Seguridades.Controllers
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
             transaccion.UsuarioRequest = usuario;
-            
+            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
+
             EstructuraBase<ActualizarUsuarioResponse> respuesta = this.Actualizar<UsuarioTrx, ActualizarUsuarioResponse, ActualizarUsuarioIN>(
                 new ActualizarUsuarioIN(),
                 transaccion);
@@ -74,12 +80,13 @@ namespace Core.Seguridades.Controllers
         }
 
         [HttpDelete]
-        [Route("EliminarUsuario/{nombreRedUsuario}")]
+        [Route("EliminarUsuario/{nombreRed}")]
         [Produces(typeof(EstructuraBase<EliminarUsuarioResponse>))]
         public IActionResult EliminarUsuario(string nombreRed)
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
-            transaccion.UsuarioRequest.NombreRed = nombreRed;
+            transaccion.EliminarNombreRed = nombreRed;
+            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<EliminarUsuarioResponse> respuesta = this.Eliminar<UsuarioTrx, EliminarUsuarioResponse, EliminarUsuarioIN>(
                 new EliminarUsuarioIN(),

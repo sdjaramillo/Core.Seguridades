@@ -17,7 +17,7 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Autenticacion
         public AutenticacionTrx() {
             UsuarioAutenticacionRequest = new AutenticarActiveDirectoryRequest();
         }
-
+        //public string BaseDatos { get; set; }
 
         /// <summary>
         /// Campos de nombre y contraseña para petición de inicio de sesión

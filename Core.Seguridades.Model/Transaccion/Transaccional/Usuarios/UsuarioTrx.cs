@@ -21,6 +21,8 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
             UsuarioRequest = new ActualizarUsuarioRequest();
         }
 
+        //public string BaseDatos { get; set; }
+
         /// <summary>
         /// Usuario de la BD
         /// </summary>
@@ -56,6 +58,8 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
         /// Campos de usuario utilizado para actualizar la infromación
         /// </summary>
         public ActualizarUsuarioRequest UsuarioRequest { get; set; }
+
+        public string EliminarNombreRed { get; set; }
 
     }
 }

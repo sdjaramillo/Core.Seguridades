@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Core.Seguridades.Model.Transaccion.Transaccional.Configuracion
 {
-    public class ConfiguracionTrx : TransaccionBase
+    public class MenusTrx : TransaccionBase
     {
-        public ConfiguracionTrx() 
+        public MenusTrx() 
         {
             ListaVariableSistema = new List<VariableSistema>();
         }

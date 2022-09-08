@@ -12,6 +12,11 @@ namespace Core.Seguridades.Controllers
     [ApiController]
     public class AutenticacionController : ControllerBase
     {
+        private readonly IConfiguration _configuration;
+        public AutenticacionController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         [HttpPost]
         [Route("AutenticarUsuarioActiveDirectory")]
         [Produces(typeof(EstructuraBase<AutenticarActiveDirectoryResponse>))]
@@ -19,6 +24,7 @@ namespace Core.Seguridades.Controllers
         {
             AutenticacionTrx transaccion = this.GenerarTransaccion<AutenticacionTrx>();
             transaccion.UsuarioAutenticacionRequest = autenticacion;
+            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<AutenticarActiveDirectoryResponse> respuesta = this.ProcesarTransaccion<AutenticacionTrx, AutenticarActiveDirectoryResponse, AutenticarUsuarioActiveDirectoryIN>(
                 new AutenticarUsuarioActiveDirectoryIN(),

@@ -6,11 +6,14 @@ using Core.Seguridades.Model.Entidad.Usuarios;
 using Core.Common.Util.Helper.API;
 using Core.Common.DataAccess.Helper;
 
+using Microsoft.Extensions.Configuration;
+
 namespace Core.Seguridades.DataAccess.Usuarios
 {
     /// <summary>
     /// Lógica de acceso de los datos que permite obtener la lista de usuarios
     /// </summary>
+    /// 
     public static class ObtenerListaUsuariosDAL
     {
         /// <summary>
@@ -41,6 +44,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
         /// <param name="objetoTransaccional">Objeto transaccional de usuario</param>
         public static void Execute(UsuarioTrx objetoTransaccional)
         {
+            
             string query = PA_SEG_OBTENER_LISTA_USUARIOS.NombreStoreProcedure;
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_name);
             List<PA_OBTENER_LISTA_USUARIOS_Result> resultadoListaUsuarios=conexion.ObtenerListaDatos<PA_OBTENER_LISTA_USUARIOS_Result>(query);

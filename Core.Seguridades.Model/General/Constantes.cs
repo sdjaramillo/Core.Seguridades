@@ -8,7 +8,7 @@ namespace Core.Seguridades.Model.General
 {
     public static class ConstantesVariablesSistema
     {
-        public const string IP_GENERAL_ACTIVE_DIRECTORY = "VAS_001";
+        public const string IP_GENERAL_ACTIVE_DIRECTORY = "VAS_002";
     }
     public static class ConstantesRest 
     {
@@ -29,13 +29,13 @@ namespace Core.Seguridades.Model.General
     public static class PA_SEG_AGREGAR_LISTA_USUARIOS
     {
         public const string NombreStoreProcedure = "PA_SEG_AGREGAR_LISTA_USUARIOS";
-        public const string NombreRedUsuario = "@NombreRedUsuario";
-        public const string NombresUsuario = "@NombreUsuario";
-        public const string ApellidosUsuario = "@ApellidoUsuario";
+        public const string NombreRed = "@NombreRed";
+        public const string Nombres = "@Nombres";
+        public const string Apellidos = "@Apellidos";
         public const string NombreEmpresa = "@NombreEmpresa";
-        public const string FechaIngresoUsuario = "@FechaIngresoUsuario";
-        public const string CorreoElectronicoUsuario = "@CorreoElectronicoUsuario";
-        public const string CiudadUsuario = "@CiudadUsuario";
+        public const string FechaIngreso = "@FechaIngreso";
+        public const string CorreoElectronico = "@CorreoElectronico";
+        public const string Ciudad = "@Ciudad";
         public const string Retorno = "@RESULT";
     }
 
@@ -60,18 +60,19 @@ namespace Core.Seguridades.Model.General
     {
         public const string NombreStoreProcedure = "PA_SEG_ACTUALIZAR_USUARIO";
         public const string CodigoHorarioLaboral = "@HorarioLaboralCodigo";
-        public const string CodigoRol = "@RolCodigo";
         public const string CodigoEmpresa = "@EmpresaCodigo";
-        public const string NombreRedUsuario = "@NombreRedUsuario";
-        public const string NombreUsuario = "@NombreUsuario";
-        public const string ApellidoUsuario = "@ApellidoUsuario";
-        public const string FechaNacimientoUsuario = "@FechaNacimientoUsuario";
-        public const string FechaIngresoUsuario = "@FechaIngresoUsuario";
-        public const string FechaSalidaUsuario = "@FechaSalidaUsuario";
-        public const string EstadoUsuario = "@EstadoUsuario";
-        public const string CorreoElectronicoUsuario = "@CorreoElectronicoUsuario";
-        public const string DescripcionUsuario = "@DescripcionUsuario";
-        public const string ImagenUsuario = "@ImagenUsuario";
+        public const string NombreRed = "@NombreRed";
+        public const string Nombres = "@Nombres";
+        public const string Apellidos = "@Apellidos";
+        public const string Ciudad = "@Ciudad";
+        public const string FechaNacimiento = "@FechaNacimiento";
+        public const string FechaIngreso = "@FechaIngreso";
+        public const string FechaSalida = "@FechaSalida";
+        public const string Estado = "@Estado";
+        public const string CorreoElectronico = "@CorreoElectronico";
+        public const string Descripcion = "@Descripcion";
+        public const string Imagen = "@Imagen";
+        public const string Retorno = "@RESULT";
     }
 
     /// <summary>
@@ -80,7 +81,7 @@ namespace Core.Seguridades.Model.General
     public static class PA_SEG_ELIMINAR_USUARIO
     {
         public const string NombreStoreProcedure = "PA_SEG_ELIMINAR_USUARIO";
-        public const string NombreRedUsuario = "@NombreRedUsuario";
+        public const string NombreRed = "@NombreRed";
     }
 
 
