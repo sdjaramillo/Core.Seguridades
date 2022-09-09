@@ -18,9 +18,4 @@
     <ProjectReference Include="..\Core.Seguridades.Model\Core.Seguridades.Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Ejecucion\Menus\" />
-    <Folder Include="Internal\Menus\" />
-  </ItemGroup>
-
 </Project>

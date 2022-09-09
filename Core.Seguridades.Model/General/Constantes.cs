@@ -36,7 +36,7 @@ namespace Core.Seguridades.Model.General
         public const string FechaIngreso = "@FechaIngreso";
         public const string CorreoElectronico = "@CorreoElectronico";
         public const string Ciudad = "@Ciudad";
-        public const string Retorno = "@RESULT";
+        public const string Retorno = "@CodigoRetorno";
     }
 
     /// <summary>
@@ -84,5 +84,15 @@ namespace Core.Seguridades.Model.General
         public const string NombreRed = "@NombreRed";
     }
 
+    public static class PA_SEG_OBTENER_MENU_ROL
+    {
+        public const string NombreStoreProcedure = "PA_SEG_OBTENER_MENU_ROL";
+        public const string NombreRed = "@NombreRed";
+        public const string ProyectoCodigo = "@ProyectoCodigo";
+    }
 
+    public static class CosntantesInicialesEmpresas
+    {
+        public static readonly string[] inicalesEmpresas = { "ORI", "INT", "REC" };
+    }
 }

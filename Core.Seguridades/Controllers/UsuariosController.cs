@@ -85,6 +85,7 @@ namespace Core.Seguridades.Controllers
         public IActionResult EliminarUsuario(string nombreRed)
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
+            //transaccion.Usuario.NombreRed = nombreRed;
             transaccion.EliminarNombreRed = nombreRed;
             //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 

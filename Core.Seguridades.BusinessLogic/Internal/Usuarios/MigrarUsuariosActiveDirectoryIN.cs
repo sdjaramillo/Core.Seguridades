@@ -22,7 +22,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
         public void EjecutarTransaccion(UsuarioTrx objetoTransaccional)
         {
             AgregarUsuariosBLL.AgregarListaUsuariosNuevos(objetoTransaccional);
-            EliminarUsuarioBBL.EliminarLogicoUsuario(objetoTransaccional);
+            EliminarUsuarioBLL.EliminarLogicoUsuario(objetoTransaccional);
         }     
 
         public void ValidarInformacion(UsuarioTrx objetoTransaccional)

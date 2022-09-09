@@ -22,7 +22,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Autenticacion
 
         public void EjecutarTransaccion(AutenticacionTrx objetoTransaccional)
         {
-            AutenticarActiveDirectoryBBL.AutenticarUsuariosActiveDirectory(objetoTransaccional);
+            AutenticarActiveDirectoryBLL.AutenticarUsuariosActiveDirectory(objetoTransaccional);
         }
 
         public void ReversarTransaccion(AutenticacionTrx objetoTransaccional)

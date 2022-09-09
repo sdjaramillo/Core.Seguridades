@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Seguridades.Model.Entidad.Menu
+namespace Core.Seguridades.Model.Entidad.MenuDinamico
 {
     public class Rol
     {

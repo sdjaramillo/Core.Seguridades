@@ -1,4 +1,5 @@
-﻿using Core.Seguridades.Model.General;
+﻿using Core.Common.DataAccess.Helper;
+using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 using Dapper;
 using System.Data;
@@ -18,8 +19,8 @@ namespace Core.Seguridades.DataAccess.Usuarios
         /// <param name="objetoTransaccional">Objeto transaccional de usuario</param>
         public static void Execute(UsuarioTrx objetoTransaccional)
         {
-            /*
-             * DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_name);
+            string query = PA_SEG_AGREGAR_LISTA_USUARIOS.NombreStoreProcedure;
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_name);
             DynamicParameters parametros;
 
             foreach (var usuario in objetoTransaccional.ListaUsuariosNuevos)
@@ -42,8 +43,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
                     objetoTransaccional.CantidadUsuariosNuevos -= 1;
                 }
             }
-             */
-
+            /*
             string query = PA_SEG_AGREGAR_LISTA_USUARIOS.NombreStoreProcedure;
 
             objetoTransaccional.CantidadUsuariosNuevos = objetoTransaccional.ListaUsuariosNuevos.Count;
@@ -73,7 +73,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
                     }
 
                 }
-            }
+            }*/
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Core.Seguridades.Model.Entidad.Usuarios;
 
-
 namespace Core.Seguridades.Model.Transaccion.Response.Usuarios
 {
     /// <summary>

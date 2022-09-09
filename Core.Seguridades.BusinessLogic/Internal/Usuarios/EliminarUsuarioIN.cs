@@ -22,7 +22,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
 
         public void Eliminarnformacion(UsuarioTrx objetoTransaccional)
         {
-            EliminarUsuarioBBL.EliminarLogicoUsuario(objetoTransaccional);
+            EliminarUsuarioBLL.EliminarLogicoUsuario(objetoTransaccional);
         }
 
         /*public EliminarUsuarioResponse ArmarObjetoRespuesta(UsuarioTrx objetoTransaccional)

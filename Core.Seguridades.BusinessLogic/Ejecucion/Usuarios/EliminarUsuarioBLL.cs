@@ -6,7 +6,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
     /// <summary>
     /// Lógica de ejecución para eliminar a un usuarios en la BD
     /// </summary>
-    public static class EliminarUsuarioBBL
+    public static class EliminarUsuarioBLL
     {
         /// <summary>
         /// Método que elimina un usuario almacenado en la BD de forma lógica

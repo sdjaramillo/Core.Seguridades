@@ -1,4 +1,4 @@
-﻿using Core.Seguridades.Model.Entidad.Menu;
+﻿using Core.Seguridades.Model.Entidad.MenuDinamico;
 using System;
 using System.Collections.Generic;
 using System.Linq;

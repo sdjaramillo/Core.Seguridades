@@ -6,7 +6,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Autenticacion
     /// <summary>
     /// Autenticar usuarios de active directory para inicio de sesión
     /// </summary>
-    public static class AutenticarActiveDirectoryBBL
+    public static class AutenticarActiveDirectoryBLL
     {
         /// <summary>
         /// Autentucación active directory usando capa adapter
