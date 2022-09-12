@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Core.Common.Util" Version="1.0.6" />
     <PackageReference Include="System.DirectoryServices" Version="6.0.0" />
     <PackageReference Include="System.DirectoryServices.AccountManagement" Version="6.0.0" />
   </ItemGroup>

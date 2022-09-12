@@ -1,4 +1,5 @@
 ﻿using Core.Common.Model.Transaccion;
+using Core.Seguridades.Model.Entidad.CredencialesAccesos;
 using Core.Seguridades.Model.Transaccion.Request.Autenticacion;
 using Core.Seguridades.Model.Transaccion.Request.Usuarios;
 using System;
@@ -14,8 +15,10 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Autenticacion
     /// </summary>
     public class AutenticacionTrx : TransaccionBase
     {
-        public AutenticacionTrx() {
+        public AutenticacionTrx()
+        {
             UsuarioAutenticacionRequest = new AutenticarActiveDirectoryRequest();
+            CredencialAcceso = new CredencialAcceso();
         }
 
 
@@ -29,5 +32,9 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Autenticacion
         /// </summary>
         public bool ResultadoAutenticacion { get; set; }
 
+        /// <summary>
+        /// Variable para mapear credencial Acceso con otras entidades
+        /// </summary>
+        public CredencialAcceso CredencialAcceso { get; set; }
     }
 }

@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Core.Common.Model.General;
 using Core.Seguridades.BusinessLogic.Internal.Usuarios;
-using Core.Common.Util.Helper;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 using Core.Seguridades.Model.Transaccion.Response.Usuarios;
 using Core.Seguridades.Model.Transaccion.Request.Usuarios;
-using Core.Common.ProcessTemplate.Util;
 using Core.Common.Model.Transaccion.Respuesta;
+using Core.Common.ProcessTemplate.Helper;
 
 namespace Core.Seguridades.Controllers
 {
