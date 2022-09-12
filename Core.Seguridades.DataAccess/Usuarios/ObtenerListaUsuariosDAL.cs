@@ -2,8 +2,8 @@
 using Core.Seguridades.Model.General;
 using Dapper;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
-using Core.Common.Util.Helper;
 using Core.Seguridades.Model.Entidad.Usuarios;
+using Core.Common.Util.Helper.API;
 
 namespace Core.Seguridades.DataAccess.Usuarios
 {
@@ -47,7 +47,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
             {
                 foreach (var usuario in connection.Query<PA_OBTENER_LISTA_USUARIOS_Result>(query).ToList())
                 {
-                    objetoTransaccional.ListaUsuarios.Add(MapHelper.MapeoDinamicoSimpleAutoMapper<Usuario, PA_OBTENER_LISTA_USUARIOS_Result>(usuario));
+                    objetoTransaccional.ListaUsuarios.Add(AutoMapperHelper.MapeoDinamicoSimpleAutoMapper<Usuario, PA_OBTENER_LISTA_USUARIOS_Result>(usuario));
                 }
             }
         }

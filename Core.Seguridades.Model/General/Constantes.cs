@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Seguridades.Model.General
 {
-    public static class ConstantesRest 
+    public static class ConstantesRest
     {
         public const string GUID_EMPTY = "00000000-0000-0000-0000-000000000000";
     }
@@ -78,4 +78,6 @@ namespace Core.Seguridades.Model.General
         public const string NombreStoreProcedure = "PA_SEG_ELIMINAR_USUARIO";
         public const string NombreRedUsuario = "@NombreRedUsuario";
     }
+
+
 }

@@ -38,7 +38,6 @@ namespace Core.Seguridades.DataAccess.Usuarios
                 parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.ImagenUsuario, objetoTransaccional.UsuarioRequest.Imagen);
 
                 var resultado = connection.Query(query, parametros, commandType: CommandType.StoredProcedure);
-
             }
         }
     }

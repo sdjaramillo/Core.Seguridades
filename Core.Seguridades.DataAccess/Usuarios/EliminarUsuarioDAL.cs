@@ -20,8 +20,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
             string query = PA_SEG_ELIMINAR_USUARIO.NombreStoreProcedure;
 
             using (var connection = new SqlConnection(new DB_Connection().connDB_name))
-            {
-                
+            {                
                 foreach (var usuario in objetoTransaccional.ListaUsuariosEliminados)
                 {
                     DynamicParameters parametros;
