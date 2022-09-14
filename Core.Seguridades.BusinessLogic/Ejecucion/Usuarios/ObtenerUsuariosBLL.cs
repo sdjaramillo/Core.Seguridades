@@ -1,4 +1,5 @@
 ﻿using Core.Seguridades.DataAccess.Usuarios;
+using Core.Seguridades.Model.Entidad.Usuarios;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 
@@ -28,6 +29,10 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
             LimpiarNombreEmpresaActiveDirectory(objetoTransaccional);
         }
 
+        public static void ObtenerUsuario(UsuarioTrx objetoTransaccional)
+        {
+            ObtenerUsuarioDAL.Execute(objetoTransaccional);
+        }
         /// <summary>
         /// Método para limpiar los datos del active directory para obtener la empresa
         /// </summary>

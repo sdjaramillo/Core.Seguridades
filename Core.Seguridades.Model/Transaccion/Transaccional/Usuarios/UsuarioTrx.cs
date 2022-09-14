@@ -18,7 +18,11 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
             ListaUsuariosNuevos = new List<UsuarioActiveDirectory>();
             ListaUsuariosEliminados = new List<string>();
             Usuario = new Usuario();
-            UsuarioRequest = new ActualizarUsuarioRequest();
+            ActualizarUsuarioRequest = new ActualizarUsuarioRequest();
+            ObtenerUsuarioRequest = new ObtenerUsuarioRequest();
+            ListaCumpleanieros = new List<CumpleanieroMes>();
+            RolAdministrador = new ObtenerUsuarioAdministradorRequest();
+            AdministradorUsuario = new Administrador();
         }
 
         //public string BaseDatos { get; set; }
@@ -57,9 +61,11 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
         /// <summary>
         /// Campos de usuario utilizado para actualizar la infromación
         /// </summary>
-        public ActualizarUsuarioRequest UsuarioRequest { get; set; }
-
-        public string EliminarNombreRed { get; set; }
-
+        public ActualizarUsuarioRequest ActualizarUsuarioRequest { get; set; }
+        public ObtenerUsuarioRequest ObtenerUsuarioRequest { get; set; }
+        public string NombreRed { get; set; }
+        public Administrador AdministradorUsuario { get; set; }
+        public List<CumpleanieroMes> ListaCumpleanieros { get; set; } 
+        public ObtenerUsuarioAdministradorRequest RolAdministrador { get; set; }
     }
 }

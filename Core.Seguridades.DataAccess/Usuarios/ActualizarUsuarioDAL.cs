@@ -26,24 +26,25 @@ namespace Core.Seguridades.DataAccess.Usuarios
             {
                 DynamicParameters parametros;
                 parametros = new DynamicParameters();
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CodigoHorarioLaboral, objetoTransaccional.UsuarioRequest.CodigoHorarioLaboral);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CodigoEmpresa, objetoTransaccional.UsuarioRequest.CodigoEmpresa);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.NombreRed, objetoTransaccional.UsuarioRequest.NombreRed);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Nombres, objetoTransaccional.UsuarioRequest.Nombres);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Apellidos, objetoTransaccional.UsuarioRequest.Apellidos);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Ciudad, objetoTransaccional.UsuarioRequest.Ciudad);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.FechaNacimiento, objetoTransaccional.UsuarioRequest.FechaNacimiento);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.FechaIngreso, objetoTransaccional.UsuarioRequest.FechaIngreso);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.FechaSalida, objetoTransaccional.UsuarioRequest.FechaSalida);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Estado, objetoTransaccional.UsuarioRequest.Estado);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CorreoElectronico, objetoTransaccional.UsuarioRequest.CorreoElectronico);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Descripcion, objetoTransaccional.UsuarioRequest.Descripcion);
-                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Imagen, objetoTransaccional.UsuarioRequest.Imagen);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CodigoHorarioLaboral, objetoTransaccional.ActualizarUsuarioRequest.CodigoHorarioLaboral);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CodigoEmpresa, objetoTransaccional.ActualizarUsuarioRequest.CodigoEmpresa);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.NombreRed, objetoTransaccional.ActualizarUsuarioRequest.NombreRed);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Nombres, objetoTransaccional.ActualizarUsuarioRequest.Nombres);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Apellidos, objetoTransaccional.ActualizarUsuarioRequest.Apellidos);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Ciudad, objetoTransaccional.ActualizarUsuarioRequest.Ciudad);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.FechaNacimiento, objetoTransaccional.ActualizarUsuarioRequest.FechaNacimiento);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.FechaIngreso, objetoTransaccional.ActualizarUsuarioRequest.FechaIngreso);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.FechaSalida, objetoTransaccional.ActualizarUsuarioRequest.FechaSalida);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Estado, objetoTransaccional.ActualizarUsuarioRequest.Estado);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CorreoElectronico, objetoTransaccional.ActualizarUsuarioRequest.CorreoElectronico);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Descripcion, objetoTransaccional.ActualizarUsuarioRequest.Descripcion);
+                parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Imagen, objetoTransaccional.ActualizarUsuarioRequest.Imagen);
                 parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
 
                 var resultado = connection.Query(query, parametros, commandType: CommandType.StoredProcedure);
 
             }
+
         }
     }
 }

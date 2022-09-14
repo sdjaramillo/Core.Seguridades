@@ -14,7 +14,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
         /// <param name="objetoTransaccional">Objeto transaccional de usuario</param>
         public static void ValidarParametrosVacios (UsuarioTrx objetoTransaccional)
         {
-            List<UsuarioActiveDirectory> usuariosInvalidos = new List<UsuarioActiveDirectory>();
+            List<UsuarioActiveDirectory> UsuariosInvalidos = new List<UsuarioActiveDirectory>();
             foreach (var usuario in objetoTransaccional.ListaUsuariosNuevos)
             {
                 if (usuario.NombreEmpresa == null ||
@@ -23,14 +23,14 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
                     usuario.NombreEmpresa == null ||
                     usuario.CorreoElectronicoUsuario == null )
                 {
-                    usuariosInvalidos.Add(usuario);
+                    UsuariosInvalidos.Add(usuario);
                 }
                 else
                 {
                     objetoTransaccional.CantidadUsuariosNuevos -= 1;
                 }
             }
-            objetoTransaccional.ListaUsuariosNuevos = objetoTransaccional.ListaUsuariosNuevos.Except(usuariosInvalidos).ToList();
+            objetoTransaccional.ListaUsuariosNuevos = objetoTransaccional.ListaUsuariosNuevos.Except(UsuariosInvalidos).ToList();
         }
         
     }

@@ -41,8 +41,8 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
 
         public void ValidarInformacion(UsuarioTrx objetoTransaccional)
         {
-            objetoTransaccional.UsuarioRequest.NombreRed = objetoTransaccional.EliminarNombreRed;
-            ValidarExisteUsuarioBLL.ExistenciaUsuarioBaseDatos(objetoTransaccional);
+            objetoTransaccional.ActualizarUsuarioRequest.NombreRed = objetoTransaccional.NombreRed;
+            ValidarExisteUsuarioBLL.ExistenciaUsuarioBaseDatosActualizar(objetoTransaccional);
             objetoTransaccional.ListaUsuariosEliminados.Add(objetoTransaccional.Usuario.NombreRed);
         }
     }

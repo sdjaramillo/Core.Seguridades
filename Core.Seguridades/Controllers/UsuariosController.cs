@@ -69,7 +69,7 @@ namespace Core.Seguridades.Controllers
         public IActionResult ActualizarUsuario([FromBody] ActualizarUsuarioRequest usuario)
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
-            transaccion.UsuarioRequest = usuario;
+            transaccion.ActualizarUsuarioRequest = usuario;
             //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<ActualizarUsuarioResponse> respuesta = this.Actualizar<UsuarioTrx, ActualizarUsuarioResponse, ActualizarUsuarioIN>(
@@ -86,11 +86,59 @@ namespace Core.Seguridades.Controllers
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
             //transaccion.Usuario.NombreRed = nombreRed;
-            transaccion.EliminarNombreRed = nombreRed;
+            transaccion.NombreRed = nombreRed;
             //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<EliminarUsuarioResponse> respuesta = this.Eliminar<UsuarioTrx, EliminarUsuarioResponse, EliminarUsuarioIN>(
                 new EliminarUsuarioIN(),
+                transaccion);
+
+            return Ok(respuesta);
+        }
+
+        [HttpPost]
+        [Route("ObtenerUsuario")]
+        [Produces(typeof(EstructuraBase<ObtenerUsuarioResponse>))]
+        public IActionResult ObtenerUsuario([FromBody] ObtenerUsuarioRequest usuario)
+        {
+            UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
+            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
+            transaccion.ObtenerUsuarioRequest = usuario;
+
+            EstructuraBase<ObtenerUsuarioResponse> respuesta = this.Obtener<UsuarioTrx, ObtenerUsuarioResponse, ObtenerUsuarioIN>(
+                new ObtenerUsuarioIN(),
+                transaccion);
+
+            return Ok(respuesta);
+        }
+
+        [HttpGet]
+        [Route("ObtenerListaCumpleanios")]
+        [Produces(typeof(EstructuraBase<ObtenerListaCumpleaniosResponse>))]
+        public IActionResult ObtenerListaCumpleanios()
+        {
+            UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
+            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
+
+            EstructuraBase<ObtenerListaCumpleaniosResponse> respuesta = this.ObtenerTodos<UsuarioTrx, ObtenerListaCumpleaniosResponse, ObtenerListaCumpleaniosIN>(
+                new ObtenerListaCumpleaniosIN(),
+                transaccion);
+
+
+            return Ok(respuesta);
+        }
+
+        [HttpPost]
+        [Route("ObtenerUsuarioAdministrador")]
+        [Produces(typeof(EstructuraBase<ObtenerUsuarioAdministradorResponse>))]
+        public IActionResult ObtenerUsuarioAdministrador([FromBody] ObtenerUsuarioAdministradorRequest usuario)
+        {
+            UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
+            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
+            transaccion.RolAdministrador = usuario;
+
+            EstructuraBase<ObtenerUsuarioAdministradorResponse> respuesta = this.Obtener<UsuarioTrx, ObtenerUsuarioAdministradorResponse, ObtenerUsuarioAdministradorIN>(
+                new ObtenerUsuarioAdministradorIN(),
                 transaccion);
 
             return Ok(respuesta);

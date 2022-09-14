@@ -8,7 +8,7 @@ namespace Core.Seguridades.DataAccess
     /// </summary>
     public class DB_Connection
     {
-        public string connDB_prod = "Data Source=MAT-CRE025\\SQLEXPRESS;Initial Catalog=BD_SEGURIDADES;Integrated Security=SSPI;";
+        public string connDB_intranet = "Data Source=10.0.0.46\\BDAPPDEV;Initial Catalog=BD_INTRANET;User ID=developer;password=Developer.2022";
         public string connDB_name = "Data Source=10.0.0.46\\BDAPPDEV;Initial Catalog=BD_SEGURIDADES;User ID=developer;password=Developer.2022"; 
     }
 }

@@ -13,15 +13,28 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
         /// Valida la existencia del usuario por el nombre de usaurio de red
         /// </summary>
         /// <param name="objetoTransaccional">Objeto transaccional de usuario</param>
-        public static void ExistenciaUsuarioBaseDatos(UsuarioTrx objetoTransaccional)
+        public static void ExistenciaUsuarioBaseDatosActualizar(UsuarioTrx objetoTransaccional)
         {
             List<Usuario> listaUsuariosBaseDatos = objetoTransaccional.ListaUsuarios.ToList();
             if (listaUsuariosBaseDatos.Count > 0)
             {
-                var usuarioActualizar = listaUsuariosBaseDatos.Single(x => x.NombreRed == objetoTransaccional.UsuarioRequest.NombreRed);
-                objetoTransaccional.Usuario = usuarioActualizar;
+                var usuarioVerificado = listaUsuariosBaseDatos.Single(x => x.NombreRed == objetoTransaccional.ActualizarUsuarioRequest.NombreRed);
+                objetoTransaccional.Usuario = usuarioVerificado;
             }
             else {
+                objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorUsuario.NoExisteUsuariosBaseDatos;
+            }
+        }
+        public static void ExistenciaUsuarioBaseDatosObtener(UsuarioTrx objetoTransaccional)
+        {
+            List<Usuario> listaUsuariosBaseDatos = objetoTransaccional.ListaUsuarios.ToList();
+            if (listaUsuariosBaseDatos.Count > 0)
+            {
+                var usuarioVerificado = listaUsuariosBaseDatos.Single(x => x.NombreRed == objetoTransaccional.ObtenerUsuarioRequest.NombreRed);
+                objetoTransaccional.Usuario = usuarioVerificado;
+            }
+            else
+            {
                 objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorUsuario.NoExisteUsuariosBaseDatos;
             }
         }

@@ -46,7 +46,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
 
         public void ValidarInformacion(UsuarioTrx objetoTransaccional)
         {
-            ValidarExisteUsuarioBLL.ExistenciaUsuarioBaseDatos(objetoTransaccional);
+            ValidarExisteUsuarioBLL.ExistenciaUsuarioBaseDatosActualizar(objetoTransaccional);
         }
     }
 }

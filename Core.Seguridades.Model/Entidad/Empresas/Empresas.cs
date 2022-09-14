@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Seguridades.Model.Entidad.Empresa
+namespace Core.Seguridades.Model.Entidad.Empresas
 {
-    internal class Empresa
+    internal class Empresas
     {
 
     }
