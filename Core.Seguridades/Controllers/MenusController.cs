@@ -33,5 +33,21 @@ namespace Core.Seguridades.Controllers
 
             return Ok(respuesta);
         }
+
+        [HttpPost]
+        [Route("ObtenerLogoEmpresa")]
+        [Produces(typeof(EstructuraBase<ObtenerLogoEmpresaResponse>))]
+        public IActionResult ObtenerLogoEmpresa([FromBody] ObtenerLogoEmpresaRequest peticionLogo)
+        {
+            MenusTrx transaccion = this.GenerarTransaccion<MenusTrx>();
+            transaccion.PeticionLogo = peticionLogo;
+            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
+
+            EstructuraBase<ObtenerLogoEmpresaResponse> respuesta = this.Obtener<MenusTrx, ObtenerLogoEmpresaResponse, ObtenerLogoEmpresaIN>(
+                new ObtenerLogoEmpresaIN(),
+                transaccion);
+
+            return Ok(respuesta);
+        }
     }
 }
