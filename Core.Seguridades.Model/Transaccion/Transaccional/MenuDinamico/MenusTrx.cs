@@ -9,8 +9,11 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.MenuDinamico
         public MenusTrx() 
         {
             ListaMenu = new List<Menu>();
+            PeticionLogo = new ObtenerLogoEmpresaRequest();
         }
         public List<Menu> ListaMenu { get; set; }
         public ObtenerListaMenuRolRequest MenuRequest { get; set; }
+        public ObtenerLogoEmpresaRequest PeticionLogo { get; set; }
+        public string ValorLogo { get; set; }
     }
 }
