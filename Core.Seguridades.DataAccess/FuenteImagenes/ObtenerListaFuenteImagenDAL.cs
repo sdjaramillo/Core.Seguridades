@@ -25,7 +25,7 @@ namespace Core.Seguridades.DataAccess.FuenteImagenes
             parametros.Add(PA_INT_OBTENER_LISTA_IMAGENES.NombreRed, objetoTransaccional.ImagenRequest.NombreRed);
             parametros.Add(PA_INT_OBTENER_LISTA_IMAGENES.Tipo, objetoTransaccional.ImagenRequest.Tipo);
 
-            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_intranet);
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
             List<PA_OBTENER_LISTA_IMAGENES_Result> resultadoListaImagenes = conexion.ObtenerListaDatos<PA_OBTENER_LISTA_IMAGENES_Result>(query, parametros);
 
             objetoTransaccional.ListaImagen.AddRange(AutoMapperHelper.MapeoDinamicoListasAutoMapper<Imagen, PA_OBTENER_LISTA_IMAGENES_Result>(resultadoListaImagenes));
