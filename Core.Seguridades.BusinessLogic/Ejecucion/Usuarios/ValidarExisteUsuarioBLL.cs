@@ -1,4 +1,5 @@
-﻿using Core.Seguridades.Model.Entidad.Usuarios;
+﻿using Core.Common.Model.ExcepcionServicio;
+using Core.Seguridades.Model.Entidad.Usuarios;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 
@@ -18,8 +19,16 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
             List<Usuario> listaUsuariosBaseDatos = objetoTransaccional.ListaUsuarios.ToList();
             if (listaUsuariosBaseDatos.Count > 0)
             {
-                var usuarioVerificado = listaUsuariosBaseDatos.Single(x => x.NombreRed == objetoTransaccional.ActualizarUsuarioRequest.NombreRed);
-                objetoTransaccional.Usuario = usuarioVerificado;
+                try
+                {
+                    var usuarioVerificado = listaUsuariosBaseDatos.Single(x => x.NombreRed == objetoTransaccional.ActualizarUsuarioRequest.NombreRed);
+                    objetoTransaccional.Usuario = usuarioVerificado;
+                }
+                catch
+                {
+                    objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorUsuario.NoExisteUsuariosBaseDatos;
+                    //throw new ExcepcionServicio((int)ErrorUsuario.NoExisteUsuariosBaseDatos);
+                }
             }
             else {
                 objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorUsuario.NoExisteUsuariosBaseDatos;
@@ -30,8 +39,15 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
             List<Usuario> listaUsuariosBaseDatos = objetoTransaccional.ListaUsuarios.ToList();
             if (listaUsuariosBaseDatos.Count > 0)
             {
-                var usuarioVerificado = listaUsuariosBaseDatos.Single(x => x.NombreRed == objetoTransaccional.ObtenerUsuarioRequest.NombreRed);
-                objetoTransaccional.Usuario = usuarioVerificado;
+                try
+                {
+                    var usuarioVerificado = listaUsuariosBaseDatos.Single(x => x.NombreRed == objetoTransaccional.ObtenerUsuarioRequest.NombreRed);
+                    objetoTransaccional.Usuario = usuarioVerificado;
+                }catch
+                {
+                    objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorUsuario.NoExisteUsuariosBaseDatos;
+                    //throw new ExcepcionServicio((int)ErrorUsuario.NoExisteUsuariosBaseDatos);
+                }
             }
             else
             {

@@ -22,7 +22,7 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
             ObtenerUsuarioRequest = new ObtenerUsuarioRequest();
             ListaCumpleanieros = new List<CumpleanieroMes>();
             RolAdministrador = new ObtenerUsuarioAdministradorRequest();
-            AdministradorUsuario = new Administrador();
+            AdministradorUsuario = new List<Administrador>();
         }
 
         //public string BaseDatos { get; set; }
@@ -64,8 +64,9 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
         public ActualizarUsuarioRequest ActualizarUsuarioRequest { get; set; }
         public ObtenerUsuarioRequest ObtenerUsuarioRequest { get; set; }
         public string NombreRed { get; set; }
-        public Administrador AdministradorUsuario { get; set; }
+        public List<Administrador> AdministradorUsuario { get; set; }
         public List<CumpleanieroMes> ListaCumpleanieros { get; set; } 
         public ObtenerUsuarioAdministradorRequest RolAdministrador { get; set; }
+        public ObtenerListaCumpleaniosRequest CumpleaniosRequest { get; set; }
     }
 }

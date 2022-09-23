@@ -19,7 +19,15 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Autenticacion
                 objetoTransaccional.UsuarioAutenticacionRequest.NombreRedUsuario == "" ||
                 objetoTransaccional.UsuarioAutenticacionRequest.ContraseniaUsuario == "")
             {
-                objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorUsuario.CamposVaciosActenticacionActiveDirectory;
+                objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorUsuario.CamposVaciosAutenticacionActiveDirectory;
+            }
+        }
+
+        public static void ValidarCredencialesCorrectas(AutenticacionTrx objetoTransaccional)
+        {
+            if (!objetoTransaccional.ResultadoAutenticacion)
+            {
+                objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorUsuario.CredencialesIncorrectasActiveDirectory;
             }
         }
     }

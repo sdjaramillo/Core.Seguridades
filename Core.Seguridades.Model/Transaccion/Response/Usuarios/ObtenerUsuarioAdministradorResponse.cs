@@ -6,8 +6,8 @@ namespace Core.Seguridades.Model.Transaccion.Response.Usuarios
     {
         public ObtenerUsuarioAdministradorResponse()
         {
-            TipoAdministrador = new Administrador();
+            TipoAdministrador = new List<Administrador>();
         }
-        public Administrador TipoAdministrador { get; set; }
+        public List<Administrador> TipoAdministrador { get; set; }
     }
 }

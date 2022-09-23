@@ -30,7 +30,7 @@ namespace Core.Seguridades.DataAccess.MenuDinamico
             parametros.Add(PA_SEG_OBTENER_MENU_ROL.ProyectoCodigo, objetoTransaccional.MenuRequest.ProyectoCodigo);
 
 
-            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_name);
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
             List<PA_OBTENER_LISTA_MENUS_Result> resultadoListaMenus = conexion.ObtenerListaDatos<PA_OBTENER_LISTA_MENUS_Result>(query,parametros);
 
             objetoTransaccional.ListaMenu.AddRange(AutoMapperHelper.MapeoDinamicoListasAutoMapper<Menu, PA_OBTENER_LISTA_MENUS_Result>(resultadoListaMenus));

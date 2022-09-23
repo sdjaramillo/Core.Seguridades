@@ -1,4 +1,5 @@
 ﻿using Core.Common.DataAccess.Helper;
+using Core.Common.Util.Helper.API;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.MenuDinamico;
 using Dapper;
@@ -20,7 +21,7 @@ namespace Core.Seguridades.DataAccess.MenuDinamico
             parametros = new DynamicParameters();
             parametros.Add(PA_SEG_OBTENER_LOGO_EMPRESA.NombreRed, objetoTransaccional.PeticionLogo.NombreRed);
 
-            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_name);
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
             List<string> resultadoLogoEmpresa = conexion.ObtenerListaDatos<string>(query, parametros);
 
             objetoTransaccional.ValorLogo = resultadoLogoEmpresa.First().ToString();

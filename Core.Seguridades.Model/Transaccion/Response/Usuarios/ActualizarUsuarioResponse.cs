@@ -1,4 +1,5 @@
 ﻿using Core.Seguridades.Model.Entidad.Usuarios;
+using Core.Seguridades.Model.Transaccion.Request.Usuarios;
 
 namespace Core.Seguridades.Model.Transaccion.Response.Usuarios
 {
@@ -9,8 +10,8 @@ namespace Core.Seguridades.Model.Transaccion.Response.Usuarios
     {
         public ActualizarUsuarioResponse ()
         {
-            Usuario = new Usuario ();
+            Usuario = new ActualizarUsuarioRequest();
         }
-        public Usuario Usuario { get; set; }
+        public ActualizarUsuarioRequest Usuario { get; set; }
     }
 }

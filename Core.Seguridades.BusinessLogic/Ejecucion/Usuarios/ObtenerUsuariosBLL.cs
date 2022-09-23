@@ -1,5 +1,4 @@
 ﻿using Core.Seguridades.DataAccess.Usuarios;
-using Core.Seguridades.Model.Entidad.Usuarios;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 

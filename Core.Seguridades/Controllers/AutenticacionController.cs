@@ -26,7 +26,7 @@ namespace Core.Seguridades.Controllers
             transaccion.UsuarioAutenticacionRequest = autenticacion;
             //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
-            EstructuraBase<AutenticarActiveDirectoryResponse> respuesta = this.ProcesarTransaccion<AutenticacionTrx, AutenticarActiveDirectoryResponse, AutenticarUsuarioActiveDirectoryIN>(
+            EstructuraBase<AutenticarActiveDirectoryResponse> respuesta = this.ProcesarTransaccionSimple<AutenticacionTrx, AutenticarActiveDirectoryResponse, AutenticarUsuarioActiveDirectoryIN>(
                 new AutenticarUsuarioActiveDirectoryIN(),
                 transaccion);
 

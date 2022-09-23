@@ -1,4 +1,6 @@
-﻿using Core.Seguridades.Model.General;
+﻿using Core.Common.DataAccess.Helper;
+using Core.Common.Util.Helper.API;
+using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 using Dapper;
 using Microsoft.Extensions.Configuration;
@@ -22,9 +24,8 @@ namespace Core.Seguridades.DataAccess.Usuarios
         {
             string query = PA_SEG_ACTUALIZAR_USUARIO.NombreStoreProcedure;
 
-            using (var connection = new SqlConnection(new DB_Connection().connDB_name))
-            {
-                DynamicParameters parametros;
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
+            DynamicParameters parametros;
                 parametros = new DynamicParameters();
                 parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CodigoHorarioLaboral, objetoTransaccional.ActualizarUsuarioRequest.CodigoHorarioLaboral);
                 parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.CodigoEmpresa, objetoTransaccional.ActualizarUsuarioRequest.CodigoEmpresa);
@@ -41,9 +42,9 @@ namespace Core.Seguridades.DataAccess.Usuarios
                 parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Imagen, objetoTransaccional.ActualizarUsuarioRequest.Imagen);
                 parametros.Add(PA_SEG_ACTUALIZAR_USUARIO.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
 
-                var resultado = connection.Query(query, parametros, commandType: CommandType.StoredProcedure);
+                conexion.Actualizar(query, parametros);
 
-            }
+            
 
         }
     }

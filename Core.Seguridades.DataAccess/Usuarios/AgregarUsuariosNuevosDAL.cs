@@ -1,4 +1,5 @@
 ﻿using Core.Common.DataAccess.Helper;
+using Core.Common.Util.Helper.API;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 using Dapper;
@@ -20,7 +21,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
         public static void Execute(UsuarioTrx objetoTransaccional)
         {
             string query = PA_SEG_AGREGAR_LISTA_USUARIOS.NombreStoreProcedure;
-            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_name);
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
             DynamicParameters parametros;
 
             foreach (var usuario in objetoTransaccional.ListaUsuariosNuevos)

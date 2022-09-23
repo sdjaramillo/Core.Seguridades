@@ -46,7 +46,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
         {
             
             string query = PA_SEG_OBTENER_LISTA_USUARIOS.NombreStoreProcedure;
-            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_name);
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
             List<PA_OBTENER_LISTA_USUARIOS_Result> resultadoListaUsuarios=conexion.ObtenerListaDatos<PA_OBTENER_LISTA_USUARIOS_Result>(query);
 
 

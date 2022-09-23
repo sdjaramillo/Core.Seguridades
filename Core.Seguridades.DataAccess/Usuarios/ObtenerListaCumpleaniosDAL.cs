@@ -3,11 +3,7 @@ using Core.Common.Util.Helper.API;
 using Core.Seguridades.Model.Entidad.Usuarios;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Dapper;
 
 namespace Core.Seguridades.DataAccess.Usuarios
 {
@@ -27,8 +23,13 @@ namespace Core.Seguridades.DataAccess.Usuarios
         {
 
             string query = PA_SEG_OBTENER_LISTA_CUMPLEANIERO_MES.NombreStoreProcedure;
-            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_name);
-            List<PA_SEG_OBTENER_LISTA_CUMPLEANIERO_MES_Result> resultadoListaCumpleanieros = conexion.ObtenerListaDatos<PA_SEG_OBTENER_LISTA_CUMPLEANIERO_MES_Result>(query);
+
+            DynamicParameters parametros;
+            parametros = new DynamicParameters();
+            parametros.Add(PA_SEG_OBTENER_LISTA_CUMPLEANIERO_MES.NombreRed, objetoTransaccional.CumpleaniosRequest.NombreRed);
+
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
+            List<PA_SEG_OBTENER_LISTA_CUMPLEANIERO_MES_Result> resultadoListaCumpleanieros = conexion.ObtenerListaDatos<PA_SEG_OBTENER_LISTA_CUMPLEANIERO_MES_Result>(query, parametros);
 
 
             objetoTransaccional.ListaCumpleanieros.AddRange(AutoMapperHelper.MapeoDinamicoListasAutoMapper<CumpleanieroMes, PA_SEG_OBTENER_LISTA_CUMPLEANIERO_MES_Result>(resultadoListaCumpleanieros));

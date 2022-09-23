@@ -9,7 +9,8 @@ namespace Core.Seguridades.Model.Entidad.Usuarios
     public class Administrador
     {
         public Administrador() { }
-        public bool RolAdministrador { get; set; }
-        public bool RolSuperAdministrador { get; set; }
+        public string MenuNombre { get; set; }
+        public string OpcionNombre { get; set; }
+        public string OpcionIcono { get; set; }
     }
 }
