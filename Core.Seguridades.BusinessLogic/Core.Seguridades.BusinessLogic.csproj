@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Core.Common.Model" Version="1.1.2" />
-    <PackageReference Include="Core.Common.ProcessTemplate" Version="1.1.2" />
-    <PackageReference Include="Core.Common.Util" Version="1.1.2" />
+    <PackageReference Include="Core.Common.Model" Version="1.1.8" />
+    <PackageReference Include="Core.Common.ProcessTemplate" Version="1.1.8" />
+    <PackageReference Include="Core.Common.Util" Version="1.1.8" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,7 @@ namespace Core.Seguridades.Model.General
         public const string FechaIngreso = "@FechaIngreso";
         public const string CorreoElectronico = "@CorreoElectronico";
         public const string Ciudad = "@Ciudad";
+
         public const string Retorno = "@CodigoRetorno";
     }
 
@@ -49,8 +51,9 @@ namespace Core.Seguridades.Model.General
         public const string HoraEntrada = "@HoraEntrada";
         public const string IpRegistro = "@IpRegistro";
         public const string PcNombre = "@PcNombre";
-        public const string Retorno = "@CodigoRetorno"; 
-        public const string Atraso = "@Atraso"; 
+        public const string Atraso = "@Atraso";
+
+        public const string Retorno = "@CodigoRetorno";
     }
 
     /// <summary>
@@ -65,6 +68,8 @@ namespace Core.Seguridades.Model.General
         public const string FechaIngresoUsuario = "whenCreated";
         public const string NombreRedUsuario = "sAMAccountName";
         public const string CorreoElectronicoUsuario = "userPrincipalName";
+
+        public const string Retorno = "@CodigoRetorno";
     }
 
     /// <summary>
@@ -86,7 +91,8 @@ namespace Core.Seguridades.Model.General
         public const string CorreoElectronico = "@CorreoElectronico";
         public const string Descripcion = "@Descripcion";
         public const string Imagen = "@Imagen";
-        public const string Retorno = "@RESULT";
+
+        public const string Retorno = "@CodigoRetorno";
     }
 
 
@@ -97,6 +103,8 @@ namespace Core.Seguridades.Model.General
     {
         public const string NombreStoreProcedure = "PA_SEG_ELIMINAR_USUARIO";
         public const string NombreRed = "@NombreRed";
+
+        public const string Retorno = "@CodigoRetorno";
     }
 
     public static class PA_SEG_OBTENER_MENU_ROL
@@ -143,6 +151,7 @@ namespace Core.Seguridades.Model.General
     public static class PA_SEG_OBTENER_LISTA_CUMPLEANIERO_MES
     {
         public const string NombreStoreProcedure = "PA_SEG_OBTENER_LISTA_CUMPLEANIERO_MES";
+        public const string NombreRed = "@NombreRed";
     }
     public static class PA_SEG_OBTENER_LOGO_EMPRESA
     {
@@ -171,5 +180,155 @@ namespace Core.Seguridades.Model.General
         public const string HoraFinAlmuerzo = "@HoraFinAlmuerzo";
         public const string TiempoAtraso = "@TiempoAtraso";
         public const string Descripcion = "@Descripcion";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_OBTENER_LISTA_NOTICIAS
+    {
+        public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_NOTICIAS";
+        public const string NombreRed = "@NombreRed";
+    }
+
+    public static class PA_INT_OBTENER_LISTA_TODOS_NOTICIAS
+    {
+        public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_TODOS_NOTICIAS";
+    }
+
+    public static class PA_INT_AGREGAR_IMAGEN
+    {
+        public const string NombreStoreProcedure = "PA_INT_AGREGAR_IMAGEN";
+        public const string Codigo = "@Codigo";
+        public const string EmpresaCodigo = "@EmpresaCodigo";
+        public const string Nombre = "@Nombre";
+        public const string Tipo = "@Tipo";
+        public const string Valor = "@Valor";
+        public const string FechaCreacion = "@FechaCreacion";
+        public const string FechaCaducidad = "@FechaCaducidad";
+        public const string Descripcion = "@Descripcion";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_ACTUALIZAR_IMAGEN
+    {
+        public const string NombreStoreProcedure = "PA_INT_ACTUALIZAR_IMAGEN";
+        public const string Codigo = "@Codigo";
+        public const string EmpresaCodigo = "@EmpresaCodigo";
+        public const string Nombre = "@Nombre";
+        public const string Tipo = "@Tipo";
+        public const string Valor = "@Valor";
+        public const string Estado = "@Estado";
+        public const string FechaCreacion = "@FechaCreacion";
+        public const string FechaCaducidad = "@FechaCaducidad";
+        public const string Descripcion = "@Descripcion";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+    public static class PA_INT_ELIMINAR_IMAGEN
+    {
+        public const string NombreStoreProcedure = "PA_INT_ELIMINAR_IMAGEN";
+        public const string ImagenCodigo = "@ImagenCodigo";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_OBTENER_TODAS_IMAGENES
+    {
+        public const string NombreStoreProcedure = "PA_INT_OBTENER_TODAS_IMAGENES";
+        public const string Id = "@Id";
+        public const string Codigo = "@Codigo";
+        public const string EmpresaCodigo = "@EmpresaCodigo";
+        public const string Nombre = "@Nombre";
+        public const string Tipo = "@Tipo";
+        public const string Valor = "@Valor";
+        public const string Estado = "@Estado";
+        public const string FechaCreacion = "@FechaCreacion";
+        public const string FechaCaducidad = "@FechaCaducidad";
+        public const string Descripcion = "@Descripcion";
+    }
+
+    public static class PA_INT_ACTUALIZAR_NOTICIA
+    {
+        public const string NombreStoreProcedure = "PA_INT_ACTUALIZAR_NOTICIA";
+        public const string CodigoNoticia = "@CodigoNoticia";
+        public const string CodigoPermisoPublicacion = "@CodigoPermisoPublicacion";
+        public const string Titulo = "@Titulo";
+        public const string Imagen = "@Imagen";
+        public const string Descripcion = "@Descripcion";
+        public const string Publico = "@Publico";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_AGREGAR_NOTICIA
+    {
+        public const string NombreStoreProcedure = "PA_INT_AGREGAR_NOTICIA";
+        public const string CodigoPermisoPublicacion = "@CodigoPermisoPublicacion";
+        public const string Codigo = "@Codigo";
+        public const string Titulo = "@Titulo";
+        public const string Imagen = "@Imagen";
+        public const string Descripcion = "@Descripcion";
+        public const string Publico = "@Publico";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_ELIMINAR_NOTICIA
+    {
+        public const string NombreStoreProcedure = "PA_INT_ELIMINAR_NOTICIA";
+        public const string CodigoNoticia = "@CodigoNoticia";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_OBTENER_REGISTRO_DIA
+    {
+        public const string NombreStoreProcedure = "PA_INT_OBTENER_REGISTRO_DIA";
+        public const string NombreRed = "@NombreRed";
+    }
+
+    public static class PA_INT_AGREGAR_APLICATIVO
+    {
+        public const string NombreStoreProcedure = "PA_INT_AGREGAR_APLICATIVO";
+        public const string Codigo = "@Codigo";
+        public const string Nombre = "@Nombre";
+        public const string Logo = "@Logo";
+        public const string Estado = "@Estado";
+        public const string Ruta = "@Ruta";
+        public const string Descripcion = "@Descripcion";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_ACTUALIZAR_APLICATIVO
+    {
+        public const string NombreStoreProcedure = "PA_INT_ACTUALIZAR_APLICATIVO";
+        public const string Codigo = "@Codigo";
+        public const string Nombre = "@Nombre";
+        public const string Logo = "@Logo";
+        public const string Estado = "@Estado";
+        public const string Ruta = "@Ruta";
+        public const string Descripcion = "@Descripcion";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+    public static class PA_INT_ELIMINAR_APLICATIVO
+    {
+        public const string NombreStoreProcedure = "PA_INT_ELIMINAR_APLICATIVO";
+        public const string AplicativoCodigo = "@Codigo";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_OBTENER_LISTA_TODOS_APLICATIVOS
+    {
+        public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_TODOS_APLICATIVOS";
+    }
+
+    public static class PA_INT_OBTENER_LISTA_APLICATIVOS
+    {
+        public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_APLICATIVOS";
+        public const string CodigoEmpresa = "@CodigoEmpresa";
     }
 }
