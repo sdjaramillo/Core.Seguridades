@@ -1,3 +1,5 @@
+using Core.Common.Util.Helper.API;
+using Core.Common.Util.Helper.Autenticacion;
 using Newtonsoft.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,11 @@ builder.Services.AddCors(c =>
 {
     c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
+
+//Configuración JWT;
+//JwtHelper.ConfigurarServicioJWT(builder);
+//Configurar Settings Helper
+SettingsHelper.ObtenerJsonAppSetings(builder.Configuration);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
