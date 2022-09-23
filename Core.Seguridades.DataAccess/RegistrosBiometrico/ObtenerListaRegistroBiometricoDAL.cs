@@ -33,7 +33,7 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
             parametros = new DynamicParameters();
             parametros.Add(PA_INT_OBTENER_LISTA_REGISTRO_BIOMETRICO.NombreRed, objetoTransaccional.RegistroBiometricoRequest.NombreRed);
             
-            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_intranet);
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
             List<PA_INT_OBTENER_LISTA_REGISTRO_BIOMETRICO_Result> resultadoListaRegistroBiometrico = conexion.ObtenerListaDatos<PA_INT_OBTENER_LISTA_REGISTRO_BIOMETRICO_Result>(query,parametros);
 
             objetoTransaccional.ListaRegistroBiometrico.AddRange(AutoMapperHelper.MapeoDinamicoListasAutoMapper<RegistroBiometrico, PA_INT_OBTENER_LISTA_REGISTRO_BIOMETRICO_Result>(resultadoListaRegistroBiometrico));

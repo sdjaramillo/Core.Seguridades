@@ -2,31 +2,24 @@
 using Core.Seguridades.BusinessLogic.Ejecucion.RegistrosBiometrico;
 using Core.Seguridades.Model.Transaccion.Response.RegistrosBiometrico;
 using Core.Seguridades.Model.Transaccion.Transaccional.RegistrosBiometrico;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Core.Seguridades.BusinessLogic.Internal.RegistrosBiometrico
 {
-    public class AgregarRegistroBiometricoIN : IInsertar<RegistroBiometricoTrx, AgregarRegistroBiometricoResponse>
+    public class ObtenerTotalAtrasosMesIN : IObtener<RegistroBiometricoTrx, ObtenerTotalAtrasosMesResponse>
     {
         public void AgregarInformacion(RegistroBiometricoTrx objetoTransaccional)
         {
-            ObtenerHorarioLaboralBLL.ObtenerHorarioLaboral(objetoTransaccional);
-        }
-
-        public void HomologarInformacion(RegistroBiometricoTrx objetoTransaccional)
-        {
-            
-        }
-
-        public void InsertarInformacion(RegistroBiometricoTrx objetoTransaccional)
-        {
             ObtenerTotalAtrasosMesBLL.ObtenerTotalAtrasosMes(objetoTransaccional);
-            AgregarRegistroBiometricoBLL.AgregarRegistroBiometrico(objetoTransaccional);
         }
 
         public void ValidarInformacion(RegistroBiometricoTrx objetoTransaccional)
         {
-            ValidarDatosRegistroBiometricoBLL.ValidarParametrosVaciosRegistroNuevo(objetoTransaccional);
+            
         }
     }
 }

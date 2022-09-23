@@ -1,4 +1,5 @@
 ﻿using Core.Common.DataAccess.Helper;
+using Core.Common.Util.Helper.API;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.RegistrosBiometrico;
 using Dapper;
@@ -26,7 +27,7 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
 
             parametros.Add(PA_SEG_OBTENER_HORA_ENTRADA.NombreRed, objetoTransaccional.RegistroBiometricoNuevoRequest.NombreRed);
 
-            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_name);
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
             List<PA_SEG_OBTENER_HORA_ENTRADA_Result> resultadoHorarioLaboral = conexion.ObtenerListaDatos<PA_SEG_OBTENER_HORA_ENTRADA_Result>(query, parametros);
 
             objetoTransaccional.HoraEntradaEstablecida.HoraEntrada = resultadoHorarioLaboral.First().HoraEntrada;

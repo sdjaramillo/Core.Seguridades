@@ -22,6 +22,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.RegistrosBiometrico
                 objetoTransaccional.RegistroBiometricoNuevoRequest.PcNombre != null
                 )
             {
+                objetoTransaccional.AtrasosMesRequest.NombreRed = objetoTransaccional.RegistroBiometricoNuevoRequest.NombreRed;
                 objetoTransaccional.RegistroBiometricoNuevo.UsuarioCodigo = objetoTransaccional.RegistroBiometricoNuevoRequest.NombreRed;
                 objetoTransaccional.RegistroBiometricoNuevo.Codigo = objetoTransaccional.RegistroBiometricoNuevoRequest.Codigo;
                 objetoTransaccional.RegistroBiometricoNuevo.FechaRegistro = objetoTransaccional.RegistroBiometricoNuevoRequest.FechaRegistro;

@@ -5,6 +5,8 @@ using Core.Seguridades.Model.Transaccion.Response.RegistrosBiometrico;
 using Core.Seguridades.Model.Transaccion.Request.RegistrosBiometrico;
 using Core.Seguridades.Model.Transaccion.Transaccional.RegistrosBiometrico;
 using Microsoft.AspNetCore.Mvc;
+using Core.Seguridades.BusinessLogic.Ejecucion.RegistrosBiometrico;
+
 namespace Core.Seguridades.Controllers
 {
     [Route("api/[controller]")]
@@ -60,6 +62,38 @@ namespace Core.Seguridades.Controllers
             EstructuraBase<ActualizarRegistroBiometricoResponse> respuesta = this.Actualizar<RegistroBiometricoTrx, ActualizarRegistroBiometricoResponse, ActualizarRegistroBiometricoIN>(
                 new ActualizarRegistroBiometricoIN(),
                 transaccion);
+
+            return Ok(respuesta);
+        }
+
+        [HttpPost]
+        [Route("ObtenerTotalAtrasosMes")]
+        [Produces(typeof(EstructuraBase<ObtenerTotalAtrasosMesResponse>))]
+        public IActionResult ObtenerTotalAtrasosMes([FromBody] ObtenerTotalAtrasosMesRequest nombreRed)
+        {
+            RegistroBiometricoTrx transaccion = this.GenerarTransaccion<RegistroBiometricoTrx>();
+            transaccion.AtrasosMesRequest = nombreRed;
+
+            EstructuraBase<ObtenerTotalAtrasosMesResponse> respuesta = this.Obtener<RegistroBiometricoTrx, ObtenerTotalAtrasosMesResponse, ObtenerTotalAtrasosMesIN>(
+                new ObtenerTotalAtrasosMesIN(),
+                transaccion);
+
+
+            return Ok(respuesta);
+        }
+
+        [HttpPost]
+        [Route("ObtenerRegistroDiaUsuario")]
+        [Produces(typeof(EstructuraBase<ObtenerRegistroDiaUsuarioResponse>))]
+        public IActionResult ObtenerRegistroDiaUsuario([FromBody] string nombreRed)
+        {
+            RegistroBiometricoTrx transaccion = this.GenerarTransaccion<RegistroBiometricoTrx>();
+            transaccion.NombreRed = nombreRed;
+
+            EstructuraBase<ObtenerRegistroDiaUsuarioResponse> respuesta = this.Obtener<RegistroBiometricoTrx, ObtenerRegistroDiaUsuarioResponse, ObtenerRegistroDiaUsuarioIN>(
+                new ObtenerRegistroDiaUsuarioIN(),
+                transaccion);
+
 
             return Ok(respuesta);
         }

@@ -1,4 +1,5 @@
 ﻿using Core.Common.DataAccess.Helper;
+using Core.Common.Util.Helper.API;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.RegistrosBiometrico;
 using Dapper;
@@ -11,7 +12,7 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
         public static void Execute(RegistroBiometricoTrx objetoTransaccional)
         {
             string query = PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.NombreStoreProcedure;
-            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, new DB_Connection().connDB_intranet);
+            
             DynamicParameters parametros;
             parametros = new DynamicParameters();
 
@@ -22,8 +23,13 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
             parametros.Add(PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.IpRegistro, objetoTransaccional.RegistroBiometricoNuevo.IpRegistro);
             parametros.Add(PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.PcNombre, objetoTransaccional.RegistroBiometricoNuevo.PcNombre);
             parametros.Add(PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.Atraso, objetoTransaccional.RegistroBiometricoNuevo.TiempoAtraso);
+            if (objetoTransaccional.RegistroBiometricoNuevo.TiempoAtraso > 0)
+            {
+                objetoTransaccional.AtrasosMes++;
+            }
             parametros.Add(PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
 
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
             var resultado = conexion.InsertarDatos(query, parametros);
 
             if (parametros.Get<int>(PA_SEG_AGREGAR_LISTA_USUARIOS.Retorno) != 10000)
