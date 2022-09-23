@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Core.Seguridades.Model.Transaccion.Request.CredencialesAccesos
 {
+    /// <summary>
+    /// Clase con formato request para agregar una nueva credencial de acceso
+    /// </summary>
     public class AgregarCredencialRequest
     {
         public string Usuario { get; set; }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Core.Seguridades.Model.Entidad.CredencialesAccesos
 {
+    /// <summary>
+    /// Entidad credencial Acceso
+    /// </summary>
     public class CredencialAcceso
     {
         public int Id { get; set; }

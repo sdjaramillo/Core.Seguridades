@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Core.Seguridades.Model.Transaccion.Transaccional.CredencialesAccesos
 {
+    /// <summary>
+    /// Objeto transaccional para la entidad credencialAcceso
+    /// </summary>
     public class CredencialAccesoTrx : TransaccionBase
     {
         public CredencialAccesoTrx()

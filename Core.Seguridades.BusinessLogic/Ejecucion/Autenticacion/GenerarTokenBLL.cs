@@ -12,7 +12,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Autenticacion
     public static class GenerarTokenBLL
     {        
         /// <summary>
-        /// Metodo para generar JWTOKEn
+        /// Metodo para generar JWTOKEN
         /// </summary>
         /// <param name="objetoTransaccional"></param>
         public static void GenerarToken(AutenticacionTrx objetoTransaccional)

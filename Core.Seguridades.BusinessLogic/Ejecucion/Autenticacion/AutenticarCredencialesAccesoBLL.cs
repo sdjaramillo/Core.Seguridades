@@ -1,4 +1,5 @@
-﻿using Core.Seguridades.DataAccess.Autenticacion;
+﻿using Core.Common.Model.ExcepcionServicio;
+using Core.Seguridades.DataAccess.Autenticacion;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Autenticacion;
 using System;
@@ -21,7 +22,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Autenticacion
             }
             else
             {
-                objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorCredencialesAcceso.UsuarioClaveIncorrecto;
+                throw new ExcepcionServicio((int)ErrorCredencialesAcceso.UsuarioClaveIncorrecto);
             }
         }
     }

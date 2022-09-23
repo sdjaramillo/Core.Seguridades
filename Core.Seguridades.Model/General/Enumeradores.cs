@@ -4,7 +4,7 @@
     {
         OperacionExitosa = 10000,
     }
-  
+
     public enum ErrorUsuario
     {
         NoExisteNombreEmpresaAsignada = 20001,
@@ -12,10 +12,13 @@
         CamposVaciosActenticacionActiveDirectory = 20003,
     }
 
+    /// <summary>
+    /// Enumeradores de errores correspondientes
+    /// a la entidad CredencialAcceso
+    /// </summary>
     public enum ErrorCredencialesAcceso
     {
         EntidadNoEncontrada = 30001,
         UsuarioClaveIncorrecto = 30002
     }
-
 }
