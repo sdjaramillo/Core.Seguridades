@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Seguridades.Model.Entidad.RegistroBiometrico;
 
 namespace Core.Seguridades.Model.Transaccion.Response.RegistrosBiometrico
 {
     public class ObtenerRegistroDiaUsuarioResponse
     {
         public ObtenerRegistroDiaUsuarioResponse() { }
-        public int IdRegistro { get; set; }
+        public RegistroBiometrico RegistroBiometricoModelo { get; set; }
     }
 }

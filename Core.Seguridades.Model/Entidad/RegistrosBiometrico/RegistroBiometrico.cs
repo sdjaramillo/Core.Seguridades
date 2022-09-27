@@ -9,6 +9,7 @@ namespace Core.Seguridades.Model.Entidad.RegistroBiometrico
     public class RegistroBiometrico
     {
         public RegistroBiometrico() { }
+        public int IdRegistroBiometrico { get; set; }
         public string EstadoAnimoCodigo { get; set; }
         public string UsuarioCodigo { get; set; }
         public string Codigo { get; set; }

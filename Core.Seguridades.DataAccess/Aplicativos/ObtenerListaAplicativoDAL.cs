@@ -22,7 +22,7 @@ namespace Core.Seguridades.DataAccess.Aplicativos
             
             DynamicParameters parametros;
             parametros = new DynamicParameters();
-            parametros.Add(PA_INT_OBTENER_LISTA_APLICATIVOS.CodigoEmpresa, objetoTransaccional.CodigoEmpresa);
+            parametros.Add(PA_INT_OBTENER_LISTA_APLICATIVOS.NombreRed, objetoTransaccional.NombreRed);
 
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
             List<PA_INT_OBTENER_LISTA_APLICATIVOS_Result> resultadoListaAplicativos = conexion.ObtenerListaDatos<PA_INT_OBTENER_LISTA_APLICATIVOS_Result>(query, parametros);

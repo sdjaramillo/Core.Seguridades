@@ -22,7 +22,6 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.RegistrosBiometrico
             ActualizarRegistroBiometrico = new ActualizarRegistroBiometricoRequest();
             AtrasosMesRequest = new ObtenerTotalAtrasosMesRequest();
             NombreRed = "";
-            IdRegistroBiometrico = 0;
         }
 
         public List<RegistroBiometrico> ListaRegistroBiometrico { get; set; }
@@ -31,7 +30,6 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.RegistrosBiometrico
         public RegistroBiometrico RegistroBiometricoNuevo { get; set; }
         public HorarioLaboral HoraEntradaEstablecida { get; set; }
         public int AtrasosMes { get; set; }
-        public int IdRegistroBiometrico { get; set; }
         public string NombreRed { get; set; }
         public ActualizarRegistroBiometricoRequest ActualizarRegistroBiometrico { get; set; }
         public ObtenerTotalAtrasosMesRequest AtrasosMesRequest { get; set; }

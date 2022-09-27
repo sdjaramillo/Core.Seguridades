@@ -16,12 +16,12 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Aplicativos
             ListadoAplicativos = new List<Aplicativo>();
             NuevaAplicativoRequest = new AplicativoRequest();
             AplicativoCodigo = "";
-            CodigoEmpresa = "";
+            NombreRed = "";
             AplicativoValido = new Aplicativo();
         }
         public List<Aplicativo> ListadoAplicativos { get; set; }
         public string AplicativoCodigo { get; set; }
-        public string CodigoEmpresa { get; set; }
+        public string NombreRed { get; set; }
         public AplicativoRequest NuevaAplicativoRequest { get; set; }
         public Aplicativo AplicativoValido { get; set; }
     }

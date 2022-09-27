@@ -17,6 +17,10 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
         internal class PA_INT_OBTENER_REGISTRO_DIA_Result
         {
             public int BiometricoId { get; set; }
+            public TimeSpan HoraEntrada { get; set; }
+            public TimeSpan HoraInicioAlmuerzo { get; set; }
+            public TimeSpan HoraFinAlmuerzo { get; set; }
+            public TimeSpan HoraSalida { get; set; }
         }
         public static void Execute(RegistroBiometricoTrx objetoTransaccional)
         {
@@ -31,8 +35,13 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
 
             try
             {
-                objetoTransaccional.IdRegistroBiometrico = resultadoIdBiometrico.First().BiometricoId;
-            }catch{
+                objetoTransaccional.RegistroBiometricoNuevo.IdRegistroBiometrico = resultadoIdBiometrico.First().BiometricoId;
+                objetoTransaccional.RegistroBiometricoNuevo.HoraEntrada = resultadoIdBiometrico.First().HoraEntrada;
+                objetoTransaccional.RegistroBiometricoNuevo.HoraInicioAlmuerzo = resultadoIdBiometrico.First().HoraInicioAlmuerzo;
+                objetoTransaccional.RegistroBiometricoNuevo.HoraFinAlmuerzo = resultadoIdBiometrico.First().HoraFinAlmuerzo;
+                objetoTransaccional.RegistroBiometricoNuevo.HoraSalida = resultadoIdBiometrico.First().HoraSalida;
+            }
+            catch{
                 objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorBiometrico.NoExisteRegistroBiometricoDia;
             }
             

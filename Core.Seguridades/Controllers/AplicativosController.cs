@@ -15,10 +15,10 @@ namespace Core.Seguridades.Controllers
         [HttpPost]
         [Route("ObtenerListaAplicativos")]
         [Produces(typeof(EstructuraBase<ObtenerListaAplicativosResponse>))]
-        public IActionResult ObtenerListaAplicativos([FromBody] string codigoEmpresa)
+        public IActionResult ObtenerListaAplicativos([FromBody] string nombreRed)
         {
             AplicativosTrx transaccion = this.GenerarTransaccion<AplicativosTrx>();
-            transaccion.CodigoEmpresa = codigoEmpresa;
+            transaccion.NombreRed = nombreRed;
 
             EstructuraBase<ObtenerListaAplicativosResponse> respuesta = this.ObtenerTodos<AplicativosTrx, ObtenerListaAplicativosResponse, ObtenerListaAplicativosIN>(
                 new ObtenerListaAplicativosIN(),

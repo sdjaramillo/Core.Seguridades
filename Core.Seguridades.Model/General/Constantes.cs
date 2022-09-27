@@ -329,6 +329,6 @@ namespace Core.Seguridades.Model.General
     public static class PA_INT_OBTENER_LISTA_APLICATIVOS
     {
         public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_APLICATIVOS";
-        public const string CodigoEmpresa = "@CodigoEmpresa";
+        public const string NombreRed = "@NombreRed";
     }
 }
