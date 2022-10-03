@@ -41,4 +41,16 @@
         CamposVaciosAplicativoRequest = 20041,
         NoExisteAplicativoBaseDatos = 20042,
     }
+
+    public enum ErrorPregunta
+    {
+        NoExistePreguntaBaseDatos = 20052,
+        CamposVaciosPreguntaRequest = 20053,
+    }
+
+    public enum ErrorContacto
+    {
+        CamposVaciosContactoRequest = 20061,
+        NoExisteContactoBaseDatos = 20062,
+    }
 }

@@ -153,6 +153,11 @@ namespace Core.Seguridades.Model.General
         public const string NombreStoreProcedure = "PA_SEG_OBTENER_LISTA_CUMPLEANIERO_MES";
         public const string NombreRed = "@NombreRed";
     }
+    public static class PA_SEG_OBTENER_CUMPLEANIEROS_DIA
+    {
+        public const string NombreStoreProcedure = "PA_SEG_OBTENER_CUMPLEANIEROS_DIA";
+        public const string NombreRed = "@NombreRed";
+    }
     public static class PA_SEG_OBTENER_LOGO_EMPRESA
     {
         public const string NombreStoreProcedure = "PA_SEG_OBTENER_LOGO_EMPRESA";
@@ -190,9 +195,20 @@ namespace Core.Seguridades.Model.General
         public const string NombreRed = "@NombreRed";
     }
 
+    public static class PA_INT_OBTENER_LISTA_PREGUNTAS
+    {
+        public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_PREGUNTAS";
+        public const string NombreRed = "@NombreRed";
+    }
+
     public static class PA_INT_OBTENER_LISTA_TODOS_NOTICIAS
     {
         public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_TODOS_NOTICIAS";
+    }
+
+    public static class PA_INT_OBTENER_LISTA_TODOS_PREGUNTAS
+    {
+        public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_TODOS_PREGUNTAS";
     }
 
     public static class PA_INT_AGREGAR_IMAGEN
@@ -261,9 +277,36 @@ namespace Core.Seguridades.Model.General
         public const string Retorno = "@CodigoRetorno";
     }
 
+    public static class PA_INT_ACTUALIZAR_PREGUNTA
+    {
+        public const string NombreStoreProcedure = "PA_INT_ACTUALIZAR_PREGUNTA";
+        public const string CodigoPregunta = "@CodigoPregunta";
+        public const string CodigoPermisoPublicacion = "@CodigoPermisoPublicacion";
+        public const string Titulo = "@Titulo";
+        public const string Imagen = "@Imagen";
+        public const string Descripcion = "@Descripcion";
+        public const string Publico = "@Publico";
+        public const string Estado = "@Estado";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
     public static class PA_INT_AGREGAR_NOTICIA
     {
         public const string NombreStoreProcedure = "PA_INT_AGREGAR_NOTICIA";
+        public const string CodigoPermisoPublicacion = "@CodigoPermisoPublicacion";
+        public const string Codigo = "@Codigo";
+        public const string Titulo = "@Titulo";
+        public const string Imagen = "@Imagen";
+        public const string Descripcion = "@Descripcion";
+        public const string Publico = "@Publico";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_AGREGAR_PREGUNTA
+    {
+        public const string NombreStoreProcedure = "PA_INT_AGREGAR_PREGUNTA";
         public const string CodigoPermisoPublicacion = "@CodigoPermisoPublicacion";
         public const string Codigo = "@Codigo";
         public const string Titulo = "@Titulo";
@@ -278,6 +321,14 @@ namespace Core.Seguridades.Model.General
     {
         public const string NombreStoreProcedure = "PA_INT_ELIMINAR_NOTICIA";
         public const string CodigoNoticia = "@CodigoNoticia";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_ELIMINAR_PREGUNTA
+    {
+        public const string NombreStoreProcedure = "PA_INT_ELIMINAR_PREGUNTA";
+        public const string CodigoPregunta = "@CodigoPregunta";
 
         public const string Retorno = "@CodigoRetorno";
     }
@@ -329,6 +380,45 @@ namespace Core.Seguridades.Model.General
     public static class PA_INT_OBTENER_LISTA_APLICATIVOS
     {
         public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_APLICATIVOS";
+        public const string NombreRed = "@NombreRed";
+    }
+
+    public static class PA_INT_AGREGAR_CONTACTO
+    {
+        public const string NombreStoreProcedure = "PA_INT_AGREGAR_CONTACTO";
+        public const string NombreRed = "@NombreRed";
+        public const string Cargo = "@Cargo";
+        public const string CorreoElectronico = "@CorreoElectronico";
+        public const string Extension = "@Extension";
+        public const string Descripcion = "@Descripcion";
+        public const string Estado = "@Estado";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_ACTUALIZAR_CONTACTO
+    {
+        public const string NombreStoreProcedure = "PA_INT_ACTUALIZAR_CONTACTO";
+        public const string NombreRed = "@NombreRed";
+        public const string Cargo = "@Cargo";
+        public const string CorreoElectronico = "@CorreoElectronico";
+        public const string Extension = "@Extension";
+        public const string Descripcion = "@Descripcion";
+        public const string Estado = "@Estado";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+    public static class PA_INT_ELIMINAR_CONTACTO
+    {
+        public const string NombreStoreProcedure = "PA_INT_ELIMINAR_CONTACTO";
+        public const string NombreRed = "@NombreRed";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_INT_OBTENER_LISTA_CONTACTO
+    {
+        public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_CONTACTO";
         public const string NombreRed = "@NombreRed";
     }
 }
