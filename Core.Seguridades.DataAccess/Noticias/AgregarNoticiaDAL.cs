@@ -4,12 +4,7 @@ using Core.Seguridades.Model.Entidad.FuenteImagenes;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Noticias;
 using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Seguridades.DataAccess.Noticias
 {
@@ -41,7 +36,7 @@ namespace Core.Seguridades.DataAccess.Noticias
 
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
 
-            var resultado = conexion.InsertarDatos(query, parametros);
+            conexion.InsertarDatos(query, parametros);
 
             if (parametros.Get<int>(PA_INT_AGREGAR_NOTICIA.Retorno) != 10000)
             {

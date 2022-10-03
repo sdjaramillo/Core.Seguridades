@@ -1,11 +1,6 @@
 ﻿using Core.Seguridades.Model.Entidad.Noticias;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Noticias;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Seguridades.BusinessLogic.Ejecucion.Noticias
 {
@@ -13,11 +8,18 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Noticias
     {
         public static void ExistenciaNoticiaBaseDatos(NoticiaTrx objetoTransaccional)
         {
-            List<Noticia> listaNoticiasBaseDatos = objetoTransaccional.ListadoNoticias;
-            if(listaNoticiasBaseDatos.Count > 0)
+            List<Noticia> ListaNoticiasBaseDatos = objetoTransaccional.ListadoNoticias;
+            if(ListaNoticiasBaseDatos.Count > 0)
             {
-                var noticiaVerificada = listaNoticiasBaseDatos.Single(x => x.Codigo.ToString() == objetoTransaccional.NoticiaRequest.Codigo.ToString());
-                objetoTransaccional.NoticiaValida = noticiaVerificada;
+                try
+                {
+                    var noticiaVerificada = ListaNoticiasBaseDatos.Single(x => x.Codigo.ToString() == objetoTransaccional.CodigoNoticia.ToString());
+                    objetoTransaccional.NoticiaValida = noticiaVerificada;
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                    objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorNoticia.NoExisteNoticiaBaseDatos;
+                }
             }
             else
             {

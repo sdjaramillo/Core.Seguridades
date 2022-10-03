@@ -33,7 +33,6 @@ namespace Core.Seguridades.Controllers
         {
             NoticiaTrx transaccion = this.GenerarTransaccion<NoticiaTrx>();
             transaccion.NoticiaRequest = noticia;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<ActualizarNoticiaResponse> respuesta = this.Actualizar<NoticiaTrx, ActualizarNoticiaResponse, ActualizarNoticiaIN>(
                 new ActualizarNoticiaIN(),
@@ -49,7 +48,6 @@ namespace Core.Seguridades.Controllers
         {
             NoticiaTrx transaccion = this.GenerarTransaccion<NoticiaTrx>();
             transaccion.NoticiaRequest = noticia;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<AgregarNoticiaResponse> respuesta = this.Insertar<NoticiaTrx, AgregarNoticiaResponse, AgregarNoticiaIN>(
                 new AgregarNoticiaIN(),
@@ -64,9 +62,7 @@ namespace Core.Seguridades.Controllers
         public IActionResult EliminarNoticia([FromBody] string noticia)
         {
             NoticiaTrx transaccion = this.GenerarTransaccion<NoticiaTrx>();
-            //transaccion.Usuario.NombreRed = nombreRed;
             transaccion.CodigoNoticia = noticia;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<EliminarNoticiaResponse> respuesta = this.Eliminar<NoticiaTrx, EliminarNoticiaResponse, EliminarNoticiaIN>(
                 new EliminarNoticiaIN(),

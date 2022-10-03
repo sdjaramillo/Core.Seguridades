@@ -14,7 +14,7 @@ namespace Core.Seguridades.BusinessLogic.Internal.Noticias
     {
         public void AgregarInformacion(NoticiaTrx objetoTransaccional)
         {
-            ObtenerListaNoticiaBLL.ObtenerListaNoticia(objetoTransaccional);
+            ObtenerTodaNoticiasBLL.ObtenerListaNoticias(objetoTransaccional);
         }
 
         public void ValidarInformacion(NoticiaTrx objetoTransaccional)
