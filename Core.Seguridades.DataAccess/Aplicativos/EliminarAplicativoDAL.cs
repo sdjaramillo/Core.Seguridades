@@ -4,12 +4,7 @@ using Core.Common.Util.Helper.API;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Aplicativos;
 using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Seguridades.DataAccess.Aplicativos
 {
@@ -27,7 +22,7 @@ namespace Core.Seguridades.DataAccess.Aplicativos
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
             conexion.Eliminar(query, parametros);
 
-            if (parametros.Get<int>(PA_INT_AGREGAR_IMAGEN.Retorno) != 10000)
+            if (parametros.Get<int>(PA_INT_ELIMINAR_APLICATIVO.Retorno) != 10000)
             {
                 objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorAplicativo.NoExisteAplicativoBaseDatos;
                 //throw new ExcepcionServicio((int)ErrorAplicativo.NoExisteAplicativoBaseDatos);

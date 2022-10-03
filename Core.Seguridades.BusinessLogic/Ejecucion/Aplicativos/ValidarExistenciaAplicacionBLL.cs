@@ -1,11 +1,6 @@
 ﻿using Core.Seguridades.Model.Entidad.Aplicativos;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.Aplicativos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Seguridades.BusinessLogic.Ejecucion.Aplicativos
 {
@@ -16,8 +11,15 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Aplicativos
             List<Aplicativo> ListaAplicativoBaseDatos = objetoTransaccional.ListadoAplicativos.ToList();
             if(ListaAplicativoBaseDatos.Count > 0)
             {
-                var aplicativoVerificado = ListaAplicativoBaseDatos.Single(x => x.Codigo.ToString() == objetoTransaccional.AplicativoCodigo.ToString());
-                objetoTransaccional.AplicativoValido = aplicativoVerificado;
+                try
+                {
+                    var aplicativoVerificado = ListaAplicativoBaseDatos.Single(x => x.Codigo.ToString() == objetoTransaccional.AplicativoRequest.Codigo.ToString());
+                    objetoTransaccional.AplicativoValido = aplicativoVerificado;
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                    objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorAplicativo.NoExisteAplicativoBaseDatos;
+                }
             }
             else
             {

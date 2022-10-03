@@ -15,13 +15,13 @@ namespace Core.Seguridades.DataAccess.Aplicativos
 
             DynamicParameters parametros;
             parametros = new DynamicParameters();
-            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Codigo, objetoTransaccional.NuevaAplicativoRequest.Codigo);
-            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Nombre, objetoTransaccional.NuevaAplicativoRequest.Nombre);
-            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Logo, objetoTransaccional.NuevaAplicativoRequest.Logo);
-            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Estado, objetoTransaccional.NuevaAplicativoRequest.Estado);
-            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Ruta, objetoTransaccional.NuevaAplicativoRequest.Ruta);
-            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Descripcion, objetoTransaccional.NuevaAplicativoRequest.Descripcion);
-            parametros.Add(PA_INT_ELIMINAR_APLICATIVO.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
+            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Codigo, objetoTransaccional.AplicativoRequest.Codigo);
+            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Nombre, objetoTransaccional.AplicativoRequest.Nombre);
+            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Logo, objetoTransaccional.AplicativoRequest.Logo);
+            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Estado, objetoTransaccional.AplicativoRequest.Estado);
+            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Ruta, objetoTransaccional.AplicativoRequest.Ruta);
+            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Descripcion, objetoTransaccional.AplicativoRequest.Descripcion);
+            parametros.Add(PA_INT_ACTUALIZAR_APLICATIVO.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
 
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
             conexion.Actualizar(query, parametros);

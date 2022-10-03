@@ -13,14 +13,14 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Aplicativos
     {
         public static void ValidarCamposVaciosAplicativoRequest(AplicativosTrx objetoTransaccional)
         {
-            if(objetoTransaccional.NuevaAplicativoRequest.Codigo==null||
-                objetoTransaccional.NuevaAplicativoRequest.Nombre==null||
-                objetoTransaccional.NuevaAplicativoRequest.Logo==null||
-                objetoTransaccional.NuevaAplicativoRequest.Ruta==null||
-                objetoTransaccional.NuevaAplicativoRequest.Codigo == "" ||
-                objetoTransaccional.NuevaAplicativoRequest.Nombre == "" ||
-                objetoTransaccional.NuevaAplicativoRequest.Logo == "" ||
-                objetoTransaccional.NuevaAplicativoRequest.Ruta == ""
+            if(objetoTransaccional.AplicativoRequest.Codigo==null||
+                objetoTransaccional.AplicativoRequest.Nombre==null||
+                objetoTransaccional.AplicativoRequest.Logo==null||
+                objetoTransaccional.AplicativoRequest.Ruta==null||
+                objetoTransaccional.AplicativoRequest.Codigo == "" ||
+                objetoTransaccional.AplicativoRequest.Nombre == "" ||
+                objetoTransaccional.AplicativoRequest.Logo == "" ||
+                objetoTransaccional.AplicativoRequest.Ruta == ""
                )
             {
                 objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorAplicativo.CamposVaciosAplicativoRequest;

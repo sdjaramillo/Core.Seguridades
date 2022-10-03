@@ -33,7 +33,7 @@ namespace Core.Seguridades.Controllers
         public IActionResult AgregarAplicativo([FromBody] AplicativoRequest AplicativoNueva)
         {
             AplicativosTrx transaccion = this.GenerarTransaccion<AplicativosTrx>();
-            transaccion.NuevaAplicativoRequest = AplicativoNueva;
+            transaccion.AplicativoRequest = AplicativoNueva;
 
             EstructuraBase<AgregarAplicativoResponse> respuesta = this.Insertar<AplicativosTrx, AgregarAplicativoResponse, AgregarAplicativoIN>(
                 new AgregarAplicativoIN(),
@@ -48,7 +48,7 @@ namespace Core.Seguridades.Controllers
         public IActionResult ActualizarAplicativo([FromBody] AplicativoRequest AplicativoRequest)
         {
             AplicativosTrx transaccion = this.GenerarTransaccion<AplicativosTrx>();
-            transaccion.NuevaAplicativoRequest = AplicativoRequest;
+            transaccion.AplicativoRequest = AplicativoRequest;
 
             EstructuraBase<ActualizarAplicativoResponse> respuesta = this.Actualizar<AplicativosTrx, ActualizarAplicativoResponse, ActualizarAplicativoIN>(
                 new ActualizarAplicativoIN(),
@@ -63,7 +63,7 @@ namespace Core.Seguridades.Controllers
         public IActionResult EliminarAplicativo([FromBody] string codigoAplicativo)
         {
             AplicativosTrx transaccion = this.GenerarTransaccion<AplicativosTrx>();
-            transaccion.AplicativoCodigo = codigoAplicativo;
+            transaccion.AplicativoRequest.Codigo = codigoAplicativo;
 
             EstructuraBase<EliminarAplicativoResponse> respuesta = this.Eliminar<AplicativosTrx, EliminarAplicativoResponse, EliminarAplicativoIN>(
                 new EliminarAplicativoIN(),

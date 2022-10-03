@@ -23,12 +23,12 @@ namespace Core.Seguridades.DataAccess.Aplicativos
 
             DynamicParameters parametros;
             parametros = new DynamicParameters();
-            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Codigo, objetoTransaccional.NuevaAplicativoRequest.Codigo);
-            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Nombre, objetoTransaccional.NuevaAplicativoRequest.Nombre);
-            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Logo, objetoTransaccional.NuevaAplicativoRequest.Logo);
-            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Ruta, objetoTransaccional.NuevaAplicativoRequest.Ruta);
-            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Descripcion, objetoTransaccional.NuevaAplicativoRequest.Descripcion);
-            parametros.Add(PA_INT_AGREGAR_IMAGEN.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
+            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Codigo, objetoTransaccional.AplicativoRequest.Codigo);
+            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Nombre, objetoTransaccional.AplicativoRequest.Nombre);
+            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Logo, objetoTransaccional.AplicativoRequest.Logo);
+            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Ruta, objetoTransaccional.AplicativoRequest.Ruta);
+            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Descripcion, objetoTransaccional.AplicativoRequest.Descripcion);
+            parametros.Add(PA_INT_AGREGAR_APLICATIVO.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
 
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
             conexion.InsertarDatos(query, parametros);

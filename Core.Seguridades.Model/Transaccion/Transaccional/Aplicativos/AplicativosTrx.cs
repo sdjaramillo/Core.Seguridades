@@ -14,7 +14,7 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Aplicativos
         public AplicativosTrx()
         {
             ListadoAplicativos = new List<Aplicativo>();
-            NuevaAplicativoRequest = new AplicativoRequest();
+            AplicativoRequest = new AplicativoRequest();
             AplicativoCodigo = "";
             NombreRed = "";
             AplicativoValido = new Aplicativo();
@@ -22,7 +22,7 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Aplicativos
         public List<Aplicativo> ListadoAplicativos { get; set; }
         public string AplicativoCodigo { get; set; }
         public string NombreRed { get; set; }
-        public AplicativoRequest NuevaAplicativoRequest { get; set; }
+        public AplicativoRequest AplicativoRequest { get; set; }
         public Aplicativo AplicativoValido { get; set; }
     }
 }
