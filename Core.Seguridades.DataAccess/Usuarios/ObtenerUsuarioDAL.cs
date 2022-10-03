@@ -33,7 +33,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
             string query = PA_SEG_OBTENER_USUARIO.NombreStoreProcedure;
             DynamicParameters parametros;
             parametros = new DynamicParameters();
-            parametros.Add(PA_SEG_OBTENER_USUARIO.NombreRed, objetoTransaccional.ObtenerUsuarioRequest.NombreRed);
+            parametros.Add(PA_SEG_OBTENER_USUARIO.NombreRed, objetoTransaccional.NombreRed);
 
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
             List<PA_OBTENER_LISTA_USUARIOS_Result> resultadoListaUsuarios = conexion.ObtenerListaDatos<PA_OBTENER_LISTA_USUARIOS_Result>(query,parametros);

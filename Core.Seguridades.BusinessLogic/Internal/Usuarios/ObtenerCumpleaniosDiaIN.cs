@@ -5,16 +5,15 @@ using Core.Seguridades.Model.Transaccion.Transaccional.Usuarios;
 
 namespace Core.Seguridades.BusinessLogic.Internal.Usuarios
 {
-    public class ObtenerListaCumpleaniosIN : IObtenerTodos<UsuarioTrx, ObtenerListaCumpleaniosResponse>
+    public class ObtenerCumpleaniosDiaIN : IObtenerTodos<UsuarioTrx, ObtenerCumpleaniosDiaResponse>
     {
         public void AgregarInformacion(UsuarioTrx objetoTransaccional)
         {
-            ObtenerListaCumpleaniosBLL.ObtenerListaCumpleanios(objetoTransaccional);
+            ObtenerCumpleanieroDiaBLL.ObtenerCumpleaniero(objetoTransaccional);
         }
 
         public void ValidarInformacion(UsuarioTrx objetoTransaccional)
         {
-            
         }
     }
 }

@@ -22,10 +22,10 @@ namespace Core.Seguridades.DataAccess.Usuarios
         {
             string query = PA_SEG_AGREGAR_LISTA_USUARIOS.NombreStoreProcedure;
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
-            DynamicParameters parametros;
 
             foreach (var usuario in objetoTransaccional.ListaUsuariosNuevos)
             {
+                DynamicParameters parametros;
                 parametros = new DynamicParameters();
                 parametros.Add(PA_SEG_AGREGAR_LISTA_USUARIOS.NombreRed, usuario.NombreRedUsuario, System.Data.DbType.String);
                 parametros.Add(PA_SEG_AGREGAR_LISTA_USUARIOS.Nombres, usuario.NombreUsuario, System.Data.DbType.String);
@@ -36,12 +36,11 @@ namespace Core.Seguridades.DataAccess.Usuarios
                 parametros.Add(PA_SEG_AGREGAR_LISTA_USUARIOS.Ciudad, usuario.CiudadUsuario, System.Data.DbType.String);
                 parametros.Add(PA_SEG_AGREGAR_LISTA_USUARIOS.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
 
-                var resultado = conexion.InsertarDatos(query,parametros);
+                conexion.InsertarDatos(query,parametros);
 
                 if (parametros.Get<int>(PA_SEG_AGREGAR_LISTA_USUARIOS.Retorno) != 10000)
                 {
                     objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorUsuario.NoExisteNombreEmpresaAsignada;
-                    objetoTransaccional.CantidadUsuariosNuevos -= 1;
                 }
             }
             /*

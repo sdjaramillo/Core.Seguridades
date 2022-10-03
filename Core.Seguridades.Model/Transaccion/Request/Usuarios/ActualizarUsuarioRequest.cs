@@ -7,7 +7,15 @@
     {
         public ActualizarUsuarioRequest() 
         {
-        
+            CodigoHorarioLaboral = null;
+            CodigoEmpresa = null;
+            NombreRed = null;
+            Nombres = null;
+            Apellidos = null;
+            Ciudad = null;
+            Imagen = null;
+            CorreoElectronico = null;
+            Descripcion = null;
         }
         public string CodigoHorarioLaboral { get; set; }
         public string CodigoEmpresa { get; set; }

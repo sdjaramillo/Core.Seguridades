@@ -1,4 +1,5 @@
 ﻿using Core.Common.Model.Transaccion;
+using Core.Seguridades.Model.Entidad.RegistrosBiometrico;
 using Core.Seguridades.Model.Entidad.Usuarios;
 using Core.Seguridades.Model.Transaccion.Request.Usuarios;
 
@@ -19,13 +20,12 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
             ListaUsuariosEliminados = new List<string>();
             Usuario = new Usuario();
             ActualizarUsuarioRequest = new ActualizarUsuarioRequest();
-            ObtenerUsuarioRequest = new ObtenerUsuarioRequest();
             ListaCumpleanieros = new List<CumpleanieroMes>();
             RolAdministrador = new ObtenerUsuarioAdministradorRequest();
             AdministradorUsuario = new List<Administrador>();
+            ListaCumpleanierosDia = new List<CumpleanieroMes>();
+            HorarioLaboralUsuario = new List<HorarioLaboral>();
         }
-
-        //public string BaseDatos { get; set; }
 
         /// <summary>
         /// Usuario de la BD
@@ -62,11 +62,11 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.Usuarios
         /// Campos de usuario utilizado para actualizar la infromación
         /// </summary>
         public ActualizarUsuarioRequest ActualizarUsuarioRequest { get; set; }
-        public ObtenerUsuarioRequest ObtenerUsuarioRequest { get; set; }
         public string NombreRed { get; set; }
         public List<Administrador> AdministradorUsuario { get; set; }
-        public List<CumpleanieroMes> ListaCumpleanieros { get; set; } 
+        public List<CumpleanieroMes> ListaCumpleanieros { get; set; }
+        public List<CumpleanieroMes> ListaCumpleanierosDia { get; set; }
         public ObtenerUsuarioAdministradorRequest RolAdministrador { get; set; }
-        public ObtenerListaCumpleaniosRequest CumpleaniosRequest { get; set; }
+        public List<HorarioLaboral> HorarioLaboralUsuario { get; set; }
     }
 }

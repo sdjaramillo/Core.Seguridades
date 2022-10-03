@@ -89,10 +89,10 @@ namespace Core.Seguridades.Controllers
         [HttpPost]
         [Route("ObtenerUsuario")]
         [Produces(typeof(EstructuraBase<ObtenerUsuarioResponse>))]
-        public IActionResult ObtenerUsuario([FromBody] ObtenerUsuarioRequest usuario)
+        public IActionResult ObtenerUsuario([FromBody] string usuario)
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
-            transaccion.ObtenerUsuarioRequest = usuario;
+            transaccion.NombreRed = usuario;
 
             EstructuraBase<ObtenerUsuarioResponse> respuesta = this.Obtener<UsuarioTrx, ObtenerUsuarioResponse, ObtenerUsuarioIN>(
                 new ObtenerUsuarioIN(),
@@ -104,15 +104,30 @@ namespace Core.Seguridades.Controllers
         [HttpPost]
         [Route("ObtenerListaCumpleanios")]
         [Produces(typeof(EstructuraBase<ObtenerListaCumpleaniosResponse>))]
-        public IActionResult ObtenerListaCumpleanios([FromBody] ObtenerListaCumpleaniosRequest peticionNombreRed)
+        public IActionResult ObtenerListaCumpleanios([FromBody] string peticionNombreRed)
         {
             UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
-            transaccion.CumpleaniosRequest = peticionNombreRed;
+            transaccion.NombreRed = peticionNombreRed;
 
             EstructuraBase<ObtenerListaCumpleaniosResponse> respuesta = this.ObtenerTodos<UsuarioTrx, ObtenerListaCumpleaniosResponse, ObtenerListaCumpleaniosIN>(
                 new ObtenerListaCumpleaniosIN(),
                 transaccion);
 
+
+            return Ok(respuesta);
+        }
+
+        [HttpPost]
+        [Route("ObtenerCumpleaniosDia")]
+        [Produces(typeof(EstructuraBase<ObtenerCumpleaniosDiaResponse>))]
+        public IActionResult ObtenerCumpleaniosDia([FromBody] string peticionNombreRed)
+        {
+            UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
+            transaccion.NombreRed = peticionNombreRed;
+
+            EstructuraBase<ObtenerCumpleaniosDiaResponse> respuesta = this.ObtenerTodos<UsuarioTrx, ObtenerCumpleaniosDiaResponse, ObtenerCumpleaniosDiaIN>(
+                new ObtenerCumpleaniosDiaIN(),
+                transaccion);
 
             return Ok(respuesta);
         }
@@ -131,5 +146,22 @@ namespace Core.Seguridades.Controllers
 
             return Ok(respuesta);
         }
+
+        [HttpPost]
+        [Route("ObtenerHoraEntradaUsuario")]
+        [Produces(typeof(EstructuraBase<ObtenerHoraEntradaUsuarioResponse>))]
+        public IActionResult ObtenerHoraEntradaUsuario([FromBody] string nombreUsuario)
+        {
+            UsuarioTrx transaccion = this.GenerarTransaccion<UsuarioTrx>();
+            transaccion.NombreRed = nombreUsuario;
+
+            EstructuraBase<ObtenerHoraEntradaUsuarioResponse> respuesta = this.Obtener<UsuarioTrx, ObtenerHoraEntradaUsuarioResponse, ObtenerHoraEntradaUsuarioIN>(
+                new ObtenerHoraEntradaUsuarioIN(),
+                transaccion);
+
+
+            return Ok(respuesta);
+        }
+
     }
 }

@@ -41,7 +41,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Usuarios
             {
                 try
                 {
-                    var usuarioVerificado = listaUsuariosBaseDatos.Single(x => x.NombreRed == objetoTransaccional.ObtenerUsuarioRequest.NombreRed);
+                    var usuarioVerificado = listaUsuariosBaseDatos.Single(x => x.NombreRed == objetoTransaccional.NombreRed);
                     objetoTransaccional.Usuario = usuarioVerificado;
                 }catch
                 {
