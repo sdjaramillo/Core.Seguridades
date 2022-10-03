@@ -1,9 +1,4 @@
 ﻿using Core.Seguridades.Model.Entidad.Preguntas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Seguridades.Model.Transaccion.Response.Preguntas
 {
@@ -11,8 +6,8 @@ namespace Core.Seguridades.Model.Transaccion.Response.Preguntas
     {
         public ObtenerListaPreguntaResponse()
         {
-            ListaPregunta = new List<Pregunta>();
+            Preguntas = new List<Pregunta>();
         }
-        public List<Pregunta> ListaPregunta { get; set; }
+        public List<Pregunta> Preguntas { get; set; }
     }
 }
