@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Core.Seguridades.Model.Transaccion.Request.RegistrosBiometrico
+﻿namespace Core.Seguridades.Model.Transaccion.Request.RegistrosBiometrico
 {
-    public class ActualizarRegistroBiometricoRequest
+    public class RegistroBiometricoRequest
     {
-        public ActualizarRegistroBiometricoRequest() {}
+        public RegistroBiometricoRequest() {}
         public string EstadoAnimoCodigo { get; set; }
         public string NombreRed { get; set; }
         public string Codigo { get; set; }

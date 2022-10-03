@@ -6,8 +6,8 @@ namespace Core.Seguridades.Model.Transaccion.Response.RegistrosBiometrico
     {
         public ActualizarRegistroBiometricoResponse() 
         {
-            RegistroBiometricoActualizado = new ActualizarRegistroBiometricoRequest();
+            RegistroBiometricoActualizado = new RegistroBiometricoRequest();
         }
-        public ActualizarRegistroBiometricoRequest RegistroBiometricoActualizado { get; set; }
+        public RegistroBiometricoRequest RegistroBiometricoActualizado { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
             string query = PA_INT_OBTENER_TOTAL_ATRASOS_MES.NombreStoreProcedure;
             DynamicParameters parametros;
             parametros = new DynamicParameters();
-            parametros.Add(PA_INT_OBTENER_TOTAL_ATRASOS_MES.NombreRed, objetoTransaccional.AtrasosMesRequest.NombreRed);
+            parametros.Add(PA_INT_OBTENER_TOTAL_ATRASOS_MES.NombreRed, objetoTransaccional.NombreRed);
 
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
             List<PA_INT_OBTENER_TOTAL_ATRASOS_MES_Result> resultadoListaUsuarios = conexion.ObtenerListaDatos<PA_INT_OBTENER_TOTAL_ATRASOS_MES_Result>(query, parametros);

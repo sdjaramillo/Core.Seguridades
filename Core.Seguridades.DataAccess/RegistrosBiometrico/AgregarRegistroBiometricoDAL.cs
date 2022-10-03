@@ -30,7 +30,7 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
             parametros.Add(PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
 
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
-            var resultado = conexion.InsertarDatos(query, parametros);
+            conexion.InsertarDatos(query, parametros);
 
             if (parametros.Get<int>(PA_SEG_AGREGAR_LISTA_USUARIOS.Retorno) != 10000)
             {

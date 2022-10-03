@@ -14,21 +14,21 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.RegistrosBiometrico
     {
         public static void ValidarParametrosVaciosRegistroNuevo(RegistroBiometricoTrx objetoTransaccional)
         {
-            if (objetoTransaccional.RegistroBiometricoNuevoRequest.NombreRed != null ||
-                objetoTransaccional.RegistroBiometricoNuevoRequest.Codigo != null ||
-                objetoTransaccional.RegistroBiometricoNuevoRequest.FechaRegistro != null ||
-                objetoTransaccional.RegistroBiometricoNuevoRequest.HoraEntrada != null ||
-                objetoTransaccional.RegistroBiometricoNuevoRequest.IpRegistro != null ||
-                objetoTransaccional.RegistroBiometricoNuevoRequest.PcNombre != null
+            if (objetoTransaccional.RegistroBiometricoRequest.NombreRed != null ||
+                objetoTransaccional.RegistroBiometricoRequest.Codigo != null ||
+                objetoTransaccional.RegistroBiometricoRequest.FechaRegistro != null ||
+                objetoTransaccional.RegistroBiometricoRequest.HoraEntrada != null ||
+                objetoTransaccional.RegistroBiometricoRequest.IpRegistro != null ||
+                objetoTransaccional.RegistroBiometricoRequest.PcNombre != null
                 )
             {
-                objetoTransaccional.AtrasosMesRequest.NombreRed = objetoTransaccional.RegistroBiometricoNuevoRequest.NombreRed;
-                objetoTransaccional.RegistroBiometricoNuevo.UsuarioCodigo = objetoTransaccional.RegistroBiometricoNuevoRequest.NombreRed;
-                objetoTransaccional.RegistroBiometricoNuevo.Codigo = objetoTransaccional.RegistroBiometricoNuevoRequest.Codigo;
-                objetoTransaccional.RegistroBiometricoNuevo.FechaRegistro = objetoTransaccional.RegistroBiometricoNuevoRequest.FechaRegistro;
-                objetoTransaccional.RegistroBiometricoNuevo.HoraEntrada = TimeSpan.Parse(objetoTransaccional.RegistroBiometricoNuevoRequest.HoraEntrada);
-                objetoTransaccional.RegistroBiometricoNuevo.IpRegistro = objetoTransaccional.RegistroBiometricoNuevoRequest.IpRegistro;
-                objetoTransaccional.RegistroBiometricoNuevo.PcNombre = objetoTransaccional.RegistroBiometricoNuevoRequest.PcNombre;
+                objetoTransaccional.NombreRed = objetoTransaccional.RegistroBiometricoRequest.NombreRed;
+                objetoTransaccional.RegistroBiometricoNuevo.UsuarioCodigo = objetoTransaccional.RegistroBiometricoRequest.NombreRed;
+                objetoTransaccional.RegistroBiometricoNuevo.Codigo = objetoTransaccional.RegistroBiometricoRequest.Codigo;
+                objetoTransaccional.RegistroBiometricoNuevo.FechaRegistro = objetoTransaccional.RegistroBiometricoRequest.FechaRegistro;
+                objetoTransaccional.RegistroBiometricoNuevo.HoraEntrada = TimeSpan.Parse(objetoTransaccional.RegistroBiometricoRequest.HoraEntrada);
+                objetoTransaccional.RegistroBiometricoNuevo.IpRegistro = objetoTransaccional.RegistroBiometricoRequest.IpRegistro;
+                objetoTransaccional.RegistroBiometricoNuevo.PcNombre = objetoTransaccional.RegistroBiometricoRequest.PcNombre;
                 string VariableSistemaAtraso = VariablesSistemaHelper.ObtenerValor(ConstantesVariablesSistema.TIEMPO_ATRASO_EMPLEADO);
                 TimeSpan HoraAtraso = TimeSpan.Parse(VariableSistemaAtraso);
                 HoraAtraso = objetoTransaccional.HoraEntradaEstablecida.HoraEntrada.Add(TimeSpan.FromMinutes(HoraAtraso.Minutes));
@@ -41,20 +41,20 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.RegistrosBiometrico
         }
         public static void ValidarParametrosVaciosRegistroActualizar(RegistroBiometricoTrx objetoTransaccional)
         {
-            if (objetoTransaccional.RegistroBiometricoNuevoRequest.NombreRed != null ||
-                objetoTransaccional.RegistroBiometricoNuevoRequest.Codigo != null ||
-                objetoTransaccional.RegistroBiometricoNuevoRequest.FechaRegistro != null ||
-                objetoTransaccional.RegistroBiometricoNuevoRequest.HoraEntrada != null ||
-                objetoTransaccional.RegistroBiometricoNuevoRequest.IpRegistro != null ||
-                objetoTransaccional.RegistroBiometricoNuevoRequest.PcNombre != null
+            if (objetoTransaccional.RegistroBiometricoRequest.NombreRed != null ||
+                objetoTransaccional.RegistroBiometricoRequest.Codigo != null ||
+                objetoTransaccional.RegistroBiometricoRequest.FechaRegistro != null ||
+                objetoTransaccional.RegistroBiometricoRequest.HoraEntrada != null ||
+                objetoTransaccional.RegistroBiometricoRequest.IpRegistro != null ||
+                objetoTransaccional.RegistroBiometricoRequest.PcNombre != null
                 )
             {
-                objetoTransaccional.RegistroBiometricoNuevo.UsuarioCodigo = objetoTransaccional.ActualizarRegistroBiometrico.NombreRed;
-                objetoTransaccional.RegistroBiometricoNuevo.Codigo = objetoTransaccional.ActualizarRegistroBiometrico.Codigo;
-                objetoTransaccional.RegistroBiometricoNuevo.FechaRegistro = objetoTransaccional.ActualizarRegistroBiometrico.FechaRegistro;
-                objetoTransaccional.RegistroBiometricoNuevo.HoraEntrada = TimeSpan.Parse(objetoTransaccional.ActualizarRegistroBiometrico.HoraEntrada);
-                objetoTransaccional.RegistroBiometricoNuevo.IpRegistro = objetoTransaccional.ActualizarRegistroBiometrico.IpRegistro;
-                objetoTransaccional.RegistroBiometricoNuevo.PcNombre = objetoTransaccional.ActualizarRegistroBiometrico.PcNombre;
+                objetoTransaccional.RegistroBiometricoNuevo.UsuarioCodigo = objetoTransaccional.RegistroBiometricoRequest.NombreRed;
+                objetoTransaccional.RegistroBiometricoNuevo.Codigo = objetoTransaccional.RegistroBiometricoRequest.Codigo;
+                objetoTransaccional.RegistroBiometricoNuevo.FechaRegistro = objetoTransaccional.RegistroBiometricoRequest.FechaRegistro;
+                objetoTransaccional.RegistroBiometricoNuevo.HoraEntrada = TimeSpan.Parse(objetoTransaccional.RegistroBiometricoRequest.HoraEntrada);
+                objetoTransaccional.RegistroBiometricoNuevo.IpRegistro = objetoTransaccional.RegistroBiometricoRequest.IpRegistro;
+                objetoTransaccional.RegistroBiometricoNuevo.PcNombre = objetoTransaccional.RegistroBiometricoRequest.PcNombre;
                 string VariableSistemaAtraso = VariablesSistemaHelper.ObtenerValor(ConstantesVariablesSistema.TIEMPO_ATRASO_EMPLEADO);
                 TimeSpan HoraAtraso = TimeSpan.Parse(VariableSistemaAtraso);
                 HoraAtraso = objetoTransaccional.HoraEntradaEstablecida.HoraEntrada.Add(TimeSpan.FromMinutes(HoraAtraso.Minutes));

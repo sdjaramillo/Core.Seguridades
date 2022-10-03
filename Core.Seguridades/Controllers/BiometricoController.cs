@@ -5,7 +5,6 @@ using Core.Seguridades.Model.Transaccion.Response.RegistrosBiometrico;
 using Core.Seguridades.Model.Transaccion.Request.RegistrosBiometrico;
 using Core.Seguridades.Model.Transaccion.Transaccional.RegistrosBiometrico;
 using Microsoft.AspNetCore.Mvc;
-using Core.Seguridades.BusinessLogic.Ejecucion.RegistrosBiometrico;
 
 namespace Core.Seguridades.Controllers
 {
@@ -13,18 +12,13 @@ namespace Core.Seguridades.Controllers
     [ApiController]
     public class BiometricoController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-        public BiometricoController(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
         [HttpPost]
         [Route("ObtenerListaRegistroBiometrico")]
         [Produces(typeof(EstructuraBase<ObtenerListaRegistroBiometricoResponse>))]
-        public IActionResult ObtenerListaRegistroBiometrico([FromBody] ObtenerListaRegistroBiometricoRequest peticionRegistroBiometrico)
+        public IActionResult ObtenerListaRegistroBiometrico([FromBody] string nombreRed)
         {
             RegistroBiometricoTrx transaccion = this.GenerarTransaccion<RegistroBiometricoTrx>();
-            transaccion.RegistroBiometricoRequest = peticionRegistroBiometrico;
+            transaccion.NombreRed = nombreRed;
 
             EstructuraBase<ObtenerListaRegistroBiometricoResponse> respuesta = this.ObtenerTodos<RegistroBiometricoTrx, ObtenerListaRegistroBiometricoResponse, ObtenerListaRegistroBiometricoIN>(
                 new ObtenerListaRegistroBiometricoIN(),
@@ -37,10 +31,10 @@ namespace Core.Seguridades.Controllers
         [HttpPost]
         [Route("AgregarRegistroBiometrico")]
         [Produces(typeof(EstructuraBase<AgregarRegistroBiometricoResponse>))]
-        public IActionResult AgregarRegistroBiometrico([FromBody] AgregarRegistroBiometricoRequest peticionRegistroBiometrico)
+        public IActionResult AgregarRegistroBiometrico([FromBody] RegistroBiometricoRequest peticionRegistroBiometrico)
         {
             RegistroBiometricoTrx transaccion = this.GenerarTransaccion<RegistroBiometricoTrx>();
-            transaccion.RegistroBiometricoNuevoRequest = peticionRegistroBiometrico;
+            transaccion.RegistroBiometricoRequest = peticionRegistroBiometrico;
 
             EstructuraBase<AgregarRegistroBiometricoResponse> respuesta = this.Insertar<RegistroBiometricoTrx, AgregarRegistroBiometricoResponse, AgregarRegistroBiometricoIN>(
                 new AgregarRegistroBiometricoIN(),
@@ -53,11 +47,10 @@ namespace Core.Seguridades.Controllers
         [HttpPut]
         [Route("ActualizarRegistroBiometrico")]
         [Produces(typeof(EstructuraBase<ActualizarRegistroBiometricoResponse>))]
-        public IActionResult ActualizarRegistroBiometrico([FromBody] ActualizarRegistroBiometricoRequest registroBiometrico)
+        public IActionResult ActualizarRegistroBiometrico([FromBody] RegistroBiometricoRequest registroBiometrico)
         {
             RegistroBiometricoTrx transaccion = this.GenerarTransaccion<RegistroBiometricoTrx>();
-            transaccion.ActualizarRegistroBiometrico = registroBiometrico;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
+            transaccion.RegistroBiometricoRequest = registroBiometrico;
 
             EstructuraBase<ActualizarRegistroBiometricoResponse> respuesta = this.Actualizar<RegistroBiometricoTrx, ActualizarRegistroBiometricoResponse, ActualizarRegistroBiometricoIN>(
                 new ActualizarRegistroBiometricoIN(),
@@ -69,10 +62,10 @@ namespace Core.Seguridades.Controllers
         [HttpPost]
         [Route("ObtenerTotalAtrasosMes")]
         [Produces(typeof(EstructuraBase<ObtenerTotalAtrasosMesResponse>))]
-        public IActionResult ObtenerTotalAtrasosMes([FromBody] ObtenerTotalAtrasosMesRequest nombreRed)
+        public IActionResult ObtenerTotalAtrasosMes([FromBody] string nombreRed)
         {
             RegistroBiometricoTrx transaccion = this.GenerarTransaccion<RegistroBiometricoTrx>();
-            transaccion.AtrasosMesRequest = nombreRed;
+            transaccion.NombreRed = nombreRed;
 
             EstructuraBase<ObtenerTotalAtrasosMesResponse> respuesta = this.Obtener<RegistroBiometricoTrx, ObtenerTotalAtrasosMesResponse, ObtenerTotalAtrasosMesIN>(
                 new ObtenerTotalAtrasosMesIN(),
