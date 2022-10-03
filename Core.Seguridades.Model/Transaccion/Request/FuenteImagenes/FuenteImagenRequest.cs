@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Core.Seguridades.Model.Transaccion.Request.FuenteImagenes
+﻿namespace Core.Seguridades.Model.Transaccion.Request.FuenteImagenes
 {
-    public class AgregarActualizarFuenteImagenRequest
+    public class FuenteImagenRequest
     {
-        public AgregarActualizarFuenteImagenRequest() { }
+        public FuenteImagenRequest() { }
         public string Codigo { get; set; }
         public string EmpresaCodigo { get; set; }
         public string Nombre { get; set; }

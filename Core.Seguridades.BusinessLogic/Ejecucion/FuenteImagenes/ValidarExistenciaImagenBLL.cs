@@ -12,8 +12,15 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.FuenteImagenes
             List<Imagen> listaImagenesBaseDatos = objetoTransaccional.ListaImagenTotal.ToList();
             if(listaImagenesBaseDatos.Count > 0)
             {
-                var imagenVerificado = listaImagenesBaseDatos.Single(x => x.Codigo.ToString() == objetoTransaccional.ImagenCodigo.ToString());
-                objetoTransaccional.ImagenValida = imagenVerificado;
+                try
+                {
+                    var imagenVerificado = listaImagenesBaseDatos.Single(x => x.Codigo.ToString() == objetoTransaccional.ImagenCodigo.ToString());
+                    objetoTransaccional.ImagenValida = imagenVerificado;
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                    objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorImagen.NoExisteImagenBaseDatos;
+                }
             }
             else
             {

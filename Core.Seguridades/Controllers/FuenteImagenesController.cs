@@ -19,7 +19,6 @@ namespace Core.Seguridades.Controllers
         {
             ImagenesTrx transaccion = this.GenerarTransaccion<ImagenesTrx>();
             transaccion.ImagenRequest = peticionImagen;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<ObtenerListaFuenteImagenResponse> respuesta = this.ObtenerTodos<ImagenesTrx, ObtenerListaFuenteImagenResponse, ObtenerListaFuenteImagenIN>(
                 new ObtenerListaFuenteImagenIN(),
@@ -31,11 +30,10 @@ namespace Core.Seguridades.Controllers
         [HttpPost]
         [Route("AgregarFuenteImagen")]
         [Produces(typeof(EstructuraBase<AgregarActualizarFuenteImagenResponse>))]
-        public IActionResult AgregarFuenteImagen([FromBody] AgregarActualizarFuenteImagenRequest imagenNueva)
+        public IActionResult AgregarFuenteImagen([FromBody] FuenteImagenRequest imagenNueva)
         {
             ImagenesTrx transaccion = this.GenerarTransaccion<ImagenesTrx>();
             transaccion.NuevaImagenRequest = imagenNueva;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<AgregarActualizarFuenteImagenResponse> respuesta = this.Insertar<ImagenesTrx, AgregarActualizarFuenteImagenResponse, AgregarFuenteImagenIN>(
                 new AgregarFuenteImagenIN(),
@@ -47,11 +45,10 @@ namespace Core.Seguridades.Controllers
         [HttpPut]
         [Route("ActualizarFuenteImagen")]
         [Produces(typeof(EstructuraBase<AgregarActualizarFuenteImagenResponse>))]
-        public IActionResult ActualizarFuenteImagen([FromBody] AgregarActualizarFuenteImagenRequest imagenRequest)
+        public IActionResult ActualizarFuenteImagen([FromBody] FuenteImagenRequest imagenRequest)
         {
             ImagenesTrx transaccion = this.GenerarTransaccion<ImagenesTrx>();
             transaccion.NuevaImagenRequest = imagenRequest;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<AgregarActualizarFuenteImagenResponse> respuesta = this.Actualizar<ImagenesTrx, AgregarActualizarFuenteImagenResponse, ActualizarFuenteImagenIN>(
                 new ActualizarFuenteImagenIN(),
@@ -66,9 +63,7 @@ namespace Core.Seguridades.Controllers
         public IActionResult EliminarFuenteImagen([FromBody] string imagenCodigo)
         {
             ImagenesTrx transaccion = this.GenerarTransaccion<ImagenesTrx>();
-            //transaccion.Usuario.NombreRed = nombreRed;
             transaccion.ImagenCodigo = imagenCodigo;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<EliminarFuenteImagenResponse> respuesta = this.Eliminar<ImagenesTrx, EliminarFuenteImagenResponse, EliminarFuenteImagenIN>(
                 new EliminarFuenteImagenIN(),

@@ -12,8 +12,8 @@ namespace Core.Seguridades.Model.Transaccion.Response.FuenteImagenes
     {
         public AgregarActualizarFuenteImagenResponse() 
         {
-            NuevaImagen = new AgregarActualizarFuenteImagenRequest();
+            NuevaImagen = new FuenteImagenRequest();
         }
-        public AgregarActualizarFuenteImagenRequest NuevaImagen { get; set; }
+        public FuenteImagenRequest NuevaImagen { get; set; }
     }
 }
