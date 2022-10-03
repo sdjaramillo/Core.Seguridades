@@ -19,7 +19,7 @@ namespace Core.Seguridades.DataAccess.MenuDinamico
             string query = PA_SEG_OBTENER_LOGO_EMPRESA.NombreStoreProcedure;
             DynamicParameters parametros;
             parametros = new DynamicParameters();
-            parametros.Add(PA_SEG_OBTENER_LOGO_EMPRESA.NombreRed, objetoTransaccional.PeticionLogo.NombreRed);
+            parametros.Add(PA_SEG_OBTENER_LOGO_EMPRESA.NombreRed, objetoTransaccional.NombreRed);
 
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
             List<string> resultadoLogoEmpresa = conexion.ObtenerListaDatos<string>(query, parametros);

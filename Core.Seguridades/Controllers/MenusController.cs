@@ -12,12 +12,6 @@ namespace Core.Seguridades.Controllers
     [ApiController]
     public class MenusController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-        public MenusController(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
-
         [HttpPost]
         [Route("ObtenerListaMenuRol")]
         [Produces(typeof(EstructuraBase<ObtenerListaMenuRolResponse>))]
@@ -25,7 +19,6 @@ namespace Core.Seguridades.Controllers
         {
             MenusTrx transaccion = this.GenerarTransaccion<MenusTrx>();
             transaccion.MenuRequest = peticionMenu;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<ObtenerListaMenuRolResponse> respuesta = this.ObtenerTodos<MenusTrx, ObtenerListaMenuRolResponse, ObtenerListaMenuRolIN>(
                 new ObtenerListaMenuRolIN(),
@@ -37,11 +30,10 @@ namespace Core.Seguridades.Controllers
         [HttpPost]
         [Route("ObtenerLogoEmpresa")]
         [Produces(typeof(EstructuraBase<ObtenerLogoEmpresaResponse>))]
-        public IActionResult ObtenerLogoEmpresa([FromBody] ObtenerLogoEmpresaRequest peticionLogo)
+        public IActionResult ObtenerLogoEmpresa([FromBody] string peticionLogo)
         {
             MenusTrx transaccion = this.GenerarTransaccion<MenusTrx>();
-            transaccion.PeticionLogo = peticionLogo;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
+            transaccion.NombreRed = peticionLogo;
 
             EstructuraBase<ObtenerLogoEmpresaResponse> respuesta = this.Obtener<MenusTrx, ObtenerLogoEmpresaResponse, ObtenerLogoEmpresaIN>(
                 new ObtenerLogoEmpresaIN(),
