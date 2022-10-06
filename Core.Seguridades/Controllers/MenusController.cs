@@ -41,5 +41,34 @@ namespace Core.Seguridades.Controllers
 
             return Ok(respuesta);
         }
+
+        [HttpPost]
+        [Route("ObtenerListaPermisosMenu")]
+        [Produces(typeof(EstructuraBase<ObtenerListaPermisosMenuResponse>))]
+        public IActionResult ObtenerListaPermisosMenu()
+        {
+            MenusTrx transaccion = this.GenerarTransaccion<MenusTrx>();
+
+            EstructuraBase<ObtenerListaPermisosMenuResponse> respuesta = this.ObtenerTodos<MenusTrx, ObtenerListaPermisosMenuResponse, ObtenerListaPermisosMenuIN>(
+                new ObtenerListaPermisosMenuIN(),
+                transaccion);
+
+            return Ok(respuesta);
+        }
+
+        [HttpPost]
+        [Route("AgregarPermisoMenu")]
+        [Produces(typeof(EstructuraBase<AgregarPermisoMenuResponse>))]
+        public IActionResult AgregarPermisoMenu([FromBody] PermisoMenuRequest PermisoMenuNueva)
+        {
+            MenusTrx transaccion = this.GenerarTransaccion<MenusTrx>();
+            transaccion.PermisoMenuRequest = PermisoMenuNueva;
+
+            EstructuraBase<AgregarPermisoMenuResponse> respuesta = this.Insertar<MenusTrx, AgregarPermisoMenuResponse, AgregarPermisoMenuIN>(
+                new AgregarPermisoMenuIN(),
+                transaccion);
+
+            return Ok(respuesta);
+        }
     }
 }

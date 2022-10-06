@@ -53,4 +53,12 @@
         CamposVaciosContactoRequest = 20061,
         NoExisteContactoBaseDatos = 20062,
     }
+
+    public enum ErrorMenuRolOpcion
+    {
+        NoExisteMenuBaseDatos = 20071,
+        NoExisteRolBaseDatos = 20072,
+        NoExisteOpcionMenuBaseDatos = 20073,
+        YaExisteMenuRolOpcionBaseDatos = 20074,
+    }
 }

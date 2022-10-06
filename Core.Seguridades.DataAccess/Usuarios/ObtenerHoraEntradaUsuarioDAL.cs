@@ -23,6 +23,7 @@ namespace Core.Seguridades.DataAccess.Usuarios
             public string Nombre { get; set; }
             public TimeSpan HoraEntrada { get; set; }
             public TimeSpan HoraSalida { get; set; }
+            public TimeSpan TiempoAlmuerzo { get; set; }
             public string Tipo { get; set; }
             public bool Estado { get; set; }
             public bool TiempoAtraso { get; set; }
@@ -40,6 +41,8 @@ namespace Core.Seguridades.DataAccess.Usuarios
 
             foreach(var horarioUsuario in resultadoListaHorarioLaboral)
             {
+                string VariableSistemaAlmuerzo = VariablesSistemaHelper.ObtenerValor(ConstantesVariablesSistema.TIEMPO_ALMUERZO);
+                horarioUsuario.TiempoAlmuerzo = TimeSpan.Parse(VariableSistemaAlmuerzo);
                 string VariableSistemaAtraso = VariablesSistemaHelper.ObtenerValor(ConstantesVariablesSistema.TIEMPO_ATRASO_EMPLEADO);
                 TimeSpan HoraAtraso = TimeSpan.Parse(VariableSistemaAtraso);
                 HoraAtraso = horarioUsuario.HoraEntrada.Add(TimeSpan.FromMinutes(HoraAtraso.Minutes));

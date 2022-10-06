@@ -15,5 +15,6 @@ namespace Core.Seguridades.Model.Transaccion.Transaccional.MenuDinamico
         public ObtenerListaMenuRolRequest MenuRequest { get; set; }
         public string NombreRed { get; set; }
         public string ValorLogo { get; set; }
+        public PermisoMenuRequest PermisoMenuRequest { get; set; }
     }
 }

@@ -5,18 +5,8 @@
     /// </summary>
     public class ActualizarUsuarioRequest
     {
-        public ActualizarUsuarioRequest() 
-        {
-            CodigoHorarioLaboral = null;
-            CodigoEmpresa = null;
-            NombreRed = null;
-            Nombres = null;
-            Apellidos = null;
-            Ciudad = null;
-            Imagen = null;
-            CorreoElectronico = null;
-            Descripcion = null;
-        }
+        public ActualizarUsuarioRequest() {}
+        public int Id { get; set; }
         public string CodigoHorarioLaboral { get; set; }
         public string CodigoEmpresa { get; set; }
         public string NombreRed { get; set; }

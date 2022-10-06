@@ -11,6 +11,7 @@ namespace Core.Seguridades.Model.General
     {
         public const string IP_GENERAL_ACTIVE_DIRECTORY = "VAS_002";
         public const string TIEMPO_ATRASO_EMPLEADO = "VAS_003";
+        public const string TIEMPO_ALMUERZO = "VAS_004";
     }
     public static class ConstantesRest 
     {
@@ -77,7 +78,9 @@ namespace Core.Seguridades.Model.General
     /// </summary>
     public static class PA_SEG_ACTUALIZAR_USUARIO
     {
+        
         public const string NombreStoreProcedure = "PA_SEG_ACTUALIZAR_USUARIO";
+        public const string Id = "@Id";
         public const string CodigoHorarioLaboral = "@HorarioLaboralCodigo";
         public const string CodigoEmpresa = "@EmpresaCodigo";
         public const string NombreRed = "@NombreRed";
@@ -112,6 +115,11 @@ namespace Core.Seguridades.Model.General
         public const string NombreStoreProcedure = "PA_SEG_OBTENER_MENU_ROL";
         public const string NombreRed = "@NombreRed";
         public const string ProyectoCodigo = "@ProyectoCodigo";
+    }
+
+    public static class PA_SEG_OBTENER_PERMISOS_MENU
+    {
+        public const string NombreStoreProcedure = "PA_SEG_OBTENER_PERMISOS_MENU";
     }
 
     public static class ConstantesInicialesEmpresas
@@ -348,6 +356,16 @@ namespace Core.Seguridades.Model.General
         public const string Estado = "@Estado";
         public const string Ruta = "@Ruta";
         public const string Descripcion = "@Descripcion";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_SEG_AGREGAR_PERMISO_MENU
+    {
+        public const string NombreStoreProcedure = "PA_SEG_AGREGAR_PERMISO_MENU";
+        public const string MenuCodigo = "@MenuCodigo";
+        public const string RolCodigo = "@RolCodigo";
+        public const string OpcionMenuCodigo = "@OpcionMenuCodigo";
 
         public const string Retorno = "@CodigoRetorno";
     }
