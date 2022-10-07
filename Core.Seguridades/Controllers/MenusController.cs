@@ -70,5 +70,20 @@ namespace Core.Seguridades.Controllers
 
             return Ok(respuesta);
         }
+
+        [HttpDelete]
+        [Route("EliminarPermisoMenu")]
+        [Produces(typeof(EstructuraBase<EliminarPermisoMenuResponse>))]
+        public IActionResult EliminarPermisoMenu([FromBody] EliminarPermisoMenuRequest eliminarPermisoMenu )
+        {
+            MenusTrx transaccion = this.GenerarTransaccion<MenusTrx>();
+            transaccion.EliminarPermisoMenuRequest = eliminarPermisoMenu;
+
+            EstructuraBase<EliminarPermisoMenuResponse> respuesta = this.Eliminar<MenusTrx, EliminarPermisoMenuResponse, EliminarPermisoMenuIN>(
+                new EliminarPermisoMenuIN(),
+                transaccion);
+
+            return Ok(respuesta);
+        }
     }
 }

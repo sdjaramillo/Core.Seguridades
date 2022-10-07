@@ -61,4 +61,10 @@
         NoExisteOpcionMenuBaseDatos = 20073,
         YaExisteMenuRolOpcionBaseDatos = 20074,
     }
+
+    public enum ErrorPermiso
+    {
+        NoExistePermisoBaseDatos = 20081,
+        CamposVaciosPermisoRequest = 20082,
+    }
 }

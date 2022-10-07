@@ -12,6 +12,9 @@ namespace Core.Seguridades.Model.General
         public const string IP_GENERAL_ACTIVE_DIRECTORY = "VAS_002";
         public const string TIEMPO_ATRASO_EMPLEADO = "VAS_003";
         public const string TIEMPO_ALMUERZO = "VAS_004";
+        public const string ORIGINARSA_CUMPLEANIERO_DIA = "VAS_005";
+        public const string INTERBROQUER_CUMPLEANIERO_DIA = "VAS_006";
+        public const string RECAUDA_CUMPLEANIERO_DIA = "VAS_007";
     }
     public static class ConstantesRest 
     {
@@ -125,6 +128,7 @@ namespace Core.Seguridades.Model.General
     public static class ConstantesInicialesEmpresas
     {
         public static readonly string[] InicalesEmpresas = { "ORI", "INT", "REC" };
+        public static readonly string[] CodigoEmpresas = { "EMP_001", "EMP_002", "EMP_003" };
     }
 
     public static class PA_INT_OBTENER_LISTA_IMAGENES
@@ -165,6 +169,7 @@ namespace Core.Seguridades.Model.General
     {
         public const string NombreStoreProcedure = "PA_SEG_OBTENER_CUMPLEANIEROS_DIA";
         public const string NombreRed = "@NombreRed";
+        public const string EmpresaCodigo = "@EmpresaCodigo";
     }
     public static class PA_SEG_OBTENER_LOGO_EMPRESA
     {
@@ -359,6 +364,18 @@ namespace Core.Seguridades.Model.General
 
         public const string Retorno = "@CodigoRetorno";
     }
+    public static class PA_SEG_AGREGAR_PERMISOS
+    {
+        public const string NombreStoreProcedure = "PA_SEG_AGREGAR_PERMISOS";
+        public const string Codigo = "@Codigo";
+        public const string NombreRed = "@NombreRed";
+        public const string RolCodigo = "@RolCodigo";
+        public const string ProyectoCodigo = "@ProyectoCodigo";
+        public const string Nombre = "@Nombre";
+        public const string Descripcion = "@Descripcion";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
 
     public static class PA_SEG_AGREGAR_PERMISO_MENU
     {
@@ -382,10 +399,41 @@ namespace Core.Seguridades.Model.General
 
         public const string Retorno = "@CodigoRetorno";
     }
+    public static class PA_SEG_ACTUALIZAR_PERMISOS
+    {
+        public const string NombreStoreProcedure = "PA_SEG_ACTUALIZAR_PERMISOS";
+        public const string Codigo = "@Codigo";
+        public const string NombreRed = "@NombreRed";
+        public const string RolCodigo = "@RolCodigo";
+        public const string ProyectoCodigo = "@ProyectoCodigo";
+        public const string Nombre = "@Nombre";
+        public const string Estado = "@Estado";
+        public const string Descripcion = "@Descripcion";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
     public static class PA_INT_ELIMINAR_APLICATIVO
     {
         public const string NombreStoreProcedure = "PA_INT_ELIMINAR_APLICATIVO";
         public const string AplicativoCodigo = "@Codigo";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+    
+    public static class PA_SEG_ELIMINAR_PERMISO_MENU
+    {
+        public const string NombreStoreProcedure = "PA_SEG_ELIMINAR_PERMISO_MENU";
+        public const string MenuCodigo = "@MenuCodigo";
+        public const string RolCodigo = "@RolCodigo";
+        public const string OpcionMenuCodigo = "@OpcionMenuCodigo";
+
+        public const string Retorno = "@CodigoRetorno";
+    }
+
+    public static class PA_SEG_ELIMINAR_PERMISOS
+    {
+        public const string NombreStoreProcedure = "PA_SEG_ELIMINAR_PERMISOS";
+        public const string PermisoCodigo = "@Codigo";
 
         public const string Retorno = "@CodigoRetorno";
     }
@@ -395,10 +443,21 @@ namespace Core.Seguridades.Model.General
         public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_TODOS_APLICATIVOS";
     }
 
+    public static class PA_SEG_OBTENER_LISTA_TODOS_PERMISOS
+    {
+        public const string NombreStoreProcedure = "PA_SEG_OBTENER_LISTA_TODOS_PERMISOS";
+    }
+
     public static class PA_INT_OBTENER_LISTA_APLICATIVOS
     {
         public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_APLICATIVOS";
         public const string NombreRed = "@NombreRed";
+    }
+
+    public static class PA_SEG_OBTENER_LISTA_PERMISOS
+    {
+        public const string NombreStoreProcedure = "PA_SEG_ACTUALIZAR_PERMISOS";
+        public const string CodigoProyecto = "@CodigoProyecto";
     }
 
     public static class PA_INT_AGREGAR_CONTACTO

@@ -5,24 +5,21 @@ using Core.Seguridades.Model.Transaccion.Transaccional.MenuDinamico;
 
 namespace Core.Seguridades.BusinessLogic.Internal.MenuDinamico
 {
-    public class AgregarPermisoMenuIN : IInsertar<MenusTrx, AgregarPermisoMenuResponse>
+    public class EliminarPermisoMenuIN : IEliminar<MenusTrx, EliminarPermisoMenuResponse>
     {
         public void AgregarInformacion(MenusTrx objetoTransaccional)
         {
-            
+            ObtenerListaPermisoMenuBLL.ObtenerListaPermisoMenuRol(objetoTransaccional);
         }
 
-        public void HomologarInformacion(MenusTrx objetoTransaccional)
+        public void Eliminarnformacion(MenusTrx objetoTransaccional)
         {
-        }
-
-        public void InsertarInformacion(MenusTrx objetoTransaccional)
-        {
-            AgregarPermisoMenuBLL.AgregarPermisoMenuRol(objetoTransaccional);
+            EliminarPermisoMenuBLL.EliminarPermisoMenu(objetoTransaccional);
         }
 
         public void ValidarInformacion(MenusTrx objetoTransaccional)
         {
+            ValidarExistenciaPermisoMenuBLL.ExistenciaPermisoMenuBaseDatos(objetoTransaccional);
         }
     }
 }

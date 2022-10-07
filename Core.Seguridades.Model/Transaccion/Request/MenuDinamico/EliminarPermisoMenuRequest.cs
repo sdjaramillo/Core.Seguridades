@@ -1,10 +1,11 @@
 ﻿namespace Core.Seguridades.Model.Transaccion.Request.MenuDinamico
 {
-    public class PermisoMenuRequest
+    public class EliminarPermisoMenuRequest
     {
-        public PermisoMenuRequest() { }
+        public EliminarPermisoMenuRequest() { }
+
         public string MenuCodigo { get; set; }
         public string RolCodigo { get; set; }
-        public string OpcionMenuCodigo { get; set; }
+        public string OpcionMenu { get; set; }
     }
 }

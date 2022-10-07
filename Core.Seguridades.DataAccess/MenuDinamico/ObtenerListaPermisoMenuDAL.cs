@@ -30,7 +30,7 @@ namespace Core.Seguridades.DataAccess.MenuDinamico
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
             List<PA_SEG_OBTENER_PERMISOS_MENU_Result> resultadoListaMenus = conexion.ObtenerListaDatos<PA_SEG_OBTENER_PERMISOS_MENU_Result>(query);
 
-            objetoTransaccional.ListaMenu.AddRange(AutoMapperHelper.MapeoDinamicoListasAutoMapper<Menu, PA_SEG_OBTENER_PERMISOS_MENU_Result>(resultadoListaMenus));
+            objetoTransaccional.ListaPermisoMenu.AddRange(AutoMapperHelper.MapeoDinamicoListasAutoMapper<PermisoMenuRol, PA_SEG_OBTENER_PERMISOS_MENU_Result>(resultadoListaMenus));
         }
     }
 }
