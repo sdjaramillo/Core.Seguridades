@@ -13,8 +13,8 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.Aplicativos
             {
                 try
                 {
-                    var aplicativoVerificado = ListaAplicativoBaseDatos.Single(x => x.Codigo.ToString() == objetoTransaccional.AplicativoRequest.Codigo.ToString());
-                    objetoTransaccional.AplicativoValido = aplicativoVerificado;
+                    var AplicativoVerificado = ListaAplicativoBaseDatos.Single(x => x.Codigo.ToString() == objetoTransaccional.AplicativoRequest.Codigo.ToString());
+                    objetoTransaccional.AplicativoValido = AplicativoVerificado;
                 }catch(Exception e)
                 {
                     Console.WriteLine(e.ToString());

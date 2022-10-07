@@ -33,6 +33,10 @@ namespace Core.Seguridades.DataAccess.Aplicativos
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
             conexion.InsertarDatos(query, parametros);
 
+            if (parametros.Get<int>(PA_INT_AGREGAR_APLICATIVO.Retorno) != 10000)
+            {
+                objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorAplicativo.CamposVaciosAplicativoRequest;
+            }
         }
     }
 }
