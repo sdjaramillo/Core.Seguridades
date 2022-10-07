@@ -15,6 +15,9 @@ namespace Core.Seguridades.Model.General
         public const string ORIGINARSA_CUMPLEANIERO_DIA = "VAS_005";
         public const string INTERBROQUER_CUMPLEANIERO_DIA = "VAS_006";
         public const string RECAUDA_CUMPLEANIERO_DIA = "VAS_007";
+        public const string ALMUERZO_TARDE = "VAS_008";
+        public const string HORA_VACIA = "VAS_009";
+
     }
     public static class ConstantesRest 
     {
@@ -498,4 +501,5 @@ namespace Core.Seguridades.Model.General
         public const string NombreStoreProcedure = "PA_INT_OBTENER_LISTA_CONTACTO";
         public const string NombreRed = "@NombreRed";
     }
+
 }

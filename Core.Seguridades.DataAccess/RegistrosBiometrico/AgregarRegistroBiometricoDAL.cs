@@ -16,7 +16,7 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
             DynamicParameters parametros;
             parametros = new DynamicParameters();
 
-            parametros.Add(PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.NombreRed, objetoTransaccional.RegistroBiometricoNuevo.UsuarioCodigo);
+            parametros.Add(PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.NombreRed, objetoTransaccional.RegistroBiometricoNuevo.NombreRed);
             parametros.Add(PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.Codigo, objetoTransaccional.RegistroBiometricoNuevo.Codigo);
             parametros.Add(PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.FechaRegistro, objetoTransaccional.RegistroBiometricoNuevo.FechaRegistro);
             parametros.Add(PA_INT_AGREGAR_LISTA_REGISTRO_BIOMETRICO.HoraEntrada, objetoTransaccional.RegistroBiometricoNuevo.HoraEntrada);

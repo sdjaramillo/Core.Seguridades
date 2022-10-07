@@ -36,6 +36,7 @@ namespace Core.Seguridades.DataAccess.Aplicativos
             if (parametros.Get<int>(PA_INT_AGREGAR_APLICATIVO.Retorno) != 10000)
             {
                 objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorAplicativo.CamposVaciosAplicativoRequest;
+                //throw new ExcepcionServicio((int)ErrorAplicativo.NoExisteAplicativoBaseDatos);
             }
         }
     }

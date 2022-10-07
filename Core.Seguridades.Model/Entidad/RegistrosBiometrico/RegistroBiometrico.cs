@@ -11,7 +11,7 @@ namespace Core.Seguridades.Model.Entidad.RegistroBiometrico
         public RegistroBiometrico() { }
         public int IdRegistroBiometrico { get; set; }
         public string EstadoAnimoCodigo { get; set; }
-        public string UsuarioCodigo { get; set; }
+        public string NombreRed { get; set; }
         public string Codigo { get; set; }
         public DateTime FechaRegistro { get; set; }
         public TimeSpan HoraEntrada { get; set; }

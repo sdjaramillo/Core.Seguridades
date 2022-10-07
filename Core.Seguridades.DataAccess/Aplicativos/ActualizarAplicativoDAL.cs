@@ -29,6 +29,7 @@ namespace Core.Seguridades.DataAccess.Aplicativos
             if (parametros.Get<int>(PA_INT_ACTUALIZAR_APLICATIVO.Retorno) != 10000)
             {
                 objetoTransaccional.Respuesta.CodigoInternoRespuesta = (int)ErrorAplicativo.NoExisteAplicativoBaseDatos;
+                
             }
         }
 

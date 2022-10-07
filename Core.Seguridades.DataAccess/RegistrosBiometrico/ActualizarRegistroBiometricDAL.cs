@@ -1,16 +1,10 @@
 ﻿using Core.Common.DataAccess.Helper;
 using Core.Common.Util.Helper.API;
+using Core.Common.Util.Helper.Datos;
 using Core.Seguridades.Model.General;
 using Core.Seguridades.Model.Transaccion.Transaccional.RegistrosBiometrico;
 using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Seguridades.DataAccess.RegistrosBiometrico
 {
@@ -28,7 +22,7 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
             parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.Codigo, objetoTransaccional.RegistroBiometricoRequest.Codigo);
             parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.FechaRegistro, objetoTransaccional.RegistroBiometricoRequest.FechaRegistro);
             parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.HoraEntrada, TimeSpan.Parse(objetoTransaccional.RegistroBiometricoRequest.HoraEntrada));
-            if (objetoTransaccional.RegistroBiometricoRequest.HoraSalida.Equals("NULL"))
+            if (objetoTransaccional.RegistroBiometricoRequest.HoraSalida.Equals(ConstantesVariablesSistema.HORA_VACIA))
             {
                 parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.HoraSalida, null);
             }
@@ -38,7 +32,7 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
             }
             parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.IpRegistro, objetoTransaccional.RegistroBiometricoRequest.IpRegistro);
             parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.PcNombre, objetoTransaccional.RegistroBiometricoRequest.PcNombre);
-            if (objetoTransaccional.RegistroBiometricoRequest.HoraInicioAlmuerzo.Equals("NULL"))
+            if (objetoTransaccional.RegistroBiometricoRequest.HoraInicioAlmuerzo.Equals(ConstantesVariablesSistema.HORA_VACIA))
             {
                 parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.HoraInicioAlmuerzo, null);
             }
@@ -46,16 +40,27 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
             {
                 parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.HoraInicioAlmuerzo, TimeSpan.Parse(objetoTransaccional.RegistroBiometricoRequest.HoraInicioAlmuerzo));
             }
-            if (objetoTransaccional.RegistroBiometricoRequest.HoraFinAlmuerzo.Equals("NULL"))
+            if (objetoTransaccional.RegistroBiometricoRequest.HoraFinAlmuerzo.Equals(ConstantesVariablesSistema.HORA_VACIA))
             {
                 parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.HoraFinAlmuerzo, null);
             }
             else
             {
                 parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.HoraFinAlmuerzo, TimeSpan.Parse(objetoTransaccional.RegistroBiometricoRequest.HoraFinAlmuerzo));
+                string VariableSistemaAtraso = VariablesSistemaHelper.ObtenerValor(ConstantesVariablesSistema.TIEMPO_ALMUERZO);
+                TimeSpan HoraAtraso = TimeSpan.Parse(VariableSistemaAtraso);
+                HoraAtraso = TimeSpan.Parse(objetoTransaccional.RegistroBiometricoRequest.HoraInicioAlmuerzo).Add(TimeSpan.FromMinutes(HoraAtraso.Hours));
+                HoraAtraso = TimeSpan.Parse(objetoTransaccional.RegistroBiometricoRequest.HoraFinAlmuerzo) - HoraAtraso;
+                if (HoraAtraso.TotalSeconds>0)
+                {
+                    parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.Descripcion, ConstantesVariablesSistema.ALMUERZO_TARDE);
+                }
+                else
+                {
+                    parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.Descripcion, objetoTransaccional.RegistroBiometricoRequest.Descripcion);
+                }
             }
             parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.TiempoAtraso, objetoTransaccional.RegistroBiometricoRequest.TiempoAtraso);
-            parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.Descripcion, objetoTransaccional.RegistroBiometricoRequest.Descripcion);
             parametros.Add(PA_INT_ACTUALIZAR_REGISTRO_BIOMETRICO.Retorno, System.Data.DbType.Int32, direction: ParameterDirection.ReturnValue);
 
             DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));

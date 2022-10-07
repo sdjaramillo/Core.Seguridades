@@ -5,6 +5,8 @@ using Core.Seguridades.Model.Transaccion.Request.Aplicativos;
 using Core.Seguridades.Model.Transaccion.Response.Aplicativos;
 using Core.Seguridades.Model.Transaccion.Transaccional.Aplicativos;
 using Microsoft.AspNetCore.Mvc;
+using System.Data.Common;
+
 
 namespace Core.Seguridades.Controllers
 {
@@ -12,6 +14,7 @@ namespace Core.Seguridades.Controllers
     [ApiController]
     public class AplicativosController : ControllerBase
     {
+        
         [HttpPost]
         [Route("ObtenerListaAplicativos")]
         [Produces(typeof(EstructuraBase<ObtenerListaAplicativosResponse>))]

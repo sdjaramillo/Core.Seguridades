@@ -23,7 +23,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.RegistrosBiometrico
                 )
             {
                 objetoTransaccional.NombreRed = objetoTransaccional.RegistroBiometricoRequest.NombreRed;
-                objetoTransaccional.RegistroBiometricoNuevo.UsuarioCodigo = objetoTransaccional.RegistroBiometricoRequest.NombreRed;
+                objetoTransaccional.RegistroBiometricoNuevo.NombreRed = objetoTransaccional.RegistroBiometricoRequest.NombreRed;
                 objetoTransaccional.RegistroBiometricoNuevo.Codigo = objetoTransaccional.RegistroBiometricoRequest.Codigo;
                 objetoTransaccional.RegistroBiometricoNuevo.FechaRegistro = objetoTransaccional.RegistroBiometricoRequest.FechaRegistro;
                 objetoTransaccional.RegistroBiometricoNuevo.HoraEntrada = TimeSpan.Parse(objetoTransaccional.RegistroBiometricoRequest.HoraEntrada);
@@ -49,7 +49,7 @@ namespace Core.Seguridades.BusinessLogic.Ejecucion.RegistrosBiometrico
                 objetoTransaccional.RegistroBiometricoRequest.PcNombre != null
                 )
             {
-                objetoTransaccional.RegistroBiometricoNuevo.UsuarioCodigo = objetoTransaccional.RegistroBiometricoRequest.NombreRed;
+                objetoTransaccional.RegistroBiometricoNuevo.NombreRed = objetoTransaccional.RegistroBiometricoRequest.NombreRed;
                 objetoTransaccional.RegistroBiometricoNuevo.Codigo = objetoTransaccional.RegistroBiometricoRequest.Codigo;
                 objetoTransaccional.RegistroBiometricoNuevo.FechaRegistro = objetoTransaccional.RegistroBiometricoRequest.FechaRegistro;
                 objetoTransaccional.RegistroBiometricoNuevo.HoraEntrada = TimeSpan.Parse(objetoTransaccional.RegistroBiometricoRequest.HoraEntrada);
