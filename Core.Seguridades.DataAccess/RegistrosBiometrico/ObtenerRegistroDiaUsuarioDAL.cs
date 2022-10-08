@@ -61,7 +61,11 @@ namespace Core.Seguridades.DataAccess.RegistrosBiometrico
             List<PA_INT_OBTENER_REGISTRO_DIA_Result> resultadoListaBiometrico = conexion.ObtenerListaDatos<PA_INT_OBTENER_REGISTRO_DIA_Result>(query, parametros);
 
             objetoTransaccional.ListaRegistroBiometrico.AddRange(AutoMapperHelper.MapeoDinamicoListasAutoMapper<RegistroBiometrico, PA_INT_OBTENER_REGISTRO_DIA_Result>(resultadoListaBiometrico));
-            objetoTransaccional.RegistroBiometricoNuevo = objetoTransaccional.ListaRegistroBiometrico.First();
+            objetoTransaccional.RegistroBiometricoNuevo = new RegistroBiometrico();
+            if (objetoTransaccional.ListaRegistroBiometrico.Count>0)
+            {
+                objetoTransaccional.RegistroBiometricoNuevo = objetoTransaccional.ListaRegistroBiometrico.First();
+            }
         }
     }
 }
