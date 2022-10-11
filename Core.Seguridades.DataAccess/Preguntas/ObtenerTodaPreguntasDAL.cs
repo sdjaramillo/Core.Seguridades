@@ -1,0 +1,35 @@
+﻿using Core.Common.DataAccess.Helper;
+using Core.Common.Util.Helper.API;
+using Core.Seguridades.Model.Entidad.Noticias;
+using Core.Seguridades.Model.Entidad.Preguntas;
+using Core.Seguridades.Model.General;
+using Core.Seguridades.Model.Transaccion.Transaccional.Preguntas;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static Core.Seguridades.DataAccess.Noticias.ObtenerTodaNoticiasDAL;
+
+namespace Core.Seguridades.DataAccess.Preguntas
+{
+    public static class ObtenerTodaPreguntasDAL
+    {
+        internal class PA_INT_OBTENER_LISTA_TODOS_PREGUNTAS_Result
+        {
+            public string Codigo { get; set; }
+            public string Imagen { get; set; }
+            public string Titulo { get; set; }
+            public string Descripcion { get; set; }
+        }
+        public static void Execute (PreguntaTrx objetoTransaccional)
+        {
+            string query = PA_INT_OBTENER_LISTA_TODOS_PREGUNTAS.NombreStoreProcedure;
+
+            DBConnectionHelper conexion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_INTRANET"));
+            List<PA_INT_OBTENER_LISTA_TODOS_PREGUNTAS_Result> resultadoListaPreguntas = conexion.ObtenerListaDatos<PA_INT_OBTENER_LISTA_TODOS_PREGUNTAS_Result>(query);
+
+            objetoTransaccional.ListadoPreguntas.AddRange(AutoMapperHelper.MapeoDinamicoListasAutoMapper<Pregunta, PA_INT_OBTENER_LISTA_TODOS_PREGUNTAS_Result>(resultadoListaPreguntas));
+        }
+    }
+}

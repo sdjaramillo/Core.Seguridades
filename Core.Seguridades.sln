@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Seguridades", "Core.Seguridades\Core.Seguridades.csproj", "{A2E5DD61-2911-4563-B31D-F15386D1695C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Seguridades", "Core.Seguridades\Core.Seguridades.csproj", "{A2E5DD61-2911-4563-B31D-F15386D1695C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Seguridades.BusinessLogic", "Core.Seguridades.BusinessLogic\Core.Seguridades.BusinessLogic.csproj", "{130B8F94-19F7-4E29-86D4-D1CBAADB1D05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Seguridades.BusinessLogic", "Core.Seguridades.BusinessLogic\Core.Seguridades.BusinessLogic.csproj", "{130B8F94-19F7-4E29-86D4-D1CBAADB1D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Seguridades.DataAccess", "Core.Seguridades.DataAccess\Core.Seguridades.DataAccess.csproj", "{6266C550-89BD-44DE-9D0E-8103D18535D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Seguridades.DataAccess", "Core.Seguridades.DataAccess\Core.Seguridades.DataAccess.csproj", "{6266C550-89BD-44DE-9D0E-8103D18535D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Seguridades.Model", "Core.Seguridades.Model\Core.Seguridades.Model.csproj", "{E04C68B7-6668-4897-890B-C98D553EA5C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Seguridades.Model", "Core.Seguridades.Model\Core.Seguridades.Model.csproj", "{E04C68B7-6668-4897-890B-C98D553EA5C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Seguridades.Adapter", "Core.Seguridades.Adapter\Core.Seguridades.Adapter.csproj", "{40917B5C-953E-41EF-AD66-B84377FD9B09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E04C68B7-6668-4897-890B-C98D553EA5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E04C68B7-6668-4897-890B-C98D553EA5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E04C68B7-6668-4897-890B-C98D553EA5C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40917B5C-953E-41EF-AD66-B84377FD9B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40917B5C-953E-41EF-AD66-B84377FD9B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40917B5C-953E-41EF-AD66-B84377FD9B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40917B5C-953E-41EF-AD66-B84377FD9B09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
