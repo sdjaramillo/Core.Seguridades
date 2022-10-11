@@ -1,9 +1,14 @@
 using Core.Common.Util.Helper.API;
 using Core.Common.Util.Helper.Autenticacion;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Core.Common.DataAccess.Helper;
+using Core.Common.Util.Helper.Autenticacion;
+using Core.Common.Util.Helper.API;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddCors(c =>
@@ -23,7 +28,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -32,6 +37,9 @@ if (app.Environment.IsDevelopment())
 app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseHttpsRedirection();
+
+//JWT
+app.UseAuthentication();
 
 app.UseAuthorization();
 

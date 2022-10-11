@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Core.Common.Model" Version="1.1.8" />
-    <PackageReference Include="Core.Common.ProcessTemplate" Version="1.1.8" />
-    <PackageReference Include="Core.Common.Util" Version="1.1.8" />
+    <PackageReference Include="Core.Common.ProcessTemplate" Version="1.1.10" />
+    <PackageReference Include="Core.Common.Model" Version="1.1.10" />
+    <PackageReference Include="Core.Common.Util" Version="1.1.10" />
   </ItemGroup>
 
   <ItemGroup>

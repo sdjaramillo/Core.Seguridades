@@ -1,10 +1,10 @@
 ﻿using Core.Common.Model.Transaccion.Respuesta;
-using Core.Common.ProcessTemplate.Helper;
 using Core.Seguridades.BusinessLogic.Internal.Autenticacion;
 using Core.Seguridades.Model.Transaccion.Request.Autenticacion;
 using Core.Seguridades.Model.Transaccion.Response.Autenticacion;
 using Core.Seguridades.Model.Transaccion.Transaccional.Autenticacion;
 using Microsoft.AspNetCore.Mvc;
+using Core.Common.ProcessTemplate.Helper;
 
 namespace Core.Seguridades.Controllers
 {
@@ -12,11 +12,7 @@ namespace Core.Seguridades.Controllers
     [ApiController]
     public class AutenticacionController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-        public AutenticacionController(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
+
         [HttpPost]
         [Route("AutenticarUsuarioActiveDirectory")]
         [Produces(typeof(EstructuraBase<AutenticarActiveDirectoryResponse>))]
@@ -24,11 +20,28 @@ namespace Core.Seguridades.Controllers
         {
             AutenticacionTrx transaccion = this.GenerarTransaccion<AutenticacionTrx>();
             transaccion.UsuarioAutenticacionRequest = autenticacion;
-            //transaccion.BaseDatos = _configuration.GetConnectionString("BD_SEGURIDADES");
 
             EstructuraBase<AutenticarActiveDirectoryResponse> respuesta = this.ProcesarTransaccionSimple<AutenticacionTrx, AutenticarActiveDirectoryResponse, AutenticarUsuarioActiveDirectoryIN>(
                 new AutenticarUsuarioActiveDirectoryIN(),
                 transaccion);
+
+            return Ok(respuesta);
+        }
+
+
+        [HttpPost]
+        [Route("GenerarToken")]
+        [Produces(typeof(EstructuraBase<GenerarTokenResponse>))]
+        public IActionResult GenerarToken([FromBody] GenerarTokenRequest request)
+        {
+            AutenticacionTrx transaccion = this.GenerarTransaccion<AutenticacionTrx>();
+
+            transaccion.CredencialAcceso.Usuario = request.Nombre;
+            transaccion.CredencialAcceso.Clave = request.Clave;
+
+            EstructuraBase<GenerarTokenResponse> respuesta = this.ProcesarTransaccionSimple<AutenticacionTrx, GenerarTokenResponse, GenerarTokenIN>(
+            new GenerarTokenIN(),
+            transaccion);
 
             return Ok(respuesta);
         }

@@ -13,7 +13,6 @@ namespace Core.Seguridades.DataAccess.Usuarios
     /// <summary>
     /// Lógica de acceso de los datos que permite obtener la lista de usuarios
     /// </summary>
-    /// 
     public static class ObtenerListaUsuariosDAL
     {
         /// <summary>
