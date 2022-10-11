@@ -23,7 +23,7 @@ namespace Core.Seguridades.DataAccess.Autenticacion
         /// </param>
         public static AutenticarCredencialesAccesoResult ValidarCredencialesAcceso(AutenticacionTrx objetoTransaccional)
         {
-            DBConnectionHelper coneccion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("LocalCon"));
+            DBConnectionHelper coneccion = new DBConnectionHelper(Common.Model.General.EnumDBConnection.SqlConnection, SettingsHelper.ObtenerConnectionString("BD_SEGURIDADES"));
             var dynamicParameters = new DynamicParameters();
 
             dynamicParameters.Add(ConstantesPA.PA_SEG_AUTENTICAR_CREDENCIALES_ACCESO.PARAM_USUARIO, objetoTransaccional.CredencialAcceso.Usuario, System.Data.DbType.String);

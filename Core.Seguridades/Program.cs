@@ -17,7 +17,7 @@ builder.Services.AddCors(c =>
 });
 
 //Configuración JWT;
-//JwtHelper.ConfigurarServicioJWT(builder);
+JwtHelper.ConfigurarServicioJWT(builder);
 //Configurar Settings Helper
 SettingsHelper.ObtenerJsonAppSetings(builder.Configuration);
 
