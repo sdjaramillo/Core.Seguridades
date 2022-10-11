@@ -7,13 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Core.Common.ProcessTemplate" Version="1.1.8" />
+    <PackageReference Include="Core.Common.ProcessTemplate" Version="1.1.10" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Core.Seguridades.Adapter\Core.Seguridades.Adapter.csproj" />
     <ProjectReference Include="..\Core.Seguridades.DataAccess\Core.Seguridades.DataAccess.csproj" />
-    <ProjectReference Include="..\Core.Seguridades.JWT\Core.Seguridades.Helpers.csproj" />
     <ProjectReference Include="..\Core.Seguridades.Model\Core.Seguridades.Model.csproj" />
   </ItemGroup>
 

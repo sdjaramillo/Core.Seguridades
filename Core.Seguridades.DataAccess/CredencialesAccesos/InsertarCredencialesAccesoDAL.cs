@@ -26,7 +26,7 @@ namespace Core.Seguridades.DataAccess.CredencialesAccesos
             dynamicParameters.Add(ConstantesPA.PA_SEG_INSERTAR_CREDENCIALES_ACCESO.PARAM_USUARIO, objetoTransaccional.CredencialAcceso.Usuario, System.Data.DbType.String);
             dynamicParameters.Add(ConstantesPA.PA_SEG_INSERTAR_CREDENCIALES_ACCESO.PARAM_CLAVE, objetoTransaccional.CredencialAcceso.Clave, System.Data.DbType.String);
             dynamicParameters.Add(ConstantesPA.PA_SEG_INSERTAR_CREDENCIALES_ACCESO.PARAM_TIPO, objetoTransaccional.CredencialAcceso.Cat_id_tipo, System.Data.DbType.String);
-            dynamicParameters.Add(ConstantesPA.PA_SEG_INSERTAR_CREDENCIALES_ACCESO.PATAM_ENTIDAD, objetoTransaccional.CredencialAcceso.EntidadId, System.Data.DbType.Int32);
+            dynamicParameters.Add(ConstantesPA.PA_SEG_INSERTAR_CREDENCIALES_ACCESO.PARAM_CODIGO_ENTIDAD, objetoTransaccional.CredencialAcceso.EntidadId, System.Data.DbType.Int32);
 
             dynamicParameters.Add(ConstantesPA.CodigoRetorno, System.Data.DbType.Int32, direction: System.Data.ParameterDirection.ReturnValue);
 

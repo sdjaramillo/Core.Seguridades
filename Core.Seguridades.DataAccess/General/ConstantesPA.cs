@@ -41,7 +41,7 @@ namespace Core.Seguridades.DataAccess.General
             public const string PARAM_USUARIO = "@Usuario";
             public const string PARAM_CLAVE = "@Clave";
             public const string PARAM_TIPO = "@TipoCodigo";
-            public const string PATAM_ENTIDAD = "@EntidadId";
+            public const string PARAM_CODIGO_ENTIDAD = "@EntidadId";            
         }
 
         /// <summary>
